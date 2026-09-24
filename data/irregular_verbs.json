@@ -1,0 +1,695 @@
+[
+  {
+    "base": "will",
+    "past": "would",
+    "participle": "—",
+    "meaning": "愿意",
+    "type": "情态动词"
+  },
+  {
+    "base": "cut",
+    "past": "cut",
+    "participle": "cut",
+    "meaning": "切割",
+    "type": "AAA"
+  },
+  {
+    "base": "shut",
+    "past": "shut",
+    "participle": "shut",
+    "meaning": "关闭",
+    "type": "AAA"
+  },
+  {
+    "base": "put",
+    "past": "put",
+    "participle": "put",
+    "meaning": "放置",
+    "type": "AAA"
+  },
+  {
+    "base": "let",
+    "past": "let",
+    "participle": "let",
+    "meaning": "让",
+    "type": "AAA"
+  },
+  {
+    "base": "set",
+    "past": "set",
+    "participle": "set",
+    "meaning": "设置",
+    "type": "AAA"
+  },
+  {
+    "base": "hit",
+    "past": "hit",
+    "participle": "hit",
+    "meaning": "打击",
+    "type": "AAA"
+  },
+  {
+    "base": "hurt",
+    "past": "hurt",
+    "participle": "hurt",
+    "meaning": "伤害",
+    "type": "AAA"
+  },
+  {
+    "base": "cost",
+    "past": "cost",
+    "participle": "cost",
+    "meaning": "花费",
+    "type": "AAA"
+  },
+  {
+    "base": "read",
+    "past": "read",
+    "participle": "read",
+    "meaning": "阅读",
+    "type": "AAA"
+  },
+  {
+    "base": "beat",
+    "past": "beat",
+    "participle": "beaten",
+    "meaning": "打败",
+    "type": "AAB"
+  },
+  {
+    "base": "run",
+    "past": "ran",
+    "participle": "run",
+    "meaning": "跑",
+    "type": "ABA"
+  },
+  {
+    "base": "come",
+    "past": "came",
+    "participle": "come",
+    "meaning": "来",
+    "type": "ABA"
+  },
+  {
+    "base": "become",
+    "past": "became",
+    "participle": "become",
+    "meaning": "变成",
+    "type": "ABA"
+  },
+  {
+    "base": "buy",
+    "past": "bought",
+    "participle": "bought",
+    "meaning": "买",
+    "type": "ABB"
+  },
+  {
+    "base": "fight",
+    "past": "fought",
+    "participle": "fought",
+    "meaning": "打架",
+    "type": "ABB"
+  },
+  {
+    "base": "think",
+    "past": "thought",
+    "participle": "thought",
+    "meaning": "想",
+    "type": "ABB"
+  },
+  {
+    "base": "seek",
+    "past": "sought",
+    "participle": "sought",
+    "meaning": "寻找",
+    "type": "ABB"
+  },
+  {
+    "base": "bring",
+    "past": "brought",
+    "participle": "brought",
+    "meaning": "带来",
+    "type": "ABB"
+  },
+  {
+    "base": "catch",
+    "past": "caught",
+    "participle": "caught",
+    "meaning": "抓住",
+    "type": "ABB"
+  },
+  {
+    "base": "teach",
+    "past": "taught",
+    "participle": "taught",
+    "meaning": "教",
+    "type": "ABB"
+  },
+  {
+    "base": "lend",
+    "past": "lent",
+    "participle": "lent",
+    "meaning": "借出",
+    "type": "ABB"
+  },
+  {
+    "base": "send",
+    "past": "sent",
+    "participle": "sent",
+    "meaning": "发送",
+    "type": "ABB"
+  },
+  {
+    "base": "spend",
+    "past": "spent",
+    "participle": "spent",
+    "meaning": "花费",
+    "type": "ABB"
+  },
+  {
+    "base": "build",
+    "past": "built",
+    "participle": "built",
+    "meaning": "建造",
+    "type": "ABB"
+  },
+  {
+    "base": "feel",
+    "past": "felt",
+    "participle": "felt",
+    "meaning": "感觉",
+    "type": "ABB"
+  },
+  {
+    "base": "leave",
+    "past": "left",
+    "participle": "left",
+    "meaning": "离开",
+    "type": "ABB"
+  },
+  {
+    "base": "keep",
+    "past": "kept",
+    "participle": "kept",
+    "meaning": "保持",
+    "type": "ABB"
+  },
+  {
+    "base": "sleep",
+    "past": "slept",
+    "participle": "slept",
+    "meaning": "睡觉",
+    "type": "ABB"
+  },
+  {
+    "base": "sweep",
+    "past": "swept",
+    "participle": "swept",
+    "meaning": "清扫",
+    "type": "ABB"
+  },
+  {
+    "base": "mean",
+    "past": "meant",
+    "participle": "meant",
+    "meaning": "意思是",
+    "type": "ABB"
+  },
+  {
+    "base": "hear",
+    "past": "heard",
+    "participle": "heard",
+    "meaning": "听见",
+    "type": "ABB"
+  },
+  {
+    "base": "lead",
+    "past": "led",
+    "participle": "led",
+    "meaning": "带领",
+    "type": "ABB"
+  },
+  {
+    "base": "feed",
+    "past": "fed",
+    "participle": "fed",
+    "meaning": "喂食",
+    "type": "ABB"
+  },
+  {
+    "base": "flee",
+    "past": "fled",
+    "participle": "fled",
+    "meaning": "逃跑",
+    "type": "ABB"
+  },
+  {
+    "base": "meet",
+    "past": "met",
+    "participle": "met",
+    "meaning": "遇见",
+    "type": "ABB"
+  },
+  {
+    "base": "shoot",
+    "past": "shot",
+    "participle": "shot",
+    "meaning": "射击",
+    "type": "ABB"
+  },
+  {
+    "base": "get",
+    "past": "got",
+    "participle": "got",
+    "meaning": "得到",
+    "type": "ABB"
+  },
+  {
+    "base": "win",
+    "past": "won",
+    "participle": "won",
+    "meaning": "赢",
+    "type": "ABB"
+  },
+  {
+    "base": "sit",
+    "past": "sat",
+    "participle": "sat",
+    "meaning": "坐下",
+    "type": "ABB"
+  },
+  {
+    "base": "dig",
+    "past": "dug",
+    "participle": "dug",
+    "meaning": "挖掘",
+    "type": "ABB"
+  },
+  {
+    "base": "stick",
+    "past": "stuck",
+    "participle": "stuck",
+    "meaning": "粘住",
+    "type": "ABB"
+  },
+  {
+    "base": "hang",
+    "past": "hung",
+    "participle": "hung",
+    "meaning": "悬挂",
+    "type": "ABB"
+  },
+  {
+    "base": "sell",
+    "past": "sold",
+    "participle": "sold",
+    "meaning": "出售",
+    "type": "ABB"
+  },
+  {
+    "base": "tell",
+    "past": "told",
+    "participle": "told",
+    "meaning": "告诉",
+    "type": "ABB"
+  },
+  {
+    "base": "smell",
+    "past": "smelt",
+    "participle": "smelt",
+    "meaning": "闻",
+    "type": "ABB"
+  },
+  {
+    "base": "spell",
+    "past": "spelt",
+    "participle": "spelt",
+    "meaning": "拼写",
+    "type": "ABB"
+  },
+  {
+    "base": "hold",
+    "past": "held",
+    "participle": "held",
+    "meaning": "拿着",
+    "type": "ABB"
+  },
+  {
+    "base": "find",
+    "past": "found",
+    "participle": "found",
+    "meaning": "找到",
+    "type": "ABB"
+  },
+  {
+    "base": "stand",
+    "past": "stood",
+    "participle": "stood",
+    "meaning": "站立",
+    "type": "ABB"
+  },
+  {
+    "base": "understand",
+    "past": "understood",
+    "participle": "understood",
+    "meaning": "理解",
+    "type": "ABB"
+  },
+  {
+    "base": "lay",
+    "past": "laid",
+    "participle": "laid",
+    "meaning": "放置",
+    "type": "ABB"
+  },
+  {
+    "base": "pay",
+    "past": "paid",
+    "participle": "paid",
+    "meaning": "付款",
+    "type": "ABB"
+  },
+  {
+    "base": "say",
+    "past": "said",
+    "participle": "said",
+    "meaning": "说",
+    "type": "ABB"
+  },
+  {
+    "base": "have",
+    "past": "had",
+    "participle": "had",
+    "meaning": "有",
+    "type": "ABB"
+  },
+  {
+    "base": "make",
+    "past": "made",
+    "participle": "made",
+    "meaning": "制作",
+    "type": "ABB"
+  },
+  {
+    "base": "lose",
+    "past": "lost",
+    "participle": "lost",
+    "meaning": "丢失",
+    "type": "ABB"
+  },
+  {
+    "base": "do",
+    "past": "did",
+    "participle": "done",
+    "meaning": "做",
+    "type": "ABC"
+  },
+  {
+    "base": "go",
+    "past": "went",
+    "participle": "gone",
+    "meaning": "去",
+    "type": "ABC"
+  },
+  {
+    "base": "begin",
+    "past": "began",
+    "participle": "begun",
+    "meaning": "开始",
+    "type": "ABC"
+  },
+  {
+    "base": "drink",
+    "past": "drank",
+    "participle": "drunk",
+    "meaning": "喝",
+    "type": "ABC"
+  },
+  {
+    "base": "ring",
+    "past": "rang",
+    "participle": "rung",
+    "meaning": "打电话",
+    "type": "ABC"
+  },
+  {
+    "base": "sing",
+    "past": "sang",
+    "participle": "sung",
+    "meaning": "唱歌",
+    "type": "ABC"
+  },
+  {
+    "base": "sink",
+    "past": "sank",
+    "participle": "sunk",
+    "meaning": "下沉",
+    "type": "ABC"
+  },
+  {
+    "base": "swim",
+    "past": "swam",
+    "participle": "swum",
+    "meaning": "游泳",
+    "type": "ABC"
+  },
+  {
+    "base": "blow",
+    "past": "blew",
+    "participle": "blown",
+    "meaning": "吹",
+    "type": "ABC"
+  },
+  {
+    "base": "fly",
+    "past": "flew",
+    "participle": "flown",
+    "meaning": "飞",
+    "type": "ABC"
+  },
+  {
+    "base": "know",
+    "past": "knew",
+    "participle": "known",
+    "meaning": "知道",
+    "type": "ABC"
+  },
+  {
+    "base": "grow",
+    "past": "grew",
+    "participle": "grown",
+    "meaning": "成长",
+    "type": "ABC"
+  },
+  {
+    "base": "throw",
+    "past": "threw",
+    "participle": "thrown",
+    "meaning": "扔",
+    "type": "ABC"
+  },
+  {
+    "base": "draw",
+    "past": "drew",
+    "participle": "drawn",
+    "meaning": "画",
+    "type": "ABC"
+  },
+  {
+    "base": "show",
+    "past": "showed",
+    "participle": "shown",
+    "meaning": "展示",
+    "type": "ABC"
+  },
+  {
+    "base": "break",
+    "past": "broke",
+    "participle": "broken",
+    "meaning": "打破",
+    "type": "ABC"
+  },
+  {
+    "base": "speak",
+    "past": "spoke",
+    "participle": "spoken",
+    "meaning": "说话",
+    "type": "ABC"
+  },
+  {
+    "base": "steal",
+    "past": "stole",
+    "participle": "stolen",
+    "meaning": "偷",
+    "type": "ABC"
+  },
+  {
+    "base": "choose",
+    "past": "chose",
+    "participle": "chosen",
+    "meaning": "选择",
+    "type": "ABC"
+  },
+  {
+    "base": "freeze",
+    "past": "froze",
+    "participle": "frozen",
+    "meaning": "冻结",
+    "type": "ABC"
+  },
+  {
+    "base": "wake",
+    "past": "woke",
+    "participle": "woken",
+    "meaning": "醒来",
+    "type": "ABC"
+  },
+  {
+    "base": "forget",
+    "past": "forgot",
+    "participle": "forgotten",
+    "meaning": "忘记",
+    "type": "ABC"
+  },
+  {
+    "base": "take",
+    "past": "took",
+    "participle": "taken",
+    "meaning": "拿",
+    "type": "ABC"
+  },
+  {
+    "base": "mistake",
+    "past": "mistook",
+    "participle": "mistaken",
+    "meaning": "弄错",
+    "type": "ABC"
+  },
+  {
+    "base": "shake",
+    "past": "shook",
+    "participle": "shaken",
+    "meaning": "摇动",
+    "type": "ABC"
+  },
+  {
+    "base": "eat",
+    "past": "ate",
+    "participle": "eaten",
+    "meaning": "吃",
+    "type": "ABC"
+  },
+  {
+    "base": "fall",
+    "past": "fell",
+    "participle": "fallen",
+    "meaning": "落下",
+    "type": "ABC"
+  },
+  {
+    "base": "rise",
+    "past": "rose",
+    "participle": "risen",
+    "meaning": "上升",
+    "type": "ABC"
+  },
+  {
+    "base": "drive",
+    "past": "drove",
+    "participle": "driven",
+    "meaning": "驾驶",
+    "type": "ABC"
+  },
+  {
+    "base": "give",
+    "past": "gave",
+    "participle": "given",
+    "meaning": "给",
+    "type": "ABC"
+  },
+  {
+    "base": "forgive",
+    "past": "forgave",
+    "participle": "forgiven",
+    "meaning": "原谅",
+    "type": "ABC"
+  },
+  {
+    "base": "see",
+    "past": "saw",
+    "participle": "seen",
+    "meaning": "看见",
+    "type": "ABC"
+  },
+  {
+    "base": "ride",
+    "past": "rode",
+    "participle": "ridden",
+    "meaning": "骑",
+    "type": "ABC"
+  },
+  {
+    "base": "hide",
+    "past": "hid",
+    "participle": "hidden",
+    "meaning": "躲藏",
+    "type": "ABC"
+  },
+  {
+    "base": "bite",
+    "past": "bit",
+    "participle": "bitten",
+    "meaning": "咬",
+    "type": "ABC"
+  },
+  {
+    "base": "forbid",
+    "past": "forbade",
+    "participle": "forbidden",
+    "meaning": "禁止",
+    "type": "ABC"
+  },
+  {
+    "base": "write",
+    "past": "wrote",
+    "participle": "written",
+    "meaning": "写",
+    "type": "ABC"
+  },
+  {
+    "base": "bear",
+    "past": "bore",
+    "participle": "born",
+    "meaning": "忍受",
+    "type": "ABC"
+  },
+  {
+    "base": "tear",
+    "past": "tore",
+    "participle": "torn",
+    "meaning": "撕破",
+    "type": "ABC"
+  },
+  {
+    "base": "wear",
+    "past": "wore",
+    "participle": "worn",
+    "meaning": "穿",
+    "type": "ABC"
+  },
+  {
+    "base": "lie",
+    "past": "lay",
+    "participle": "lain",
+    "meaning": "躺",
+    "type": "ABC"
+  },
+  {
+    "base": "be",
+    "past": "was/were",
+    "participle": "been",
+    "meaning": "是",
+    "type": "be动词"
+  }
+]

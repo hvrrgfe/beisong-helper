@@ -1,0 +1,2613 @@
+[
+  {
+    "seq": 1,
+    "word": "abolish",
+    "meaning": "废除、废止",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 2,
+    "word": "abortion",
+    "meaning": "流产、放弃、中止",
+    "forms": "abort",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 3,
+    "word": "accelerate",
+    "meaning": "加速",
+    "forms": "acceleration",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 4,
+    "word": "anticipate",
+    "meaning": "预期、期待",
+    "forms": "anticipation",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 5,
+    "word": "attain",
+    "meaning": "获得、得到",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 6,
+    "word": "bid",
+    "meaning": "出价",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 7,
+    "word": "bind",
+    "meaning": "捆绑、绑定",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 8,
+    "word": "boil",
+    "meaning": "沸腾、煮",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 9,
+    "word": "boycott",
+    "meaning": "抵制",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 10,
+    "word": "cater",
+    "meaning": "提供饮食、承办酒席",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 11,
+    "word": "cite",
+    "meaning": "引用",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 12,
+    "word": "classify",
+    "meaning": "分类",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 13,
+    "word": "compensate",
+    "meaning": "补偿、弥补",
+    "forms": "compensation",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 14,
+    "word": "consume",
+    "meaning": "消耗、花费、消费",
+    "forms": "consumption, consumer",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 15,
+    "word": "correspond",
+    "meaning": "与⋯⋯一致对应、通信",
+    "forms": "corresponding",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 16,
+    "word": "dial",
+    "meaning": "拨打电话",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 17,
+    "word": "digest",
+    "meaning": "消化、吸收",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 18,
+    "word": "entitle",
+    "meaning": "赋予权利、给……命名",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 19,
+    "word": "exclaim",
+    "meaning": "惊呼、叫喊",
+    "forms": "exclamation",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 20,
+    "word": "execute",
+    "meaning": "执行、实施",
+    "forms": "execution",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 21,
+    "word": "export",
+    "meaning": "出口、输出",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 22,
+    "word": "facilitate",
+    "meaning": "促进、促使",
+    "forms": "facilitation",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 23,
+    "word": "hibernate",
+    "meaning": "冬眠",
+    "forms": "hibernation",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 24,
+    "word": "howl",
+    "meaning": "呼啸、嚎叫",
+    "forms": "howling",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 25,
+    "word": "import",
+    "meaning": "进口、输入",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 26,
+    "word": "irrigate",
+    "meaning": "灌溉",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 27,
+    "word": "murder",
+    "meaning": "谋杀",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 28,
+    "word": "offend",
+    "meaning": "冒犯",
+    "forms": "offence, offender",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 29,
+    "word": "perceive",
+    "meaning": "感知、认为、注意到",
+    "forms": "perception",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 30,
+    "word": "polish",
+    "meaning": "抛光、打磨",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 31,
+    "word": "preview",
+    "meaning": "预览、预告",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 32,
+    "word": "protest",
+    "meaning": "抗议、反对",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 33,
+    "word": "quake",
+    "meaning": "震动、颤抖",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 34,
+    "word": "resemble",
+    "meaning": "看起来像",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 35,
+    "word": "revolve",
+    "meaning": "旋转、环绕",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 36,
+    "word": "rewind",
+    "meaning": "倒带",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 37,
+    "word": "salute",
+    "meaning": "敬礼",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 38,
+    "word": "scratch",
+    "meaning": "划痕、划伤",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 39,
+    "word": "shrink",
+    "meaning": "缩小、缩减",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 40,
+    "word": "snatch",
+    "meaning": "抢夺、夺走",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 41,
+    "word": "sob",
+    "meaning": "啜泣",
+    "forms": "irrigation protestor shrank, shrunk, shrinking sobbed, sobbing",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 42,
+    "word": "stimulate",
+    "meaning": "促进、刺激",
+    "forms": "stimulation",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 43,
+    "word": "subscribe",
+    "meaning": "订阅、订购",
+    "forms": "subscription",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 44,
+    "word": "substitute",
+    "meaning": "代替、取代",
+    "forms": "substitution",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 45,
+    "word": "swallow",
+    "meaning": "吞咽",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 46,
+    "word": "swap",
+    "meaning": "交换",
+    "forms": "swapped, swapping",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 47,
+    "word": "telegraph",
+    "meaning": "电报",
+    "forms": "telegram",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 48,
+    "word": "twist",
+    "meaning": "扭曲、转动",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 49,
+    "word": "wag",
+    "meaning": "摇动、摇摆",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 50,
+    "word": "wrestle",
+    "meaning": "摔跤",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 51,
+    "word": "zoom",
+    "meaning": "快速移动、放缩、猛涨形容词、副词序号单词释义相关词汇或考查形式",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 1,
+    "word": "abrupt",
+    "meaning": "突然的、意外的",
+    "forms": "abruptly",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 2,
+    "word": "absolute",
+    "meaning": "绝对的",
+    "forms": "absolutely",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 3,
+    "word": "absurd",
+    "meaning": "荒谬的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 4,
+    "word": "acute",
+    "meaning": "严重的、急性病的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 5,
+    "word": "ambiguous",
+    "meaning": "模棱两可的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 6,
+    "word": "ample",
+    "meaning": "充足的、丰裕的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 7,
+    "word": "ancient",
+    "meaning": "古代的、古老的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 8,
+    "word": "annual",
+    "meaning": "每年的、一年一度的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 9,
+    "word": "arbitrary",
+    "meaning": "专横的、专制的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 10,
+    "word": "authentic",
+    "meaning": "真正的、真品的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 124,
+    "word": "annually",
+    "meaning": "序号单词释义相关词汇或考查形式",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 11,
+    "word": "bureaucratic",
+    "meaning": "官僚的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 12,
+    "word": "catholic",
+    "meaning": "天主教的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 13,
+    "word": "centigrade",
+    "meaning": "摄氏度",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 14,
+    "word": "compulsory",
+    "meaning": "强制的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 15,
+    "word": "confidential",
+    "meaning": "机密的、保密的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 16,
+    "word": "conscious",
+    "meaning": "有意识的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 17,
+    "word": "contemporary",
+    "meaning": "当代的、同一时期的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 18,
+    "word": "contrary",
+    "meaning": "相反的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 19,
+    "word": "conventional",
+    "meaning": "常规的、传统的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 20,
+    "word": "cordless",
+    "meaning": "无线的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 21,
+    "word": "corrupt",
+    "meaning": "贪污的、腐败的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 22,
+    "word": "damp",
+    "meaning": "潮湿的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 23,
+    "word": "disgusting",
+    "meaning": "令人厌恶的",
+    "forms": "disgust",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 24,
+    "word": "domestic",
+    "meaning": "国内的、本土的",
+    "forms": "domestically",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 25,
+    "word": "elementary",
+    "meaning": "初级的、基础的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 26,
+    "word": "enormous",
+    "meaning": "巨大的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 27,
+    "word": "exclusive",
+    "meaning": "独占的、排外的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 28,
+    "word": "explicit",
+    "meaning": "直白的、明确的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 29,
+    "word": "federal",
+    "meaning": "联邦的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 30,
+    "word": "former",
+    "meaning": "以前的、前者",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 31,
+    "word": "fragrant",
+    "meaning": "芳香的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 32,
+    "word": "fundamental",
+    "meaning": "基本的、基础的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 33,
+    "word": "furnished",
+    "meaning": "配备家具的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 34,
+    "word": "gay",
+    "meaning": "快乐的",
+    "forms": "unconscious corruption exclude, exclusion fragrance",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 35,
+    "word": "genuine",
+    "meaning": "真正的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 36,
+    "word": "hence",
+    "meaning": "因此",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 37,
+    "word": "horizontal",
+    "meaning": "水平的、横向的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 38,
+    "word": "ideal",
+    "meaning": "理想的、完美的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 39,
+    "word": "identical",
+    "meaning": "完全相同的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 40,
+    "word": "inland",
+    "meaning": "内陆的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 41,
+    "word": "intimate",
+    "meaning": "亲密的",
+    "forms": "intimacy",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 42,
+    "word": "literally",
+    "meaning": "字面意义上、确实",
+    "forms": "literal",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 43,
+    "word": "logical",
+    "meaning": "符合逻辑的",
+    "forms": "logic, logically",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 44,
+    "word": "lunar",
+    "meaning": "月亮的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 45,
+    "word": "luxury",
+    "meaning": "奢侈、奢华",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 46,
+    "word": "magnificent",
+    "meaning": "壮丽的、宏伟的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 47,
+    "word": "marvellous",
+    "meaning": "了不起的、奇迹般的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 48,
+    "word": "maximum",
+    "meaning": "最大程度的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 49,
+    "word": "military",
+    "meaning": "军队的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 50,
+    "word": "minimum",
+    "meaning": "最小程度的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 51,
+    "word": "nevertheless",
+    "meaning": "然而",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 52,
+    "word": "nuclear",
+    "meaning": "核能的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 53,
+    "word": "numb",
+    "meaning": "麻木的、迟钝的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 54,
+    "word": "offshore",
+    "meaning": "近海的、离岸的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 55,
+    "word": "oral",
+    "meaning": "口头的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 56,
+    "word": "parallel",
+    "meaning": "平行的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 57,
+    "word": "passive",
+    "meaning": "被动的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 58,
+    "word": "portable",
+    "meaning": "便携的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 59,
+    "word": "pregnant",
+    "meaning": "怀孕的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 60,
+    "word": "primary",
+    "meaning": "初级的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 61,
+    "word": "primitive",
+    "meaning": "原始的、",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 62,
+    "word": "radioactive",
+    "meaning": "放射性的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 63,
+    "word": "rigid",
+    "meaning": "僵硬的、死板的、固执的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 64,
+    "word": "rural",
+    "meaning": "乡村的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 65,
+    "word": "sacred",
+    "meaning": "神圣的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 66,
+    "word": "static",
+    "meaning": "静态的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 67,
+    "word": "steep",
+    "meaning": "险峻的、陡峭的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 68,
+    "word": "stout",
+    "meaning": "粗壮的、厚实的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 69,
+    "word": "subsequent",
+    "meaning": "随后的、后续的",
+    "forms": "subsequently",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 70,
+    "word": "sufficient",
+    "meaning": "足够的、充分的",
+    "forms": "sufficiency",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 71,
+    "word": "superb",
+    "meaning": "卓越的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 72,
+    "word": "superior",
+    "meaning": "更胜一筹的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 73,
+    "word": "supreme",
+    "meaning": "至高无上的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 74,
+    "word": "swift",
+    "meaning": "迅速的、敏捷的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 75,
+    "word": "transparent",
+    "meaning": "透明的、清澈的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 76,
+    "word": "urban",
+    "meaning": "城市的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 77,
+    "word": "vacant",
+    "meaning": "空缺的、未被占用的",
+    "forms": "vacancy",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 78,
+    "word": "valid",
+    "meaning": "有效的、合理的",
+    "forms": "validity",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 79,
+    "word": "vast",
+    "meaning": "巨大的、广阔的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 80,
+    "word": "vertical",
+    "meaning": "垂直的、纵向的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 81,
+    "word": "visual",
+    "meaning": "视力的、视觉的",
+    "forms": "",
+    "category": "拓展词汇"
+  },
+  {
+    "seq": 1,
+    "word": "accountant",
+    "meaning": "会计",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 2,
+    "word": "acid",
+    "meaning": "酸",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 3,
+    "word": "acre",
+    "meaning": "英亩",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 4,
+    "word": "administration",
+    "meaning": "管理、行政部门",
+    "forms": "administrative, administrator",
+    "category": "名词"
+  },
+  {
+    "seq": 5,
+    "word": "adolescence",
+    "meaning": "青春、青春期",
+    "forms": "adolescent",
+    "category": "名词"
+  },
+  {
+    "seq": 6,
+    "word": "agriculture",
+    "meaning": "农业",
+    "forms": "agricultural",
+    "category": "名词"
+  },
+  {
+    "seq": 7,
+    "word": "algebra",
+    "meaning": "代数",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 8,
+    "word": "alphabet",
+    "meaning": "字母",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 9,
+    "word": "altitude",
+    "meaning": "海拔高度",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 10,
+    "word": "aluminium",
+    "meaning": "铝",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 11,
+    "word": "ambassador",
+    "meaning": "大使",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 12,
+    "word": "ancestor",
+    "meaning": "祖先",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 13,
+    "word": "anchor",
+    "meaning": "锚",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 14,
+    "word": "anecdote",
+    "meaning": "逸事、趣闻",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 15,
+    "word": "angle",
+    "meaning": "角度",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 16,
+    "word": "ankle",
+    "meaning": "脚踝",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 17,
+    "word": "anniversary",
+    "meaning": "周年纪念日",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 18,
+    "word": "appendix",
+    "meaning": "附录",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 19,
+    "word": "appetite",
+    "meaning": "食欲、胃口",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 20,
+    "word": "apron",
+    "meaning": "围裙",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 21,
+    "word": "arch",
+    "meaning": "拱门",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 22,
+    "word": "architecture",
+    "meaning": "建筑",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 23,
+    "word": "arithmetic",
+    "meaning": "算术",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 24,
+    "word": "astronomy",
+    "meaning": "天文学",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 25,
+    "word": "atom",
+    "meaning": "原子",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 26,
+    "word": "authority",
+    "meaning": "权力、权威、官方",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 27,
+    "word": "bachelor",
+    "meaning": "本科学士、单身汉",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 28,
+    "word": "backache",
+    "meaning": "后背痛",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 29,
+    "word": "bacteria",
+    "meaning": "细菌",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 30,
+    "word": "badminton",
+    "meaning": "羽毛球",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 31,
+    "word": "ballpoint",
+    "meaning": "圆珠笔",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 32,
+    "word": "bandage",
+    "meaning": "绷带",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 33,
+    "word": "beam",
+    "meaning": "光束",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 34,
+    "word": "beancurd",
+    "meaning": "豆腐",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 35,
+    "word": "behalf",
+    "meaning": "代表某人",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 36,
+    "word": "bestseller",
+    "meaning": "畅销书",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 37,
+    "word": "biochemistry",
+    "meaning": "生物化学",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 38,
+    "word": "biography",
+    "meaning": "人物传记",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 39,
+    "word": "bishop",
+    "meaning": "主教",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 40,
+    "word": "blouse",
+    "meaning": "女式短上衣",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 41,
+    "word": "booth",
+    "meaning": "单间、小隔间",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 42,
+    "word": "botany",
+    "meaning": "植物学",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 43,
+    "word": "breakthrough",
+    "meaning": "重大进展、突破",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 44,
+    "word": "brewery",
+    "meaning": "酿酒厂",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 45,
+    "word": "brochure",
+    "meaning": "广告手册",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 46,
+    "word": "broom",
+    "meaning": "扫帚相关词汇或考查形式",
+    "forms": "astronomer botanical",
+    "category": "名词"
+  },
+  {
+    "seq": 47,
+    "word": "buddhism",
+    "meaning": "佛教",
+    "forms": "buddhist",
+    "category": "名词"
+  },
+  {
+    "seq": 48,
+    "word": "buffet",
+    "meaning": "自助餐",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 49,
+    "word": "bun",
+    "meaning": "馒头、小面包",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 50,
+    "word": "bunch",
+    "meaning": "一束、大量",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 51,
+    "word": "bungalow",
+    "meaning": "平房",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 52,
+    "word": "burglar",
+    "meaning": "窃贼",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 53,
+    "word": "butcher",
+    "meaning": "屠夫",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 54,
+    "word": "calligraphy",
+    "meaning": "书法",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 55,
+    "word": "caption",
+    "meaning": "说明文字、字幕",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 56,
+    "word": "carpenter",
+    "meaning": "木匠",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 57,
+    "word": "carpet",
+    "meaning": "地毯",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 58,
+    "word": "carriage",
+    "meaning": "四轮马车",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 59,
+    "word": "cassette",
+    "meaning": "磁带",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 60,
+    "word": "catastrophe",
+    "meaning": "灾祸",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 61,
+    "word": "cathedral",
+    "meaning": "大教堂",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 62,
+    "word": "cellar",
+    "meaning": "地窖",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 63,
+    "word": "centimetre",
+    "meaning": "厘米",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 64,
+    "word": "chimney",
+    "meaning": "烟囱",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 65,
+    "word": "choir",
+    "meaning": "合唱团",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 66,
+    "word": "circuit",
+    "meaning": "电路、环形路线",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 67,
+    "word": "claw",
+    "meaning": "爪子",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 68,
+    "word": "clay",
+    "meaning": "黏土",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 69,
+    "word": "collision",
+    "meaning": "碰撞、冲突",
+    "forms": "collide",
+    "category": "名词"
+  },
+  {
+    "seq": 70,
+    "word": "communism",
+    "meaning": "共产主义",
+    "forms": "communist",
+    "category": "名词"
+  },
+  {
+    "seq": 71,
+    "word": "compass",
+    "meaning": "罗盘、指南针",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 72,
+    "word": "component",
+    "meaning": "组成部分、部件",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 73,
+    "word": "conference",
+    "meaning": "大型会议",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 74,
+    "word": "conscience",
+    "meaning": "良心、良知",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 75,
+    "word": "consensus",
+    "meaning": "一致意见、共识",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 76,
+    "word": "constitution",
+    "meaning": "宪法",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 77,
+    "word": "context",
+    "meaning": "上下文、语境",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 78,
+    "word": "cottage",
+    "meaning": "小屋、村舍",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 79,
+    "word": "council",
+    "meaning": "委员会",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 80,
+    "word": "crayon",
+    "meaning": "蜡笔",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 81,
+    "word": "criterion",
+    "meaning": "标准、准则",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 82,
+    "word": "curriculum",
+    "meaning": "课程",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 83,
+    "word": "diagram",
+    "meaning": "示意图",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 84,
+    "word": "dictation",
+    "meaning": "听写",
+    "forms": "dictate",
+    "category": "名词"
+  },
+  {
+    "seq": 85,
+    "word": "dimension",
+    "meaning": "维度、尺寸、规模",
+    "forms": "dimensional",
+    "category": "名词"
+  },
+  {
+    "seq": 86,
+    "word": "dinosaur",
+    "meaning": "恐龙",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 87,
+    "word": "dioxide",
+    "meaning": "二氧化物",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 88,
+    "word": "diploma",
+    "meaning": "文凭、证书",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 89,
+    "word": "directory",
+    "meaning": "目录、名录",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 90,
+    "word": "discrimination",
+    "meaning": "歧视",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 91,
+    "word": "domain",
+    "meaning": "领域",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 92,
+    "word": "dormitory",
+    "meaning": "学生宿舍",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 93,
+    "word": "drawback",
+    "meaning": "缺点",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 94,
+    "word": "embassy",
+    "meaning": "大使馆",
+    "forms": "criteria discriminate dorm",
+    "category": "名词"
+  },
+  {
+    "seq": 95,
+    "word": "emergency",
+    "meaning": "紧急状况",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 96,
+    "word": "emperor",
+    "meaning": "皇帝",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 97,
+    "word": "empire",
+    "meaning": "帝国",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 98,
+    "word": "episode",
+    "meaning": "电视剧的一集",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 99,
+    "word": "estate",
+    "meaning": "私有土地、庄园",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 100,
+    "word": "evolution",
+    "meaning": "进化、演变",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 101,
+    "word": "fabric",
+    "meaning": "纺织物、布料",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 102,
+    "word": "feast",
+    "meaning": "盛宴",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 103,
+    "word": "fibre",
+    "meaning": "纤维",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 104,
+    "word": "fortnight",
+    "meaning": "两周、十四天",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 105,
+    "word": "freeway",
+    "meaning": "高速公路",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 106,
+    "word": "friction",
+    "meaning": "摩擦",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 107,
+    "word": "frontier",
+    "meaning": "前沿、前线",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 108,
+    "word": "frost",
+    "meaning": "霜",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 109,
+    "word": "gale",
+    "meaning": "强风",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 110,
+    "word": "gallon",
+    "meaning": "加仑",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 111,
+    "word": "garment",
+    "meaning": "服装",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 112,
+    "word": "geography",
+    "meaning": "地理学",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 113,
+    "word": "geometry",
+    "meaning": "几何学",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 114,
+    "word": "gown",
+    "meaning": "长袍、长外衣、长裙",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 115,
+    "word": "grain",
+    "meaning": "谷物",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 116,
+    "word": "gravity",
+    "meaning": "重力、引力",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 117,
+    "word": "gruel",
+    "meaning": "粥",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 118,
+    "word": "heap",
+    "meaning": "一堆",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 119,
+    "word": "heel",
+    "meaning": "脚后跟",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 120,
+    "word": "hive",
+    "meaning": "蜂箱",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 121,
+    "word": "hook",
+    "meaning": "钩子",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 122,
+    "word": "horizon",
+    "meaning": "地平线、眼界",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 123,
+    "word": "hurricane",
+    "meaning": "飓风",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 124,
+    "word": "hydrogen",
+    "meaning": "氢",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 125,
+    "word": "identity",
+    "meaning": "身份、特征",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 126,
+    "word": "idiom",
+    "meaning": "习语、俗语",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 127,
+    "word": "immigration",
+    "meaning": "移民",
+    "forms": "immigrate",
+    "category": "名词"
+  },
+  {
+    "seq": 128,
+    "word": "industry",
+    "meaning": "工业、产业",
+    "forms": "industrial",
+    "category": "名词"
+  },
+  {
+    "seq": 129,
+    "word": "initiative",
+    "meaning": "倡议",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 130,
+    "word": "integrity",
+    "meaning": "诚实、正直",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 131,
+    "word": "interface",
+    "meaning": "人机交互界面",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 132,
+    "word": "interference",
+    "meaning": "干扰、干涉、妨碍",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 133,
+    "word": "interval",
+    "meaning": "间歇、间隔",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 134,
+    "word": "intervention",
+    "meaning": "干预、干涉",
+    "forms": "intervene",
+    "category": "名词"
+  },
+  {
+    "seq": 135,
+    "word": "isolation",
+    "meaning": "隔离、孤立",
+    "forms": "isolate",
+    "category": "名词"
+  },
+  {
+    "seq": 136,
+    "word": "lantern",
+    "meaning": "灯笼",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 137,
+    "word": "latter",
+    "meaning": "后者",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 138,
+    "word": "laundry",
+    "meaning": "洗衣店",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 139,
+    "word": "lavatory",
+    "meaning": "厕所",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 140,
+    "word": "liberty",
+    "meaning": "自由",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 141,
+    "word": "loaf",
+    "meaning": "面包",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 142,
+    "word": "locust",
+    "meaning": "蝗虫",
+    "forms": "beehive interfere",
+    "category": "名词"
+  },
+  {
+    "seq": 143,
+    "word": "maple",
+    "meaning": "枫树",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 144,
+    "word": "marble",
+    "meaning": "大理石",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 145,
+    "word": "mine",
+    "meaning": "矿",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 146,
+    "word": "mineral",
+    "meaning": "矿物质",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 147,
+    "word": "modem",
+    "meaning": "调制解调器",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 148,
+    "word": "monument",
+    "meaning": "纪念碑",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 149,
+    "word": "moustache",
+    "meaning": "小胡子",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 150,
+    "word": "mustard",
+    "meaning": "芥末",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 151,
+    "word": "mutton",
+    "meaning": "羊肉",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 152,
+    "word": "navy",
+    "meaning": "海军",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 153,
+    "word": "nylon",
+    "meaning": "尼龙",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 154,
+    "word": "omelette",
+    "meaning": "蛋卷、蛋饼",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 155,
+    "word": "optics",
+    "meaning": "光学",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 156,
+    "word": "orbit",
+    "meaning": "天体的运行轨道",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 157,
+    "word": "organ",
+    "meaning": "器官",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 158,
+    "word": "outcome",
+    "meaning": "结果、效果",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 159,
+    "word": "oval",
+    "meaning": "椭圆、椭圆形的",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 160,
+    "word": "paddle",
+    "meaning": "船桨、涉水",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 161,
+    "word": "paragraph",
+    "meaning": "文章段落",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 162,
+    "word": "pedestrian",
+    "meaning": "行人",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 163,
+    "word": "pension",
+    "meaning": "养老金",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 164,
+    "word": "perfume",
+    "meaning": "香水",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 165,
+    "word": "personnel",
+    "meaning": "全体人员、职员",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 166,
+    "word": "phase",
+    "meaning": "阶段、时期",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 167,
+    "word": "phenomenon",
+    "meaning": "现象",
+    "forms": "phenomena",
+    "category": "名词"
+  },
+  {
+    "seq": 168,
+    "word": "phrase",
+    "meaning": "短语、词组",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 169,
+    "word": "pint",
+    "meaning": "品脱",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 170,
+    "word": "porridge",
+    "meaning": "粥",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 171,
+    "word": "porter",
+    "meaning": "搬运工",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 172,
+    "word": "prairie",
+    "meaning": "大草原",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 173,
+    "word": "premier",
+    "meaning": "首相、总理",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 174,
+    "word": "prescription",
+    "meaning": "处方、药方",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 175,
+    "word": "profession",
+    "meaning": "职业",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 176,
+    "word": "prosperity",
+    "meaning": "繁荣",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 177,
+    "word": "pulse",
+    "meaning": "脉搏",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 178,
+    "word": "pump",
+    "meaning": "抽水机、水泵",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 179,
+    "word": "punctuation",
+    "meaning": "标点符号",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 180,
+    "word": "pyramid",
+    "meaning": "金字塔",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 181,
+    "word": "quantity",
+    "meaning": "数量",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 182,
+    "word": "questionnaire",
+    "meaning": "调查问卷",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 183,
+    "word": "radiation",
+    "meaning": "辐射、放射线",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 184,
+    "word": "rectangle",
+    "meaning": "长方形",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 185,
+    "word": "relay",
+    "meaning": "接力、中转",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 186,
+    "word": "religion",
+    "meaning": "宗教",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 187,
+    "word": "revolution",
+    "meaning": "革命、变革",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 188,
+    "word": "rhyme",
+    "meaning": "押韵",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 189,
+    "word": "rugby",
+    "meaning": "橄榄球",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 190,
+    "word": "savage",
+    "meaning": "野蛮人",
+    "forms": "prosperous, prospect punctuate religious",
+    "category": "名词"
+  },
+  {
+    "seq": 191,
+    "word": "scale",
+    "meaning": "大小、规模、刻度",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 192,
+    "word": "sculpture",
+    "meaning": "雕塑",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 193,
+    "word": "section",
+    "meaning": "一段、部分",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 194,
+    "word": "sequence",
+    "meaning": "序列、顺序",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 195,
+    "word": "session",
+    "meaning": "一场、一段时间、会议",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 196,
+    "word": "smog",
+    "meaning": "烟雾、雾霾",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 197,
+    "word": "snackbar",
+    "meaning": "快餐店",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 198,
+    "word": "sneaker",
+    "meaning": "运动鞋",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 199,
+    "word": "socket",
+    "meaning": "电源插座",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 200,
+    "word": "spray",
+    "meaning": "喷雾、喷洒",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 201,
+    "word": "stain",
+    "meaning": "污点、污渍",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 202,
+    "word": "starvation",
+    "meaning": "饥荒",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 203,
+    "word": "statesman",
+    "meaning": "政治家",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 204,
+    "word": "stepmother",
+    "meaning": "继母",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 205,
+    "word": "steward",
+    "meaning": "乘务员",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 206,
+    "word": "strait",
+    "meaning": "海峡",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 207,
+    "word": "straw",
+    "meaning": "稻草",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 208,
+    "word": "string",
+    "meaning": "细线、琴弦、一连串",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 209,
+    "word": "substance",
+    "meaning": "物质、实质",
+    "forms": "substantial",
+    "category": "名词"
+  },
+  {
+    "seq": 210,
+    "word": "subtract",
+    "meaning": "减去",
+    "forms": "subtraction",
+    "category": "名词"
+  },
+  {
+    "seq": 211,
+    "word": "surplus",
+    "meaning": "过剩、剩余",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 212,
+    "word": "suspend",
+    "meaning": "暂停、悬浮",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 213,
+    "word": "symphony",
+    "meaning": "交响乐",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 214,
+    "word": "tanker",
+    "meaning": "油轮",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 215,
+    "word": "telescope",
+    "meaning": "望远镜",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 216,
+    "word": "temptation",
+    "meaning": "诱惑",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 217,
+    "word": "tendency",
+    "meaning": "倾向",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 218,
+    "word": "thermos",
+    "meaning": "热水瓶",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 219,
+    "word": "tissue",
+    "meaning": "纸巾、细胞组织",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 220,
+    "word": "tram",
+    "meaning": "有轨电车",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 221,
+    "word": "trolley",
+    "meaning": "手推车",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 222,
+    "word": "typhoon",
+    "meaning": "台风",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 223,
+    "word": "vanilla",
+    "meaning": "香草",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 224,
+    "word": "veal",
+    "meaning": "小牛肉",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 225,
+    "word": "venue",
+    "meaning": "地点、场所",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 226,
+    "word": "version",
+    "meaning": "版本",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 227,
+    "word": "vest",
+    "meaning": "背心",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 228,
+    "word": "vibration",
+    "meaning": "振动、摇摆",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 229,
+    "word": "vice",
+    "meaning": "邪恶、罪行",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 230,
+    "word": "victim",
+    "meaning": "受害者、牺牲品",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 231,
+    "word": "visa",
+    "meaning": "签证",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 232,
+    "word": "vocabulary",
+    "meaning": "词汇",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 233,
+    "word": "volcano",
+    "meaning": "火山",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 234,
+    "word": "volume",
+    "meaning": "体积、容量、音量、大量",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 235,
+    "word": "wage",
+    "meaning": "工资",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 236,
+    "word": "welfare",
+    "meaning": "幸福、福利",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 237,
+    "word": "windbreaker",
+    "meaning": "风衣",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 238,
+    "word": "wool",
+    "meaning": "羊毛、羊绒相关词汇或考查形式",
+    "forms": "vibrate woollen",
+    "category": "名词"
+  },
+  {
+    "seq": 239,
+    "word": "windbreaker",
+    "meaning": "风衣",
+    "forms": "",
+    "category": "名词"
+  },
+  {
+    "seq": 240,
+    "word": "wool",
+    "meaning": "羊毛、羊绒相关词汇或考查形式",
+    "forms": "Fin woollen",
+    "category": "名词"
+  }
+]

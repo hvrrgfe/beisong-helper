@@ -1,0 +1,4902 @@
+[
+  {
+    "seq": 1,
+    "word": "a.m. / A.M.",
+    "meaning": "午前、上午",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 2,
+    "word": "afternoon",
+    "meaning": "下午",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 3,
+    "word": "alcohol",
+    "meaning": "酒精、酒",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 4,
+    "word": "alley",
+    "meaning": "小巷、胡同",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 5,
+    "word": "ant",
+    "meaning": "蚂蚁",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 6,
+    "word": "apartment",
+    "meaning": "公寓",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 7,
+    "word": "armchair",
+    "meaning": "扶手椅",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 8,
+    "word": "army",
+    "meaning": "军队",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 9,
+    "word": "arrow",
+    "meaning": "箭、箭头",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 10,
+    "word": "ash",
+    "meaning": "灰烬",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 11,
+    "word": "aspect",
+    "meaning": "方面",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 12,
+    "word": "astronaut",
+    "meaning": "宇航员",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 13,
+    "word": "aunt",
+    "meaning": "姑姑",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 14,
+    "word": "avenue",
+    "meaning": "大道",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 15,
+    "word": "B.C. / A.D.",
+    "meaning": "公元前 / 公元后",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 16,
+    "word": "bacon",
+    "meaning": "培根",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 17,
+    "word": "baggage",
+    "meaning": "行李相关词汇或考查形式序号单词释义",
+    "forms": "alcoholic",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 18,
+    "word": "ball",
+    "meaning": "球、舞会",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 19,
+    "word": "ballet",
+    "meaning": "芭蕾舞",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 20,
+    "word": "balloon",
+    "meaning": "气球",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 21,
+    "word": "bamboo",
+    "meaning": "竹子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 22,
+    "word": "banana",
+    "meaning": "香蕉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 23,
+    "word": "bar",
+    "meaning": "一条、一块、酒吧",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 24,
+    "word": "barbecue",
+    "meaning": "烧烤",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 25,
+    "word": "barber",
+    "meaning": "理发师",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 26,
+    "word": "basin",
+    "meaning": "水盆、盆地",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 27,
+    "word": "bat",
+    "meaning": "球棒、蝙蝠",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 28,
+    "word": "battery",
+    "meaning": "电池",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 29,
+    "word": "bay",
+    "meaning": "海湾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 30,
+    "word": "bean",
+    "meaning": "豆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 31,
+    "word": "beard",
+    "meaning": "胡须",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 32,
+    "word": "beast",
+    "meaning": "野兽",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 33,
+    "word": "bee",
+    "meaning": "蜜蜂",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 34,
+    "word": "beef",
+    "meaning": "牛肉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 35,
+    "word": "beer",
+    "meaning": "啤酒",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 36,
+    "word": "belly",
+    "meaning": "肚子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 37,
+    "word": "belt",
+    "meaning": "腰带",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 38,
+    "word": "bench",
+    "meaning": "长凳",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 39,
+    "word": "bit",
+    "meaning": "一点、少量的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 40,
+    "word": "blackboard",
+    "meaning": "黑板",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 41,
+    "word": "blog",
+    "meaning": "博客相关词汇或考查形式",
+    "forms": "barbershop",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 42,
+    "word": "bookmark",
+    "meaning": "书签",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 43,
+    "word": "boot",
+    "meaning": "靴子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 44,
+    "word": "bowling",
+    "meaning": "保龄球",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 45,
+    "word": "boxing",
+    "meaning": "拳击",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 46,
+    "word": "boy",
+    "meaning": "男孩",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 47,
+    "word": "branch",
+    "meaning": "树枝、分支",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 48,
+    "word": "bread",
+    "meaning": "面包",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 49,
+    "word": "breakfast",
+    "meaning": "早餐",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 50,
+    "word": "breast",
+    "meaning": "胸脯",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 51,
+    "word": "brick",
+    "meaning": "砖块",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 52,
+    "word": "bride",
+    "meaning": "新娘",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 53,
+    "word": "brunch",
+    "meaning": "早午饭",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 54,
+    "word": "bucket",
+    "meaning": "桶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 55,
+    "word": "butter",
+    "meaning": "黄油",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 56,
+    "word": "butterfly",
+    "meaning": "蝴蝶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 57,
+    "word": "button",
+    "meaning": "纽扣、按钮",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 58,
+    "word": "cab",
+    "meaning": "出租车",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 59,
+    "word": "cabbage",
+    "meaning": "卷心菜café咖啡馆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 61,
+    "word": "calendar",
+    "meaning": "日历",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 62,
+    "word": "calorie",
+    "meaning": "卡路里、热量",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 63,
+    "word": "camel",
+    "meaning": "骆驼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 64,
+    "word": "canal",
+    "meaning": "运河",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 65,
+    "word": "candle",
+    "meaning": "蜡烛相关词汇或考查形式序号单词释义",
+    "forms": "bridegroom cafeteria",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 66,
+    "word": "candy",
+    "meaning": "糖果",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 67,
+    "word": "cap",
+    "meaning": "帽子、瓶盖、笔帽",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 68,
+    "word": "capital",
+    "meaning": "首都、省会、大写、资本",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 69,
+    "word": "capsule",
+    "meaning": "胶囊",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 70,
+    "word": "captain",
+    "meaning": "上校、船长、队长",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 71,
+    "word": "carbon",
+    "meaning": "碳",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 72,
+    "word": "card",
+    "meaning": "卡片、名片、纸牌",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 73,
+    "word": "carrot",
+    "meaning": "胡萝卜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 74,
+    "word": "cartoon",
+    "meaning": "动画片",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 75,
+    "word": "castle",
+    "meaning": "城堡",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 76,
+    "word": "cat",
+    "meaning": "猫",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 77,
+    "word": "cattle",
+    "meaning": "牛",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 78,
+    "word": "cell",
+    "meaning": "细胞",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 79,
+    "word": "century",
+    "meaning": "世纪",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 80,
+    "word": "chairman",
+    "meaning": "主席",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 81,
+    "word": "chalk",
+    "meaning": "粉笔",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 82,
+    "word": "chapter",
+    "meaning": "章",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 83,
+    "word": "chart",
+    "meaning": "图表、航海图",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 84,
+    "word": "cheese",
+    "meaning": "奶酪",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 85,
+    "word": "chef",
+    "meaning": "主厨",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 86,
+    "word": "chess",
+    "meaning": "棋",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 87,
+    "word": "chicken",
+    "meaning": "鸡肉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 88,
+    "word": "china",
+    "meaning": "瓷器",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 89,
+    "word": "chips",
+    "meaning": "薯条、薯片相关词汇或考查形式",
+    "forms": "chairwoman chick",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 90,
+    "word": "chocolate",
+    "meaning": "巧克力",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 91,
+    "word": "choke",
+    "meaning": "窒息、哽咽",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 92,
+    "word": "chopsticks",
+    "meaning": "筷子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 93,
+    "word": "chorus",
+    "meaning": "合唱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 94,
+    "word": "Christmas",
+    "meaning": "圣诞节",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 95,
+    "word": "cinema",
+    "meaning": "电影院",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 96,
+    "word": "circus",
+    "meaning": "马戏团",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 97,
+    "word": "civilization",
+    "meaning": "文明",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 98,
+    "word": "clerk",
+    "meaning": "店员、职员",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 99,
+    "word": "clock",
+    "meaning": "钟",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 100,
+    "word": "clone",
+    "meaning": "克隆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 101,
+    "word": "coal",
+    "meaning": "煤",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 102,
+    "word": "coast",
+    "meaning": "海岸",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 103,
+    "word": "cock",
+    "meaning": "公鸡",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 104,
+    "word": "cocoa",
+    "meaning": "可可粉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 105,
+    "word": "coin",
+    "meaning": "硬币",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 106,
+    "word": "coke",
+    "meaning": "可口可乐",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 107,
+    "word": "collar",
+    "meaning": "衣领",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 108,
+    "word": "comb",
+    "meaning": "梳子、梳",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 109,
+    "word": "comedy",
+    "meaning": "喜剧",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 110,
+    "word": "comic",
+    "meaning": "漫画",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 111,
+    "word": "comma",
+    "meaning": "逗号",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 112,
+    "word": "committee",
+    "meaning": "委员会",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 113,
+    "word": "comrade",
+    "meaning": "同志相关词汇或考查形式序号单词释义相关词汇或考查形式",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 114,
+    "word": "Confucius",
+    "meaning": "孔子",
+    "forms": "Confucianism",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 115,
+    "word": "coral",
+    "meaning": "珊瑚",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 116,
+    "word": "corn",
+    "meaning": "玉米",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 117,
+    "word": "corporation",
+    "meaning": "企业、公司",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 118,
+    "word": "cotton",
+    "meaning": "棉花",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 119,
+    "word": "cough",
+    "meaning": "咳嗽",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 120,
+    "word": "countryside",
+    "meaning": "乡村",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 121,
+    "word": "county",
+    "meaning": "县",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 122,
+    "word": "courtyard",
+    "meaning": "院子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 123,
+    "word": "cousin",
+    "meaning": "堂表亲",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 124,
+    "word": "cow",
+    "meaning": "母牛",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 125,
+    "word": "cowboy",
+    "meaning": "牛仔",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 126,
+    "word": "co-worker",
+    "meaning": "合作者、同事",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 127,
+    "word": "cream",
+    "meaning": "奶油",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 128,
+    "word": "crew",
+    "meaning": "船员、全体成员",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 129,
+    "word": "cube",
+    "meaning": "立方体",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 130,
+    "word": "cupboard",
+    "meaning": "橱柜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 131,
+    "word": "currency",
+    "meaning": "货币",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 132,
+    "word": "custom",
+    "meaning": "习俗、定制的",
+    "forms": "customs, customer",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 133,
+    "word": "dad",
+    "meaning": "爸爸",
+    "forms": "daddy",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 134,
+    "word": "dam",
+    "meaning": "水坝",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 135,
+    "word": "dawn",
+    "meaning": "黎明",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 136,
+    "word": "deadline",
+    "meaning": "截止日期",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 137,
+    "word": "decade",
+    "meaning": "十年",
+    "forms": "cubic",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 138,
+    "word": "deer",
+    "meaning": "鹿",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 139,
+    "word": "dentist",
+    "meaning": "牙科医生",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 140,
+    "word": "dessert",
+    "meaning": "甜品",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 141,
+    "word": "diamond",
+    "meaning": "钻石",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 142,
+    "word": "dictionary",
+    "meaning": "字典",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 143,
+    "word": "diet",
+    "meaning": "饮食",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 144,
+    "word": "disk",
+    "meaning": "磁盘",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 145,
+    "word": "district",
+    "meaning": "区、区域",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 146,
+    "word": "document",
+    "meaning": "文件",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 147,
+    "word": "dog",
+    "meaning": "狗",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 148,
+    "word": "doll",
+    "meaning": "玩偶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 149,
+    "word": "dolphin",
+    "meaning": "海豚",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 150,
+    "word": "dot",
+    "meaning": "点、圆点",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 151,
+    "word": "dozen",
+    "meaning": "十二个",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 152,
+    "word": "draft",
+    "meaning": "草稿、草案",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 153,
+    "word": "dragon",
+    "meaning": "龙",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 154,
+    "word": "drought",
+    "meaning": "干旱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 155,
+    "word": "duck",
+    "meaning": "鸭子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 156,
+    "word": "dumpling",
+    "meaning": "饺子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 157,
+    "word": "dusk",
+    "meaning": "黄昏",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 158,
+    "word": "dustbin",
+    "meaning": "垃圾箱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 159,
+    "word": "dynasty",
+    "meaning": "王朝、朝代",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 160,
+    "word": "eagle",
+    "meaning": "鹰",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 161,
+    "word": "earth",
+    "meaning": "地球、泥土、大地相关词汇或考查形式序号单词释义相关词汇或考查形式",
+    "forms": "dentistry",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 162,
+    "word": "earthquake",
+    "meaning": "地震",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 163,
+    "word": "east",
+    "meaning": "东方",
+    "forms": "eastern",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 164,
+    "word": "ecology",
+    "meaning": "生态学",
+    "forms": "ecological",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 165,
+    "word": "edition",
+    "meaning": "版本",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 166,
+    "word": "egg",
+    "meaning": "蛋",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 167,
+    "word": "eggplant",
+    "meaning": "茄子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 168,
+    "word": "electricity",
+    "meaning": "电",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 169,
+    "word": "elephant",
+    "meaning": "大象",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 170,
+    "word": "equator",
+    "meaning": "赤道",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 171,
+    "word": "era",
+    "meaning": "时代",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 172,
+    "word": "eve",
+    "meaning": "前夜、前夕",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 173,
+    "word": "evening",
+    "meaning": "晚上",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 174,
+    "word": "expert",
+    "meaning": "专家",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 175,
+    "word": "eyewitness",
+    "meaning": "目击证人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 176,
+    "word": "fare",
+    "meaning": "交通费用",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 177,
+    "word": "fat",
+    "meaning": "脂肪、肥胖的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 178,
+    "word": "fax",
+    "meaning": "传真",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 179,
+    "word": "fence",
+    "meaning": "栅栏、篱笆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 180,
+    "word": "ferry",
+    "meaning": "渡船",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 181,
+    "word": "fever",
+    "meaning": "发烧、发热",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 182,
+    "word": "fiction",
+    "meaning": "小说、虚构事件",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 183,
+    "word": "file",
+    "meaning": "文档",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 184,
+    "word": "finger",
+    "meaning": "手指",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 185,
+    "word": "firework",
+    "meaning": "烟花",
+    "forms": "electric, electrical, electronic fingernail",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 186,
+    "word": "flag",
+    "meaning": "旗子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 187,
+    "word": "flashlight",
+    "meaning": "手电筒",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 188,
+    "word": "flesh",
+    "meaning": "肉、肉体",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 189,
+    "word": "flour",
+    "meaning": "面粉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 190,
+    "word": "flu",
+    "meaning": "流感",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 191,
+    "word": "fork",
+    "meaning": "餐叉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 192,
+    "word": "format",
+    "meaning": "格式",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 193,
+    "word": "fountain",
+    "meaning": "喷泉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 194,
+    "word": "fox",
+    "meaning": "狐狸",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 195,
+    "word": "fridge",
+    "meaning": "冰箱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 196,
+    "word": "frog",
+    "meaning": "青蛙",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 197,
+    "word": "fur",
+    "meaning": "毛皮",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 198,
+    "word": "gallery",
+    "meaning": "画廊、美术馆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 199,
+    "word": "garage",
+    "meaning": "车库、修车厂",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 200,
+    "word": "garlic",
+    "meaning": "大蒜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 201,
+    "word": "gender",
+    "meaning": "性别",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 202,
+    "word": "genius",
+    "meaning": "天才",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 203,
+    "word": "giraffe",
+    "meaning": "长颈鹿",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 204,
+    "word": "glass",
+    "meaning": "玻璃杯、玻璃",
+    "forms": "glasses",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 205,
+    "word": "globe",
+    "meaning": "地球、世界、地球仪",
+    "forms": "global",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 206,
+    "word": "goat",
+    "meaning": "山羊",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 207,
+    "word": "God",
+    "meaning": "上帝",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 208,
+    "word": "goldfish",
+    "meaning": "金鱼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 209,
+    "word": "golf",
+    "meaning": "高尔夫球序号单词释义相关词汇或考查形式",
+    "forms": "refrigerator",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 210,
+    "word": "goose",
+    "meaning": "鹅",
+    "forms": "geese",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 211,
+    "word": "gram",
+    "meaning": "克",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 212,
+    "word": "grammar",
+    "meaning": "语法",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 213,
+    "word": "grandchild",
+    "meaning": "孙子、孙女",
+    "forms": "grandson, granddaughter",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 214,
+    "word": "grandparents",
+    "meaning": "祖父、祖母",
+    "forms": "grandpa, grandma",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 215,
+    "word": "granny",
+    "meaning": "老奶奶、外婆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 216,
+    "word": "grape",
+    "meaning": "葡萄",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 217,
+    "word": "grill",
+    "meaning": "烧烤架",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 218,
+    "word": "guitar",
+    "meaning": "吉他",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 219,
+    "word": "gun",
+    "meaning": "枪",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 220,
+    "word": "guy",
+    "meaning": "家伙、男人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 221,
+    "word": "haircut",
+    "meaning": "理发",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 222,
+    "word": "ham",
+    "meaning": "火腿",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 223,
+    "word": "hamburger",
+    "meaning": "汉堡包",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 224,
+    "word": "hammer",
+    "meaning": "锤子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 225,
+    "word": "handkerchief",
+    "meaning": "手帕",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 226,
+    "word": "handwriting",
+    "meaning": "书写、笔迹",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 227,
+    "word": "hawk",
+    "meaning": "鹰",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 228,
+    "word": "hay",
+    "meaning": "干草",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 229,
+    "word": "headline",
+    "meaning": "大字标题",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 230,
+    "word": "heaven",
+    "meaning": "天堂",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 231,
+    "word": "helicopter",
+    "meaning": "直升飞机",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 232,
+    "word": "helmet",
+    "meaning": "头盔",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 233,
+    "word": "hen",
+    "meaning": "母鸡",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 234,
+    "word": "herb",
+    "meaning": "药草",
+    "forms": "herbal",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 235,
+    "word": "highway",
+    "meaning": "公路",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 236,
+    "word": "honey",
+    "meaning": "蜂蜜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 237,
+    "word": "horse",
+    "meaning": "马",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 238,
+    "word": "hotdog",
+    "meaning": "热狗",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 239,
+    "word": "icecream",
+    "meaning": "冰淇淋",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 240,
+    "word": "ink",
+    "meaning": "墨水、油墨",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 241,
+    "word": "inn",
+    "meaning": "小旅馆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 242,
+    "word": "insect",
+    "meaning": "昆虫",
+    "forms": "insects",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 243,
+    "word": "institute",
+    "meaning": "学院、机构、研究所",
+    "forms": "institution",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 244,
+    "word": "internet",
+    "meaning": "互联网",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 245,
+    "word": "island",
+    "meaning": "岛",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 246,
+    "word": "jaw",
+    "meaning": "下巴、下颌",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 247,
+    "word": "jazz",
+    "meaning": "爵士乐",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 248,
+    "word": "jeep",
+    "meaning": "吉普车",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 249,
+    "word": "jet",
+    "meaning": "喷气式飞机",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 250,
+    "word": "jewelry",
+    "meaning": "珠宝",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 251,
+    "word": "juice",
+    "meaning": "汁水、汁液",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 252,
+    "word": "jungle",
+    "meaning": "丛林",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 253,
+    "word": "junk",
+    "meaning": "废旧物品、垃圾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 254,
+    "word": "kangaroo",
+    "meaning": "袋鼠",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 255,
+    "word": "keyboard",
+    "meaning": "键盘",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 256,
+    "word": "kilogram",
+    "meaning": "公斤",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 257,
+    "word": "kilometre",
+    "meaning": "公里",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 100,
+    "word": "juicy",
+    "meaning": "junkfood, junkmail序号单词释义",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 258,
+    "word": "kindergarten",
+    "meaning": "幼儿园",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 259,
+    "word": "kite",
+    "meaning": "风筝",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 260,
+    "word": "knee",
+    "meaning": "膝盖",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 261,
+    "word": "knife",
+    "meaning": "小刀",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 262,
+    "word": "ladder",
+    "meaning": "梯子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 263,
+    "word": "lady",
+    "meaning": "女士",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 264,
+    "word": "lamb",
+    "meaning": "羔羊",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 265,
+    "word": "lap",
+    "meaning": "大腿腿面、一圈跑道",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 266,
+    "word": "laptop",
+    "meaning": "笔记本电脑",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 267,
+    "word": "laser",
+    "meaning": "激光",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 268,
+    "word": "law",
+    "meaning": "法律、法则、定律",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 269,
+    "word": "leather",
+    "meaning": "皮革",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 270,
+    "word": "leftover",
+    "meaning": "残羹剩饭、残存物",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 271,
+    "word": "leisure",
+    "meaning": "休闲",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 272,
+    "word": "lemon",
+    "meaning": "柠檬",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 273,
+    "word": "lid",
+    "meaning": "盖子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 274,
+    "word": "lifetime",
+    "meaning": "一生、终生",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 275,
+    "word": "lightning",
+    "meaning": "闪电",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 276,
+    "word": "lion",
+    "meaning": "狮子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 277,
+    "word": "lip",
+    "meaning": "嘴唇",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 278,
+    "word": "liquid",
+    "meaning": "液体、液体的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 279,
+    "word": "litre",
+    "meaning": "公升",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 280,
+    "word": "litter",
+    "meaning": "垃圾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 281,
+    "word": "loan",
+    "meaning": "贷款相关词汇或考查形式",
+    "forms": "lemonade",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 282,
+    "word": "lot",
+    "meaning": "许多",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 283,
+    "word": "lung",
+    "meaning": "肺",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 284,
+    "word": "madam",
+    "meaning": "夫人、女士",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 285,
+    "word": "magazine",
+    "meaning": "杂志",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 286,
+    "word": "maid",
+    "meaning": "女仆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 287,
+    "word": "mainland",
+    "meaning": "大陆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 288,
+    "word": "marathon",
+    "meaning": "马拉松",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 289,
+    "word": "mask",
+    "meaning": "口罩、面具",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 290,
+    "word": "mass",
+    "meaning": "大量、大块、群众",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 291,
+    "word": "mat",
+    "meaning": "垫子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 292,
+    "word": "meat",
+    "meaning": "食用的肉类",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 293,
+    "word": "medal",
+    "meaning": "奖牌",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 294,
+    "word": "media",
+    "meaning": "媒体",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 295,
+    "word": "melon",
+    "meaning": "瓜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 296,
+    "word": "merchant",
+    "meaning": "商人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 297,
+    "word": "metal",
+    "meaning": "金属、金属的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 298,
+    "word": "metre",
+    "meaning": "米",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 299,
+    "word": "microcomputer",
+    "meaning": "微型计算机",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 300,
+    "word": "microscope",
+    "meaning": "显微镜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 301,
+    "word": "microwave",
+    "meaning": "微波",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 302,
+    "word": "mile",
+    "meaning": "英里",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 303,
+    "word": "milk",
+    "meaning": "牛奶、挤奶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 304,
+    "word": "millimetre",
+    "meaning": "毫米",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 305,
+    "word": "minibus",
+    "meaning": "小型公共汽车",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 306,
+    "word": "minister",
+    "meaning": "部长",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 307,
+    "word": "ministry",
+    "meaning": "政府部门",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 308,
+    "word": "minute",
+    "meaning": "分钟",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 309,
+    "word": "missile",
+    "meaning": "导弹",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 310,
+    "word": "mist",
+    "meaning": "雾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 311,
+    "word": "Mom",
+    "meaning": "妈妈",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 312,
+    "word": "monkey",
+    "meaning": "猴子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 313,
+    "word": "moon",
+    "meaning": "月亮",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 314,
+    "word": "morning",
+    "meaning": "上午",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 315,
+    "word": "mosquito",
+    "meaning": "蚊子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 316,
+    "word": "motherland",
+    "meaning": "祖国",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 317,
+    "word": "motor",
+    "meaning": "发动机",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 318,
+    "word": "motorbike",
+    "meaning": "摩托车",
+    "forms": "motorcycle",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 319,
+    "word": "mouse",
+    "meaning": "老鼠、鼠标",
+    "forms": "mice",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 320,
+    "word": "mud",
+    "meaning": "淤泥、泥浆",
+    "forms": "muddy",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 321,
+    "word": "muscle",
+    "meaning": "肌肉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 322,
+    "word": "mushroom",
+    "meaning": "蘑菇",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 323,
+    "word": "nail",
+    "meaning": "钉子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 324,
+    "word": "neck",
+    "meaning": "脖子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 325,
+    "word": "needle",
+    "meaning": "针",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 326,
+    "word": "nephew",
+    "meaning": "侄子、外甥",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 327,
+    "word": "network",
+    "meaning": "网络",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 328,
+    "word": "news",
+    "meaning": "新闻、消息",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 329,
+    "word": "niece",
+    "meaning": "侄女、外甥女",
+    "forms": "mommy mooncake necklace, necktie newspaper",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 330,
+    "word": "noodle",
+    "meaning": "面条",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 331,
+    "word": "noon",
+    "meaning": "中午",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 332,
+    "word": "nut",
+    "meaning": "坚果",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 333,
+    "word": "ocean",
+    "meaning": "海洋o’clock……点钟",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 335,
+    "word": "oil",
+    "meaning": "油、石油",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 336,
+    "word": "onion",
+    "meaning": "洋葱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 337,
+    "word": "opera",
+    "meaning": "歌剧",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 338,
+    "word": "orange",
+    "meaning": "橙子、橙色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 339,
+    "word": "outing",
+    "meaning": "郊游、远足",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 340,
+    "word": "outline",
+    "meaning": "概述、大纲",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 341,
+    "word": "output",
+    "meaning": "产量、产出",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 342,
+    "word": "ox",
+    "meaning": "公牛",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 343,
+    "word": "oxygen",
+    "meaning": "氧、氧气",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 344,
+    "word": "P.E.",
+    "meaning": "体育",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 345,
+    "word": "P.M.",
+    "meaning": "午后、下午",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 346,
+    "word": "palace",
+    "meaning": "宫殿",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 347,
+    "word": "pan",
+    "meaning": "平底锅",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 348,
+    "word": "panda",
+    "meaning": "熊猫",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 349,
+    "word": "pardon",
+    "meaning": "原谅、宽恕",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 350,
+    "word": "parrot",
+    "meaning": "鹦鹉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 351,
+    "word": "passer-by",
+    "meaning": "路人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 352,
+    "word": "pea",
+    "meaning": "豌豆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 353,
+    "word": "peach",
+    "meaning": "桃子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 354,
+    "word": "peak",
+    "meaning": "山峰、顶峰",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 355,
+    "word": "pear",
+    "meaning": "梨",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 356,
+    "word": "peasant",
+    "meaning": "农民",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 357,
+    "word": "pencil",
+    "meaning": "铅笔",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 358,
+    "word": "penny",
+    "meaning": "便士、美分",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 359,
+    "word": "people",
+    "meaning": "人们",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 360,
+    "word": "pepper",
+    "meaning": "胡椒粉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 361,
+    "word": "percent",
+    "meaning": "百分之……",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 362,
+    "word": "pest",
+    "meaning": "害虫",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 363,
+    "word": "philosophy",
+    "meaning": "哲学",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 364,
+    "word": "piano",
+    "meaning": "钢琴",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 365,
+    "word": "picnic",
+    "meaning": "野餐",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 366,
+    "word": "pie",
+    "meaning": "馅饼、派",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 367,
+    "word": "piece",
+    "meaning": "一块、一片、一张",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 368,
+    "word": "pig",
+    "meaning": "猪",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 369,
+    "word": "pill",
+    "meaning": "药丸",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 370,
+    "word": "pillow",
+    "meaning": "枕头",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 371,
+    "word": "pilot",
+    "meaning": "飞行员、试点",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 372,
+    "word": "pin",
+    "meaning": "别针、钉住",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 373,
+    "word": "pine",
+    "meaning": "松树",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 374,
+    "word": "pineapple",
+    "meaning": "菠萝",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 375,
+    "word": "planet",
+    "meaning": "行星",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 376,
+    "word": "playground",
+    "meaning": "操场",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 377,
+    "word": "playroom",
+    "meaning": "游戏室相关词汇或考查形式",
+    "forms": "pence percentage pianist",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 378,
+    "word": "plug",
+    "meaning": "塞子、插头",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 379,
+    "word": "poison",
+    "meaning": "毒药",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 380,
+    "word": "polar",
+    "meaning": "极地的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 381,
+    "word": "pole",
+    "meaning": "杆子、地球极点",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 382,
+    "word": "politics",
+    "meaning": "政治",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 383,
+    "word": "pond",
+    "meaning": "池塘",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 384,
+    "word": "popcorn",
+    "meaning": "爆米花",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 385,
+    "word": "population",
+    "meaning": "人口、人数",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 386,
+    "word": "pork",
+    "meaning": "猪肉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 387,
+    "word": "port",
+    "meaning": "港口、端口",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 388,
+    "word": "pose",
+    "meaning": "姿势",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 389,
+    "word": "pot",
+    "meaning": "壶、瓶、罐、锅",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 390,
+    "word": "potato",
+    "meaning": "土豆",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 391,
+    "word": "powder",
+    "meaning": "粉、粉末",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 392,
+    "word": "president",
+    "meaning": "总统、主席",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 393,
+    "word": "prison",
+    "meaning": "监狱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 394,
+    "word": "protein",
+    "meaning": "蛋白质",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 395,
+    "word": "province",
+    "meaning": "省",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 396,
+    "word": "pub",
+    "meaning": "酒吧",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 397,
+    "word": "pudding",
+    "meaning": "布丁",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 398,
+    "word": "pupil",
+    "meaning": "小学生",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 399,
+    "word": "quarter",
+    "meaning": "四分之一、一刻钟",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 400,
+    "word": "queen",
+    "meaning": "皇后、女王",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 401,
+    "word": "queue",
+    "meaning": "长队列、排队",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 402,
+    "word": "quilt",
+    "meaning": "被子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 403,
+    "word": "rabbit",
+    "meaning": "兔子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 404,
+    "word": "radio",
+    "meaning": "收音机",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 405,
+    "word": "rag",
+    "meaning": "破布",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 406,
+    "word": "rainbow",
+    "meaning": "彩虹",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 407,
+    "word": "raincoat",
+    "meaning": "雨衣",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 408,
+    "word": "rat",
+    "meaning": "老鼠",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 409,
+    "word": "ray",
+    "meaning": "光线",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 410,
+    "word": "razor",
+    "meaning": "剃须刀",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 411,
+    "word": "referee",
+    "meaning": "裁判",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 412,
+    "word": "rent",
+    "meaning": "租金",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 413,
+    "word": "republic",
+    "meaning": "共和国",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 414,
+    "word": "rice",
+    "meaning": "米",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 415,
+    "word": "riddle",
+    "meaning": "谜语",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 416,
+    "word": "river",
+    "meaning": "河流",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 417,
+    "word": "robot",
+    "meaning": "机器人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 418,
+    "word": "rocket",
+    "meaning": "火箭",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 419,
+    "word": "rooster",
+    "meaning": "公鸡",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 420,
+    "word": "root",
+    "meaning": "根、根源、起源",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 421,
+    "word": "rubber",
+    "meaning": "橡胶、橡皮",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 422,
+    "word": "rubbish",
+    "meaning": "垃圾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 423,
+    "word": "sail",
+    "meaning": "航行、航海",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 424,
+    "word": "salad",
+    "meaning": "沙拉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 425,
+    "word": "salary",
+    "meaning": "薪水相关词汇或考查形式",
+    "forms": "sailing, sailor",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 426,
+    "word": "salt",
+    "meaning": "盐",
+    "forms": "salty",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 427,
+    "word": "sand",
+    "meaning": "沙子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 428,
+    "word": "sandwich",
+    "meaning": "三明治",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 429,
+    "word": "satellite",
+    "meaning": "卫星",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 430,
+    "word": "sauce",
+    "meaning": "酱汁",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 431,
+    "word": "saucer",
+    "meaning": "茶碟、圆盘",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 432,
+    "word": "sausage",
+    "meaning": "香肠",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 433,
+    "word": "scar",
+    "meaning": "伤疤、伤痕",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 434,
+    "word": "scarf",
+    "meaning": "围巾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 435,
+    "word": "scissors",
+    "meaning": "剪刀",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 436,
+    "word": "seagull",
+    "meaning": "海鸥",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 437,
+    "word": "seaman",
+    "meaning": "海员",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 438,
+    "word": "seashell",
+    "meaning": "贝壳",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 439,
+    "word": "seaside",
+    "meaning": "海滨",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 440,
+    "word": "seaweed",
+    "meaning": "海草",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 441,
+    "word": "secondhand",
+    "meaning": "二手货",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 442,
+    "word": "seed",
+    "meaning": "种子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 443,
+    "word": "servant",
+    "meaning": "仆人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 444,
+    "word": "sex",
+    "meaning": "性、性别",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 445,
+    "word": "shark",
+    "meaning": "鲨鱼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 446,
+    "word": "sheep",
+    "meaning": "绵羊",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 447,
+    "word": "sheet",
+    "meaning": "薄板、床单",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 448,
+    "word": "shelf",
+    "meaning": "架子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 449,
+    "word": "shortcoming",
+    "meaning": "缺点",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 108,
+    "word": "shelves",
+    "meaning": "序号单词释义",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 450,
+    "word": "shower",
+    "meaning": "阵雨、淋浴",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 451,
+    "word": "shuttle",
+    "meaning": "穿梭班机或汽车",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 452,
+    "word": "sightseeing",
+    "meaning": "游览、观光",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 453,
+    "word": "silk",
+    "meaning": "丝织品",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 454,
+    "word": "silver",
+    "meaning": "银色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 455,
+    "word": "sir",
+    "meaning": "先生、阁下",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 456,
+    "word": "skin",
+    "meaning": "皮肤、表皮",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 457,
+    "word": "skirt",
+    "meaning": "短裙",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 458,
+    "word": "sky",
+    "meaning": "天空",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 459,
+    "word": "skyscraper",
+    "meaning": "摩天大楼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 460,
+    "word": "slave",
+    "meaning": "奴隶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 461,
+    "word": "sleeve",
+    "meaning": "袖子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 462,
+    "word": "slice",
+    "meaning": "薄片",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 463,
+    "word": "snake",
+    "meaning": "蛇",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 464,
+    "word": "snowball",
+    "meaning": "雪球",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 465,
+    "word": "snowman",
+    "meaning": "雪人",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 466,
+    "word": "soap",
+    "meaning": "肥皂",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 467,
+    "word": "soccer",
+    "meaning": "足球",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 468,
+    "word": "socialism",
+    "meaning": "社会主义",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 469,
+    "word": "sofa",
+    "meaning": "沙发",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 470,
+    "word": "softball",
+    "meaning": "垒球",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 471,
+    "word": "softdrink",
+    "meaning": "无酒精饮料",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 472,
+    "word": "software",
+    "meaning": "软件",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 473,
+    "word": "soil",
+    "meaning": "土壤相关词汇或考查形式",
+    "forms": "slavery socialist",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 474,
+    "word": "son",
+    "meaning": "儿子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 475,
+    "word": "soul",
+    "meaning": "灵魂、心灵",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 476,
+    "word": "soup",
+    "meaning": "汤",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 477,
+    "word": "south",
+    "meaning": "南方",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 478,
+    "word": "spaceship",
+    "meaning": "宇宙飞船",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 479,
+    "word": "spade",
+    "meaning": "铲子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 480,
+    "word": "sparrow",
+    "meaning": "麻雀",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 481,
+    "word": "spear",
+    "meaning": "长矛",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 482,
+    "word": "spring",
+    "meaning": "春天、泉水",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 483,
+    "word": "squid",
+    "meaning": "鱿鱼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 484,
+    "word": "squirrel",
+    "meaning": "松鼠",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 485,
+    "word": "stair",
+    "meaning": "楼梯",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 486,
+    "word": "stamp",
+    "meaning": "邮票",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 487,
+    "word": "star",
+    "meaning": "星星",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 488,
+    "word": "steak",
+    "meaning": "牛排",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 489,
+    "word": "steel",
+    "meaning": "钢铁",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 490,
+    "word": "stocking",
+    "meaning": "长筒女袜",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 491,
+    "word": "stopwatch",
+    "meaning": "秒表",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 492,
+    "word": "stove",
+    "meaning": "火炉",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 493,
+    "word": "strawberry",
+    "meaning": "草莓",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 494,
+    "word": "studio",
+    "meaning": "工作室、演播室",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 495,
+    "word": "suburb",
+    "meaning": "郊区",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 496,
+    "word": "subway",
+    "meaning": "地铁",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 497,
+    "word": "sugar",
+    "meaning": "糖",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 498,
+    "word": "suite",
+    "meaning": "套间、组曲",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 499,
+    "word": "summary",
+    "meaning": "概要",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 500,
+    "word": "summer",
+    "meaning": "夏天",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 501,
+    "word": "supermarket",
+    "meaning": "超市",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 502,
+    "word": "tablet",
+    "meaning": "药片、平板电脑",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 503,
+    "word": "tailor",
+    "meaning": "裁缝",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 504,
+    "word": "tale",
+    "meaning": "故事、传说",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 505,
+    "word": "taxi",
+    "meaning": "出租车",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 506,
+    "word": "tea",
+    "meaning": "茶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 507,
+    "word": "technique",
+    "meaning": "技术、技巧、方法",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 508,
+    "word": "teenager",
+    "meaning": "13至19岁的青少年",
+    "forms": "teen",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 509,
+    "word": "television",
+    "meaning": "电视",
+    "forms": "TV",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 510,
+    "word": "temple",
+    "meaning": "寺庙",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 511,
+    "word": "tennis",
+    "meaning": "网球",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 512,
+    "word": "thread",
+    "meaning": "线",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 513,
+    "word": "thunderstorm",
+    "meaning": "暴风雨",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 514,
+    "word": "tiger",
+    "meaning": "老虎",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 515,
+    "word": "timetable",
+    "meaning": "时间表",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 516,
+    "word": "tin",
+    "meaning": "罐头",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 517,
+    "word": "tobacco",
+    "meaning": "烟草",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 518,
+    "word": "today",
+    "meaning": "今天、现在、当前",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 519,
+    "word": "toilet",
+    "meaning": "厕所",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 520,
+    "word": "tomato",
+    "meaning": "西红柿",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 521,
+    "word": "tomb",
+    "meaning": "坟墓",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 522,
+    "word": "tomorrow",
+    "meaning": "明天、未来",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 523,
+    "word": "ton",
+    "meaning": "吨",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 524,
+    "word": "tonight",
+    "meaning": "今晚",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 525,
+    "word": "tooth",
+    "meaning": "牙齿",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 526,
+    "word": "toothache",
+    "meaning": "牙疼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 527,
+    "word": "toothbrush",
+    "meaning": "牙刷",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 528,
+    "word": "toothpaste",
+    "meaning": "牙膏",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 529,
+    "word": "tortoise",
+    "meaning": "乌龟",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 530,
+    "word": "towel",
+    "meaning": "毛巾",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 531,
+    "word": "tractor",
+    "meaning": "拖拉机",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 532,
+    "word": "tree",
+    "meaning": "树",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 533,
+    "word": "triangle",
+    "meaning": "三角形",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 534,
+    "word": "troop",
+    "meaning": "军队",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 535,
+    "word": "trousers",
+    "meaning": "裤子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 536,
+    "word": "trunk",
+    "meaning": "树干、主体、后备箱",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 537,
+    "word": "tube",
+    "meaning": "管子",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 538,
+    "word": "turkey",
+    "meaning": "火鸡",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 539,
+    "word": "twin",
+    "meaning": "双胞胎",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 540,
+    "word": "umbrella",
+    "meaning": "雨伞",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 541,
+    "word": "uncle",
+    "meaning": "叔叔",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 542,
+    "word": "underwear",
+    "meaning": "内衣",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 543,
+    "word": "uniform",
+    "meaning": "制服",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 544,
+    "word": "union",
+    "meaning": "联盟、工会",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 545,
+    "word": "unit",
+    "meaning": "单元、一件物品",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 546,
+    "word": "vinegar",
+    "meaning": "醋",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 547,
+    "word": "violin",
+    "meaning": "小提琴",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 548,
+    "word": "virtue",
+    "meaning": "美德、品德",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 549,
+    "word": "virus",
+    "meaning": "病毒",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 550,
+    "word": "waist",
+    "meaning": "腰部",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 551,
+    "word": "walnut",
+    "meaning": "核桃",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 552,
+    "word": "ward",
+    "meaning": "病房、看护",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 553,
+    "word": "warehouse",
+    "meaning": "仓库",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 554,
+    "word": "washroom",
+    "meaning": "洗手间",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 555,
+    "word": "wax",
+    "meaning": "蜡",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 556,
+    "word": "web",
+    "meaning": "网",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 557,
+    "word": "wedding",
+    "meaning": "婚礼、结婚",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 558,
+    "word": "weed",
+    "meaning": "杂草",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 559,
+    "word": "west",
+    "meaning": "西方",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 560,
+    "word": "whale",
+    "meaning": "鲸鱼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 561,
+    "word": "wheat",
+    "meaning": "小麦",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 562,
+    "word": "which",
+    "meaning": "哪个、哪些",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 563,
+    "word": "whistle",
+    "meaning": "口哨声",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 564,
+    "word": "wine",
+    "meaning": "酒",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 565,
+    "word": "winter",
+    "meaning": "冬天",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 566,
+    "word": "wire",
+    "meaning": "电线",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 567,
+    "word": "wolf",
+    "meaning": "狼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 568,
+    "word": "worm",
+    "meaning": "蠕虫",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 569,
+    "word": "wrinkle",
+    "meaning": "皱纹相关词汇或考查形式",
+    "forms": "violinist western, westerner wolves",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 570,
+    "word": "wrist",
+    "meaning": "手腕",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 571,
+    "word": "yoghurt",
+    "meaning": "酸奶",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 572,
+    "word": "zebra",
+    "meaning": "斑马",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 573,
+    "word": "zero",
+    "meaning": "零、零点、零度",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 574,
+    "word": "zip",
+    "meaning": "拉链",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 575,
+    "word": "zipcode",
+    "meaning": "邮政编码",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 576,
+    "word": "zoo",
+    "meaning": "动物园相关词汇或考查形式动词序号单词释义",
+    "forms": "zipper",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 1,
+    "word": "bake",
+    "meaning": "烘焙",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 2,
+    "word": "ban",
+    "meaning": "禁止、禁令",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 3,
+    "word": "be",
+    "meaning": "是",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 4,
+    "word": "consist",
+    "meaning": "包含、由……组成",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 5,
+    "word": "delete",
+    "meaning": "删除",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 6,
+    "word": "download",
+    "meaning": "下载",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 7,
+    "word": "may",
+    "meaning": "可能、可以",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 8,
+    "word": "mend",
+    "meaning": "修理、修补",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 9,
+    "word": "ought to",
+    "meaning": "应该",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 10,
+    "word": "roast",
+    "meaning": "烤",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 11,
+    "word": "shave",
+    "meaning": "剃须",
+    "forms": "shaver",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 12,
+    "word": "spit",
+    "meaning": "吐痰",
+    "forms": "spat, spitting",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 13,
+    "word": "switch",
+    "meaning": "转换、改变、开关",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 14,
+    "word": "toast",
+    "meaning": "干杯、吐司面包、烤",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 15,
+    "word": "underline",
+    "meaning": "在……下面划线",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 16,
+    "word": "yawn",
+    "meaning": "打哈欠",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 17,
+    "word": "drown",
+    "meaning": "溺水、淹没",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 18,
+    "word": "rot",
+    "meaning": "腐烂、腐败",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 19,
+    "word": "chew",
+    "meaning": "咀嚼",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 20,
+    "word": "fry",
+    "meaning": "煎、炸",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 21,
+    "word": "plant",
+    "meaning": "植物、工厂、种植",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 22,
+    "word": "spell",
+    "meaning": "拼写、咒语",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 23,
+    "word": "suck",
+    "meaning": "吮吸、抽取",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 24,
+    "word": "tick",
+    "meaning": "打勾、作记号、滴答声相关词汇或考查形式形容词、副词序号单词释义相关词汇或考查形式",
+    "forms": "fried spelt, spelling",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 1,
+    "word": "awesome",
+    "meaning": "令人惊叹的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 2,
+    "word": "black",
+    "meaning": "黑色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 3,
+    "word": "brown",
+    "meaning": "棕色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 4,
+    "word": "cheap",
+    "meaning": "便宜的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 5,
+    "word": "chief",
+    "meaning": "主要的、首要的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 6,
+    "word": "civil",
+    "meaning": "平民、民用的、国内的",
+    "forms": "civilian",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 7,
+    "word": "classic",
+    "meaning": "经典的",
+    "forms": "classical",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 8,
+    "word": "cosy",
+    "meaning": "温馨的、舒适的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 9,
+    "word": "cute",
+    "meaning": "可爱的、机灵的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 10,
+    "word": "dear",
+    "meaning": "亲爱的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 11,
+    "word": "digital",
+    "meaning": "数字的、数码的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 12,
+    "word": "easy-going",
+    "meaning": "随和的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 13,
+    "word": "extraordinary",
+    "meaning": "异乎寻常的、非凡的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 14,
+    "word": "favourite",
+    "meaning": "最喜爱的人或物",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 15,
+    "word": "female",
+    "meaning": "女性的、雌性的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 16,
+    "word": "folk",
+    "meaning": "民间的、民俗的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 17,
+    "word": "green",
+    "meaning": "绿色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 18,
+    "word": "handsome",
+    "meaning": "英俊的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 19,
+    "word": "hardworking",
+    "meaning": "努力工作的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 20,
+    "word": "holy",
+    "meaning": "神圣的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 21,
+    "word": "human",
+    "meaning": "人、人类",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 22,
+    "word": "junior",
+    "meaning": "初级的、少年的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 23,
+    "word": "male",
+    "meaning": "男性的、雄性的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 24,
+    "word": "merry",
+    "meaning": "高兴的、愉快的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 25,
+    "word": "mobile",
+    "meaning": "手机、可移动的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 26,
+    "word": "north",
+    "meaning": "北方",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 27,
+    "word": "Olympic",
+    "meaning": "奥林匹克",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 28,
+    "word": "outer",
+    "meaning": "外部的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 29,
+    "word": "overseas",
+    "meaning": "外国的、在国外",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 30,
+    "word": "part-time",
+    "meaning": "兼职的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 31,
+    "word": "pink",
+    "meaning": "粉色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 32,
+    "word": "plastic",
+    "meaning": "塑料的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 33,
+    "word": "purple",
+    "meaning": "紫色的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 34,
+    "word": "several",
+    "meaning": "许多的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 35,
+    "word": "shabby",
+    "meaning": "破旧的、衣衫褴褛的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 36,
+    "word": "shallow",
+    "meaning": "浅的、肤浅的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 37,
+    "word": "smoke-free",
+    "meaning": "非吸烟的、无烟的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 38,
+    "word": "solar",
+    "meaning": "太阳的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 39,
+    "word": "splendid",
+    "meaning": "灿烂的、辉煌的、极好的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 40,
+    "word": "straightforward",
+    "meaning": "直截了当的、坦率的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 41,
+    "word": "super",
+    "meaning": "超级的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 42,
+    "word": "tax-free",
+    "meaning": "免税的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 43,
+    "word": "that",
+    "meaning": "那个",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 44,
+    "word": "these",
+    "meaning": "这些",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 45,
+    "word": "thin",
+    "meaning": "薄的、瘦的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 46,
+    "word": "this",
+    "meaning": "这个",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 47,
+    "word": "thorough",
+    "meaning": "彻底的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 48,
+    "word": "those",
+    "meaning": "那些",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 49,
+    "word": "underground",
+    "meaning": "地下的、地铁",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 50,
+    "word": "upper",
+    "meaning": "较高的，靠上的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 51,
+    "word": "widespread",
+    "meaning": "广泛的、普遍的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 52,
+    "word": "yummy",
+    "meaning": "美味的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 53,
+    "word": "abroad",
+    "meaning": "在国外",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 54,
+    "word": "ago",
+    "meaning": "以前",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 55,
+    "word": "downtown",
+    "meaning": "商业区、中心区",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 56,
+    "word": "here",
+    "meaning": "这里、在这里",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 57,
+    "word": "maybe",
+    "meaning": "大概、也许相关词汇或考查形式",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 58,
+    "word": "outdoors",
+    "meaning": "在户外",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 59,
+    "word": "outward",
+    "meaning": "向外的",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 60,
+    "word": "twice",
+    "meaning": "两次、两倍",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 61,
+    "word": "yes",
+    "meaning": "肯定、同意相关词汇或考查形式冠词、介词、数词序号单词释义",
+    "forms": "outwards",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 1,
+    "word": "a / an",
+    "meaning": "一个、某个",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 2,
+    "word": "the",
+    "meaning": "这个、那个",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 3,
+    "word": "aboard",
+    "meaning": "上（交通工具）",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 4,
+    "word": "among",
+    "meaning": "在多者之间",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 5,
+    "word": "inside",
+    "meaning": "在……里面",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 6,
+    "word": "minus",
+    "meaning": "减",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 7,
+    "word": "opposite",
+    "meaning": "与……相对、在……对面",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 8,
+    "word": "per",
+    "meaning": "每个",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 9,
+    "word": "plus",
+    "meaning": "加",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 10,
+    "word": "throughout",
+    "meaning": "遍及、始终",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 11,
+    "word": "via",
+    "meaning": "通过、凭借、经由某处",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 12,
+    "word": "five",
+    "meaning": "五",
+    "forms": "fifth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 13,
+    "word": "six",
+    "meaning": "六",
+    "forms": "sixth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 14,
+    "word": "seven",
+    "meaning": "七",
+    "forms": "seventh",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 15,
+    "word": "eight",
+    "meaning": "八",
+    "forms": "eighth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 16,
+    "word": "nine",
+    "meaning": "九",
+    "forms": "ninth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 17,
+    "word": "ten",
+    "meaning": "十",
+    "forms": "tenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 18,
+    "word": "eleven",
+    "meaning": "十一",
+    "forms": "eleventh",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 19,
+    "word": "twelve",
+    "meaning": "十二",
+    "forms": "twelfth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 20,
+    "word": "thirteen",
+    "meaning": "十三",
+    "forms": "thirteenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 21,
+    "word": "fourteen",
+    "meaning": "十四",
+    "forms": "fourteenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 22,
+    "word": "fifteen",
+    "meaning": "十五",
+    "forms": "fifteenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 23,
+    "word": "sixteen",
+    "meaning": "十六",
+    "forms": "sixteenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 24,
+    "word": "seventeen",
+    "meaning": "十七",
+    "forms": "seventeenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 25,
+    "word": "eighteen",
+    "meaning": "十八",
+    "forms": "eighteenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 26,
+    "word": "nineteen",
+    "meaning": "十九",
+    "forms": "nineteenth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 27,
+    "word": "twenty",
+    "meaning": "二十",
+    "forms": "twentieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 28,
+    "word": "twenty-one",
+    "meaning": "二十一",
+    "forms": "twenty-first",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 29,
+    "word": "thirty",
+    "meaning": "三十",
+    "forms": "thirtieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 30,
+    "word": "forty",
+    "meaning": "四十",
+    "forms": "fortieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 31,
+    "word": "fifty",
+    "meaning": "五十",
+    "forms": "fiftieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 32,
+    "word": "sixty",
+    "meaning": "六十",
+    "forms": "sixtieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 33,
+    "word": "seventy",
+    "meaning": "七十",
+    "forms": "seventieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 34,
+    "word": "eighty",
+    "meaning": "八十",
+    "forms": "eightieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 35,
+    "word": "ninety",
+    "meaning": "九十",
+    "forms": "ninetieth",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 36,
+    "word": "hundred",
+    "meaning": "百",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 37,
+    "word": "thousand",
+    "meaning": "千",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 38,
+    "word": "million",
+    "meaning": "百万",
+    "forms": "",
+    "category": "基础词汇"
+  },
+  {
+    "seq": 39,
+    "word": "billion",
+    "meaning": "十亿",
+    "forms": "",
+    "category": "基础词汇"
+  }
+]

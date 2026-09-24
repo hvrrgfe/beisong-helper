@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>背诵助手 — 简单·熟悉·重复</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar">
+    <div class="logo">
+      <span class="logo-icon">📖</span>
+      <span class="logo-text">背诵助手</span>
+    </div>
+    <p class="tagline">简单 · 熟悉 · 重复</p>
+    <ul class="nav-list">
+      <li class="nav-item active" data-view="home"><span>🏠</span> 首页</li>
+      <li class="nav-item" data-view="materials"><span>📚</span> 资料库</li>
+      <li class="nav-item" data-view="flashcard"><span>🎴</span> 闪卡背诵</li>
+      <li class="nav-item" data-view="recite"><span>✍️</span> 古文背诵</li>
+      <li class="nav-item" data-view="test"><span>📝</span> 检验</li>
+      <li class="nav-item" data-view="progress"><span>📊</span> 学习进度</li>
+    </ul>
+    <div class="sidebar-footer">
+      <div id="quick-stats" class="quick-stats"></div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu toggle -->
+  <button id="menu-toggle" aria-label="菜单">☰</button>
+
+  <!-- Main Content -->
+  <main id="content">
+    <!-- Views rendered here -->
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

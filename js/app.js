@@ -35,6 +35,7 @@ const App = {
     score: 0,
     startTime: 0,
     config: {},
+    repeatMode: false,
   },
 };
 
@@ -285,7 +286,7 @@ function renderFlashcardSetup(c) {
     <div class="session-settings">
       <div class="settings-row">
         <label>选择资料</label>
-        <select id="fc-source">
+        <select id="fc-source" onchange="updateRangeMax(this.value)">
           <option value="vocab2050">核心词汇 2050</option>
           <option value="vocab700">基础词汇 700</option>
           <option value="vocab370">拓展词汇 370</option>
@@ -302,12 +303,22 @@ function renderFlashcardSetup(c) {
         </select>
       </div>
       <div class="settings-row">
-        <label>每次张数</label>
-        <input type="number" id="fc-count" value="20" min="5" max="100" style="width:80px">
+        <label>顺序</label>
+        <select id="fc-order" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem">
+          <option value="seq" selected>正序</option>
+          <option value="shuffle">乱序</option>
+        </select>
       </div>
       <div class="settings-row">
-        <label>乱序</label>
-        <input type="checkbox" id="fc-shuffle" checked>
+        <label>范围</label>
+        <div style="font-size:.9rem;display:flex;align-items:center;gap:4px">
+          第 <input type="number" id="fc-from" value="1" min="1" style="width:56px;padding:6px;border:1px solid var(--border);border-radius:6px"> 
+          ~ <input type="number" id="fc-to" style="width:56px;padding:6px;border:1px solid var(--border);border-radius:6px"> 词
+        </div>
+      </div>
+      <div class="settings-row">
+        <label>每次张数</label>
+        <input type="number" id="fc-count" value="20" min="5" max="100" style="width:80px">
       </div>
     </div>
     <div style="text-align:center;margin-top:24px">
@@ -332,9 +343,18 @@ function startFlashcardSession() {
   const source = document.getElementById('fc-source').value;
   const mode = document.getElementById('fc-mode').value;
   const count = parseInt(document.getElementById('fc-count').value);
-  const shuffle = document.getElementById('fc-shuffle').checked;
+  const order = document.getElementById('fc-order')?.value || 'shuffle';
+  const fromVal = parseInt(document.getElementById('fc-from')?.value || '1');
+  const toVal = parseInt(document.getElementById('fc-to')?.value || '0') || App.data[source].length;
   
   let items = App.data[source].slice();
+  
+  // Range filter (by seq index, 1-based)
+  if (source !== 'irregularVerbs') {
+    items = items.filter(item => item.seq >= fromVal && item.seq <= toVal);
+  } else {
+    items = items.filter((item, i) => i >= fromVal - 1 && i <= toVal - 1);
+  }
   
   // Filter by familiarity mode
   items = items.filter(item => {
@@ -346,12 +366,13 @@ function startFlashcardSession() {
     return true;
   });
   
-  if (shuffle) {
+  if (order === 'shuffle') {
     for (let i = items.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [items[i], items[j]] = [items[j], items[i]];
     }
   }
+  // seq = keep as-is (already sequential)
   
   items = items.slice(0, count);
   
@@ -369,6 +390,14 @@ function startFlashcardSession() {
   App.fc.sessionCount = 0;
   Progress.incSession();
   render();
+}
+
+function updateRangeMax(source) {
+  const total = App.data[source]?.length || 0;
+  const toInput = document.getElementById('fc-to');
+  if (toInput && !toInput.value) toInput.placeholder = total;
+  const toQuiz = document.getElementById('qc-to');
+  if (toQuiz && !toQuiz.value) toQuiz.placeholder = total;
 }
 
 function startFlashcard(source, mode) {
@@ -821,7 +850,7 @@ function renderVocabConfig(panel) {
     <div class="card" style="margin-top:8px">
       <h3 style="margin-bottom:16px">词汇测验设置</h3>
       <div class="settings-row"><label>词汇来源</label>
-        <select id="qc-source" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem">
+        <select id="qc-source" onchange="updateRangeMax(this.value)" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem">
           <option value="vocab2050">核心词汇 2050</option>
           <option value="vocab700">基础词汇 700</option>
           <option value="vocab370">拓展词汇 370</option>
@@ -834,12 +863,25 @@ function renderVocabConfig(panel) {
           <option value="mix">混合</option>
         </select>
       </div>
+      <div class="settings-row"><label>顺序</label>
+        <select id="qc-order" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem">
+          <option value="seq" selected>正序</option>
+          <option value="shuffle">乱序</option>
+        </select>
+      </div>
+      <div class="settings-row"><label>范围</label>
+        <div style="font-size:.9rem;display:flex;align-items:center;gap:4px">
+          第 <input type="number" id="qc-from" value="1" min="1" style="width:56px;padding:6px;border:1px solid var(--border);border-radius:6px"> 
+          ~ <input type="number" id="qc-to" style="width:56px;padding:6px;border:1px solid var(--border);border-radius:6px"> 词
+        </div>
+      </div>
       <div class="settings-row"><label>题量</label>
         <select id="qc-count" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem">
           <option value="5">5 题</option>
           <option value="10" selected>10 题</option>
           <option value="20">20 题</option>
           <option value="30">30 题</option>
+          <option value="50">50 题</option>
         </select>
       </div>
       <div style="text-align:center;margin-top:20px">
@@ -916,13 +958,17 @@ function launchVocabQuiz() {
   const source = document.getElementById('qc-source').value;
   const dir = document.getElementById('qc-direction').value;
   const count = parseInt(document.getElementById('qc-count').value);
-  App.quiz.config = { source, direction: dir, count };
-  App.quiz.questions = generateVocabQuestions(source, dir, count);
+  const order = document.getElementById('qc-order')?.value || 'shuffle';
+  const fromVal = parseInt(document.getElementById('qc-from')?.value || '1');
+  const toVal = parseInt(document.getElementById('qc-to')?.value || '0') || App.data[source].length;
+  App.quiz.config = { source, direction: dir, count, order, from: fromVal, to: toVal };
+  App.quiz.questions = generateVocabQuestions(source, dir, count, order, fromVal, toVal);
   App.quiz.current = 0;
   App.quiz.answers = [];
   App.quiz.score = 0;
   App.quiz.phase = 'running';
   App.quiz.startTime = Date.now();
+  App.quiz.repeatMode = false;
   Progress.incSession();
   render();
 }
@@ -937,6 +983,7 @@ function launchVerbQuiz() {
   App.quiz.score = 0;
   App.quiz.phase = 'running';
   App.quiz.startTime = Date.now();
+  App.quiz.repeatMode = false;
   Progress.incSession();
   render();
 }
@@ -958,19 +1005,25 @@ function launchPoetryQuiz() {
   App.quiz.score = 0;
   App.quiz.phase = 'running';
   App.quiz.startTime = Date.now();
+  App.quiz.repeatMode = false;
   Progress.incSession();
   render();
 }
 
 // ===== Quiz Question Generators =====
 
-function generateVocabQuestions(source, direction, count) {
-  const pool = App.data[source];
-  // Shuffle
+function generateVocabQuestions(source, direction, count, order, fromVal, toVal) {
+  let pool = App.data[source].slice();
+  // Range filter
+  if (fromVal && toVal) {
+    pool = pool.filter(item => item.seq >= fromVal && item.seq <= toVal);
+  }
   const shuffled = pool.slice();
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  if (order !== 'seq') {
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
   }
   const selected = shuffled.slice(0, Math.max(count * 2, 20)); // extra for distractors
   
@@ -1272,6 +1325,37 @@ function submitPoetryQuiz() {
 
 // ===== Quiz Results View =====
 
+function repeatWrongQuestions() {
+  // Collect wrong answers from the quiz
+  const wrongAnswers = App.quiz.answers.filter(a => !a.correct);
+  if (wrongAnswers.length === 0) return;
+  
+  // Rebuild questions from wrong answers' source items
+  const wrongQuestions = [];
+  for (const ans of wrongAnswers) {
+    // Find the original question
+    const origQ = App.quiz.questions.find(q => q.itemId === ans.itemId);
+    if (origQ) {
+      // Re-shuffle options
+      const newOpts = origQ.options.slice();
+      shuffleArr(newOpts);
+      wrongQuestions.push({ ...origQ, options: newOpts });
+    }
+  }
+  
+  if (wrongQuestions.length === 0) return;
+  
+  App.quiz.questions = wrongQuestions;
+  App.quiz.current = 0;
+  App.quiz.answers = [];
+  App.quiz.score = 0;
+  App.quiz.phase = 'running';
+  App.quiz.startTime = Date.now();
+  App.quiz.repeatMode = true;
+  Progress.incSession();
+  render();
+}
+
 function renderQuizResults(c) {
   const total = App.quiz.questions.length;
   const score = App.quiz.score;
@@ -1290,7 +1374,7 @@ function renderQuizResults(c) {
           <div class="quiz-score-pct" style="color:${levelColor}">${pct}%</div>
           <div class="quiz-score-label">正确率</div>
         </div>
-        <h2 style="margin-bottom:8px;color:${levelColor}">${levelText}</h2>
+        <h2 style="margin-bottom:8px;color:${levelColor}">${App.quiz.repeatMode ? '🔄 重复错题 ' : ''}${levelText}</h2>
         <div class="quiz-result-stats">
           <div class="quiz-result-stat"><div class="quiz-result-stat-num" style="color:var(--success)">${score}</div><div class="quiz-result-stat-label">正确</div></div>
           <div class="quiz-result-stat"><div class="quiz-result-stat-num" style="color:var(--danger)">${total - score}</div><div class="quiz-result-stat-label">错误</div></div>
@@ -1310,6 +1394,9 @@ function renderQuizResults(c) {
           `).join('')}
         </div>` : ''}
         <div class="quiz-nav">
+          ${App.quiz.answers.filter(a => !a.correct).length > 0 ? `
+          <button class="btn btn-danger btn-lg" onclick="repeatWrongQuestions()">🔄 重复错题 (${App.quiz.answers.filter(a => !a.correct).length})</button>
+          ` : ''}
           <button class="btn btn-primary btn-lg" onclick="renderTest(document.getElementById('content'));App.quiz.phase='setup';">再测一次</button>
           <button class="btn btn-outline btn-lg" onclick="navigate('test')">换类型</button>
           <button class="btn btn-outline" onclick="navigate('progress')">查看进度</button>

@@ -1,44 +1,177 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>背诵助手 — 简单·熟悉·重复</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>背背 · 语文英语背诵助手</title>
 <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-  <!-- Sidebar Navigation -->
-  <nav id="sidebar">
-    <div class="logo">
-      <span class="logo-icon">📖</span>
-      <span class="logo-text">背诵助手</span>
+<header>
+  <h1>背背</h1>
+  <span class="badge" id="voiceBadge">检查语音…</span>
+  <span class="sp"></span>
+  <button class="btn sm" id="btnAdd">＋ 新课文</button>
+</header>
+
+<main>
+  <!-- 书架 -->
+  <section id="v-library">
+    <div class="stat" id="dash"></div>
+    <h2>课文库</h2>
+    <div id="libList"></div>
+    <div class="card" id="emptyCard">
+      <p class="muted">还没有课文。点右上角「＋ 新课文」，把要背的语文课文或英语段落粘贴进去。</p>
     </div>
-    <p class="tagline">简单 · 熟悉 · 重复</p>
-    <ul class="nav-list">
-      <li class="nav-item active" data-view="home"><span>🏠</span> 首页</li>
-      <li class="nav-item" data-view="materials"><span>📚</span> 资料库</li>
-      <li class="nav-item" data-view="flashcard"><span>🎴</span> 闪卡背诵</li>
-      <li class="nav-item" data-view="recite"><span>✍️</span> 古文背诵</li>
-      <li class="nav-item" data-view="test"><span>📝</span> 检验</li>
-      <li class="nav-item" data-view="progress"><span>📊</span> 学习进度</li>
-    </ul>
-    <div class="sidebar-footer">
-      <div id="quick-stats" class="quick-stats"></div>
+  </section>
+
+  <!-- 跟读 -->
+  <section id="v-read" class="hide">
+    <div class="card">
+      <div class="row"><select id="readSel" class="grow"></select>
+        <button class="btn sm" id="readDel">删</button></div>
+      <div class="row wrap" style="margin-top:10px">
+        <button class="btn pri" id="btnPlayAll">▶ 整篇朗读</button>
+        <button class="btn" id="btnStop">⏹ 停止</button>
+        <button class="btn" id="btnLoop">🔁 单句循环</button>
+        <button class="btn" id="btnShadow">🎤 跟读模式</button>
+      </div>
+      <div class="row wrap" style="margin-top:10px">
+        <span class="pill" id="ratePill">语速 1.0×</span>
+        <span class="pill" id="gapPill">间隔 0.6s</span>
+        <span class="pill" id="repPill">每句 1 遍</span>
+        <span class="pill" id="voicePill">语音 自动</span>
+      </div>
+      <p class="muted small" style="margin:10px 0 0" id="readTip">点句子里的 🔊 可单独重听；🎤 录下你的跟读再回放对比。</p>
     </div>
-  </nav>
+    <div class="card" id="sentBox"></div>
+  </section>
 
-  <!-- Mobile menu toggle -->
-  <button id="menu-toggle" aria-label="菜单">☰</button>
+  <!-- 背诵 -->
+  <section id="v-recite" class="hide">
+    <div class="card">
+      <div class="row"><select id="reciteSel" class="grow"></select></div>
+      <div class="row wrap" style="margin-top:10px">
+        <button class="btn pri" id="btnBlank">🙈 挖空背诵</button>
+        <button class="btn" id="btnStep">➡️ 逐句推进</button>
+        <button class="btn" id="btnWrite">✍️ 全文默写</button>
+      </div>
+      <div class="row wrap" style="margin-top:10px">
+        <span class="pill" id="blankPill">挖空 30%</span>
+        <span class="pill" id="blankModePill">隐藏整句</span>
+      </div>
+    </div>
+    <div class="card" id="reciteBox"></div>
+  </section>
 
-  <!-- Main Content -->
-  <main id="content">
-    <!-- Views rendered here -->
-  </main>
-</div>
+  <!-- 出题 -->
+  <section id="v-quiz" class="hide">
+    <div class="card">
+      <div class="row"><select id="quizSel" class="grow"></select></div>
+      <div class="row wrap" style="margin-top:10px">
+        <span class="pill on" data-src="text">课文出题</span>
+        <span class="pill" data-src="vocab">单词词库</span>
+        <span class="pill" data-src="dict">理解默写</span>
+        <span class="muted small" id="vocabInfo"></span>
+      </div>
+      <div class="row wrap" style="margin-top:10px">
+        <button class="btn pri" id="btnGenQuiz">🎯 生成题目</button>
+        <button class="btn" id="btnAIQuiz">✨ AI 出题</button>
+      </div>
+      <div class="row wrap" style="margin-top:10px" id="quizTypes">
+        <span class="pill on" data-t="fill">填空</span>
+        <span class="pill on" data-t="choice">选择</span>
+        <span class="pill on" data-t="dictation">听写</span>
+        <span class="pill" data-t="translate">翻译</span>
+      </div>
+      <p class="muted small" style="margin:8px 0 0">点标签可开关题型。「翻译」需要先在「我的」里填单词表。</p>
+    </div>
+    <div id="quizBox"></div>
+  </section>
 
-<script src="js/app.js"></script>
+  <!-- 复习 -->
+  <section id="v-review" class="hide">
+    <div class="card">
+      <h2>错题本 · 间隔复习</h2>
+      <p class="muted small" id="reviewInfo"></p>
+    </div>
+    <div id="reviewBox"></div>
+  </section>
+
+  <!-- 我的 -->
+  <section id="v-me" class="hide">
+    <div class="card">
+      <h2>学习统计</h2>
+      <div class="stat" id="meStat"></div>
+      <h3>最近 7 天</h3>
+      <div id="weekChart" class="row" style="align-items:flex-end;height:90px;gap:6px"></div>
+    </div>
+    <div class="card">
+      <h2>语音设置</h2>
+      <label class="muted small">朗读来源</label>
+      <select id="setProvider">
+        <option value="edge-web">Edge 网页朗读（外网可用，自然音色）</option>
+        <option value="browser">手机系统语音（离线，最稳）</option>
+        <option value="auto">自动（仅电脑本机：Edge → GPT-SoVITS）</option>
+        <option value="edge">Edge TTS（电脑本机合成）</option>
+        <option value="sovits">GPT-SoVITS 克隆音（电脑本机）</option>
+        <option value="custom">自定义接口（外网调用电脑克隆音）</option>
+      </select>
+      <div class="row" style="margin-top:10px">
+        <div class="grow"><label class="muted small">中文音色</label><input id="setVoiceZh" placeholder="zh-CN-XiaoxiaoNeural"></div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <div class="grow"><label class="muted small">英文音色</label><input id="setVoiceEn" placeholder="en-US-JennyNeural"></div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <div class="grow"><label class="muted small">语速（0.6–1.6）</label><input id="setSpeed" type="number" step="0.1" min="0.6" max="1.6"></div>
+        <div class="grow"><label class="muted small">句间停顿（秒）</label><input id="setGap" type="number" step="0.1" min="0" max="3"></div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <div class="grow"><label class="muted small">自定义朗读接口地址（外网用）</label><input id="setCustomUrl" placeholder="https://xxx.trycloudflare.com/api/tts"></div>
+      </div>
+      <h3>GPT-SoVITS 克隆音色（需电脑本机服务）</h3>
+      <div class="row"><select id="sovitsVoice" class="grow"><option value="">（读取中…）</option></select>
+        <button class="btn" id="btnUseVoice">切换</button></div>
+      <p class="muted small" style="margin:6px 0 0">切换后，朗读会用该克隆音（需电脑上的 GPT-SoVITS 正在运行）。</p>
+      <h3>GPT-SoVITS 参考音频</h3>
+      <div class="grow"><label class="muted small">参考音频路径（电脑本地）</label><input id="setRef"></div>
+      <div class="grow" style="margin-top:8px"><label class="muted small">参考音频对应文本</label><input id="setPrompt"></div>
+      <button class="btn pri" style="margin-top:10px" id="btnSaveSet">保存设置</button>
+    </div>
+    <div class="card">
+      <h2>单词表（用于翻译题）</h2>
+      <p class="muted small">每行一个：<b>英文 中文</b>（或 中文 英文）。例如：<br>apple 苹果<br>the 定冠词</p>
+      <textarea id="setWords" placeholder="apple 苹果&#10;beautiful 美丽的"></textarea>
+      <button class="btn" style="margin-top:10px" id="btnSaveWords">保存单词表</button>
+    </div>
+    <div class="card">
+      <h2>数据</h2>
+      <div class="row wrap">
+        <button class="btn" id="btnExport">导出数据</button>
+        <button class="btn" id="btnImport">导入数据</button>
+        <button class="btn warn" id="btnWipe">清空全部</button>
+      </div>
+      <p class="muted small" style="margin-top:8px">数据保存在你的电脑上（data/*.json），手机和电脑可同时使用。</p>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs">
+  <button data-v="library" class="on"><span class="ic">📚</span>书架</button>
+  <button data-v="read"><span class="ic">🎧</span>跟读</button>
+  <button data-v="recite"><span class="ic">🙈</span>背诵</button>
+  <button data-v="quiz"><span class="ic">🎯</span>出题</button>
+  <button data-v="review"><span class="ic">🔁</span>复习</button>
+  <button data-v="me"><span class="ic">⚙️</span>我的</button>
+</nav>
+
+<div id="modalWrap"></div>
+<div id="toastWrap"></div>
+<audio id="player"></audio>
+
+<script src="app.js"></script>
 </body>
 </html>

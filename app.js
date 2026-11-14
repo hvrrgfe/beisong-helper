@@ -109,7 +109,7 @@ function localApi(path, body) {
   return Promise.reject(new Error('静态模式不支持该接口'));
 }
 const DEFAULT_SETTINGS_LOCAL = {
-  ttsProvider: 'edge-web', edgeVoiceZh: 'zh-CN-XiaoxiaoNeural', edgeVoiceEn: 'en-US-JennyNeural',
+  ttsProvider: 'browser', edgeVoiceZh: 'zh-CN-XiaoxiaoNeural', edgeVoiceEn: 'en-US-JennyNeural',
   speed: 1, repeatGap: 0.6, customTtsUrl: '', words: '',
 };
 
@@ -345,7 +345,7 @@ async function fetchAudio(text, lang, provider, st) {
   if (provider === 'edge-web') {
     const voice = lang === 'en' ? (st.edgeVoiceEn || 'en-US-JennyNeural') : (st.edgeVoiceZh || 'zh-CN-XiaoxiaoNeural');
     try { return await edgeWebTTS(text, voice, st.speed); }
-    catch (e) { toast('Edge 朗读失败，改用系统语音'); await speakBrowser(text, lang); return null; }
+    catch (e) { toast('Edge 网页朗读不可用，已改用系统语音（可在设置里换）'); await speakBrowser(text, lang); return null; }
   }
   if (provider === 'custom' && st.customTtsUrl) {
     try {

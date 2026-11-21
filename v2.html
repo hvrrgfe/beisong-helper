@@ -690,7 +690,7 @@ function playClip(clip,onEnd){
   if(!clip)return;
   const base=mediaBase();
   stopAudioOnly();running=true;setPlayBtn();
-  audio.src=base+clip;audio.playbackRate=+DB.settings.speed||1;
+  audio.src=base+String(clip).replace(/^media\//,'');audio.playbackRate=+DB.settings.speed||1;
   audio.onended=()=>{running=false;setPlayBtn();if(onEnd)onEnd()};
   const p=audio.play();
   if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
@@ -737,7 +737,7 @@ function playSeekChain(i){
     if(audio.currentTime<startAt-1.5||audio.currentTime>endAt+8){seekTo()}
     if(++tries>600){finish()}
   },1000);
-  audio.src=mediaBase()+m.seek;audio.playbackRate=+DB.settings.speed||1;
+  audio.src=mediaBase()+String(m.seek).replace(/^media\//,'');audio.playbackRate=+DB.settings.speed||1;
   const p=audio.play();
   if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
 }

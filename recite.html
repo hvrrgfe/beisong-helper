@@ -1006,6 +1006,7 @@ function enterMat(id){
   DB.settings.device=dev;save();
   document.body.classList.toggle('pc',dev==='pc');
   matIdx=i;cur=-1;abLoop=false;dueSet=null;sessionStuck=[];sessionNew=0;
+  window.__entered=true;
   $('#startScreen').style.display='none';
   renderAll();resumePrompt();preloadMaterial(S());genLoop();renderQChip();renderPcSide();
 }
@@ -1075,7 +1076,10 @@ async function loadMaterialsFile(){
       else{const m=mkMat(x.title,x.text,x.items,x.lang,x.cat);m.id=x.id||m.id;DB.materials.push(m)}});
     save();renderSel();toast('已加载 '+d.length+' 篇材料，开始后台生成音频…',4000);
     DB.materials.forEach(m=>{if(!m.tracks)ensureMat(m)});genLoop()}catch(e){}}
+window.__initErr='';
+window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.message||'err')+' @'+(e.lineno||'')});
 (async function init(){
+ try{
   await idbOpen();
   try{await navigator.storage.persist()}catch(e){}
   // 恢复内存热缓存（后台进行，不阻塞开始界面）
@@ -1095,6 +1099,16 @@ async function loadMaterialsFile(){
   if(TV){preloadMaterial(S())}
   else{showStart()}
   resumePrompt();
+ }catch(e){
+  window.__initErr='init: '+e.message+' @'+String(e.stack||'').split('\n')[1];
+  try{showStart()}catch(e2){}
+ }
+ setTimeout(async()=>{
+   if(window.__entered)return;
+   if(!DB.materials.length){try{await loadMaterialsFile()}catch(e){}}
+   const ss=$('#startScreen');
+   if(!ss.style.display||ss.style.display==='none'){try{showStart()}catch(e){}}
+ },1200);
 })();
 /* ================= 音频包导出/导入 ================= */
 const CRC_T=(()=>{const t=new Uint32Array(256);

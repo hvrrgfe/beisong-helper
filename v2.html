@@ -408,7 +408,7 @@ function load(){try{const d=JSON.parse(localStorage.getItem(LS));if(d&&d.materia
       toast('已迁移旧版背诵小助手的材料')}}catch(e){}
   return d}
 function mkMat(title,text,items,lang,cat){
-  const sents=(items&&items.length)?items.map(x=>({t:x.t,n:x.n||'',tt:x.tt||'',clip:x.clip||'',l:x.l||''})):{};
+  const sents=(items&&items.length)?items.map(x=>({t:x.t,n:x.n||'',tt:x.tt||'',clip:x.clip||'',l:x.l||'',s:x.s,e:x.e})):{};
   const m={id:'m'+Date.now()+Math.floor(Math.random()*999),title:title,lang:lang||(items&&items[0]?langOf(items[0].t):(text?langOf(text):'zh')),
     cat:cat||'',text:text||'',items:sents,ts:Date.now()};
   m.st=(items||[]).map(x=>0);m.lv=(items||[]).map(x=>0);m.nr=(items||[]).map(x=>0);m.bp={stage:1,idx:0};
@@ -528,7 +528,9 @@ function unlockAudio(){ // iOS：必须在用户手势内同步 play 一次，�
   }catch(e){}}
 document.addEventListener('touchend',unlockAudio,true);
 document.addEventListener('click',unlockAudio,true);
-function stopAudioOnly(){speakToken++;try{speechSynthesis.cancel()}catch(e){};audio.pause();curKey=''}
+function stopAudioOnly(){speakToken++;try{speechSynthesis.cancel()}catch(e){};audio.pause();
+  if(seekTimer){clearInterval(seekTimer);seekTimer=null}
+  audio.ontimeupdate=null;audio.onended=null;audio.onloadedmetadata=null;curKey=''}
 function setPlayBtn(){$('#btnPlay').textContent=running?'⏸':'▶'}
 async function playKey(k,token){ // 返回 'done'|'missing'|'blocked'
   let b=blobCache.get(k)||await blobGet(k);
@@ -550,6 +552,7 @@ async function playIndex(i,rep){
   if(matIdx<0)return;const m=S();if(i<0||i>=slen(m))return;
   const _it=sents(m)[i];
   if(_it&&_it.clip){playClipChain(i);return}   // 原声片段材料：直接播片段并连播
+  if(m.seek&&_it&&_it.s!=null){playSeekChain(i);return} // 整段音频 seek 模式
   stopAudioOnly();
   const tk=++speakToken;
   cur=i;renderList();renderDots();saveBp();
@@ -705,6 +708,38 @@ function playClipChain(i){
     if(i+1<slen(m)&&its[i+1].clip)playClipChain(i+1);
     else{running=false;setPlayBtn();markSpeaking(-1);cur=-1;$('#nowInfo').textContent=''}}
   );
+}
+/* 整段音频 seek 播放（政史地生带背：一个大 m4a，按句跳时间点） */
+let seekTimer=null;
+function playSeekChain(i){
+  const m=S();if(!m||!m.seek||i<0||i>=slen(m))return;
+  const its=sents(m),it=its[i];
+  if(it.s==null){running=false;setPlayBtn();return}
+  cur=i;markSpeaking(i);renderDots();saveBp();
+  const nm=it.n?(' · '+it.n):'';
+  $('#nowInfo').textContent='第 '+(i+1)+' / '+slen(m)+' 段'+nm;
+  const el=document.getElementById('sent'+i);
+  if(el)el.scrollIntoView({block:'nearest',behavior:'smooth'});
+  stopAudioOnly();running=true;setPlayBtn();
+  if(seekTimer){clearInterval(seekTimer);seekTimer=null}
+  let tries=0;
+  const startAt=it.s,endAt=it.e;
+  const seekTo=()=>{try{audio.currentTime=startAt}catch(_){}};
+  audio.onloadedmetadata=()=>{if(Math.abs(audio.currentTime-startAt)>2)seekTo()};
+  audio.ontimeupdate=()=>{if(audio.currentTime>=endAt)finish()};
+  audio.onended=()=>finish();
+  function finish(){
+    if(seekTimer){clearInterval(seekTimer);seekTimer=null}
+    audio.ontimeupdate=null;audio.onended=null;audio.onloadedmetadata=null;audio.pause();
+    if(i+1<slen(m)&&its[i+1].s!=null)playSeekChain(i+1);
+    else{running=false;setPlayBtn();markSpeaking(-1);cur=-1;$('#nowInfo').textContent=''}}
+  seekTimer=setInterval(()=>{ // 某些浏览器 currentTime 设置后仍从头播，强制拉回
+    if(audio.currentTime<startAt-1.5||audio.currentTime>endAt+8){seekTo()}
+    if(++tries>600){finish()}
+  },1000);
+  audio.src=mediaBase()+m.seek;audio.playbackRate=+DB.settings.speed||1;
+  const p=audio.play();
+  if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
 }
 /* ================= 渲染 ================= */
 function maskHTML(t,mode){
@@ -1281,7 +1316,9 @@ elect();
 async function loadMaterialsFile(){
   try{const r=await fetch('materials.json');if(!r.ok)return;
     const d=await r.json();
-    const ver=String(d.length)+'_'+d.reduce((a,x)=>a+(x.items?x.items.length:0)+(x.tracks?x.tracks.length:0),0);
+    const nc=d.reduce((a,x)=>a+(x.items?x.items.reduce((b,it)=>b+(it.clip?1:0),0):0),0);
+    const ns=d.reduce((a,x)=>a+(x.seek?1:0),0);
+    const ver=String(d.length)+'_'+d.reduce((a,x)=>a+(x.items?x.items.length:0)+(x.tracks?x.tracks.length:0),0)+'_'+nc+'_'+ns;
     if(localStorage.getItem('matver')===ver && DB.materials.length===d.length)return; // 未变化
     const oldById={};DB.materials.forEach(m=>oldById[m.id]=m);
     const news=[];
@@ -1294,6 +1331,7 @@ async function loadMaterialsFile(){
                m.lv=om.lv&&om.lv.length===m.items.length?om.lv:m.lv;
                m.nr=om.nr&&om.nr.length===m.items.length?om.nr:m.nr;
                m.bp=om.bp||m.bp}
+        if(x.seek)m.seek=x.seek;
         news.push(m)}});
     DB.materials=news;matIdx=Math.min(Math.max(matIdx,0),news.length-1);
     localStorage.setItem('matver',ver);

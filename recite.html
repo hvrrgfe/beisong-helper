@@ -385,6 +385,8 @@ function urlFor(k){if(urls.has(k))return urls.get(k);
 /* ================= 队列引擎 ================= */
 const blobCache=new Map();      // key -> Blob（内存热缓存）
 let genBusy=false, genTimer=null, lastGenMs=[], isLeader=false;
+function pageBase(){return location.pathname.replace(/[^/]*$/,'')}
+function mediaBase(){return (location.protocol.indexOf('http')===0)?(pageBase()+'media/'):'media/'}
 function parseApi(){return DB.settings.api||((location.protocol.indexOf('http')===0)?location.origin:'http://192.168.31.57:8899')}
 async function genOne(task){
   const t0=Date.now();
@@ -440,7 +442,9 @@ async function enqueue(key,text,lang,matId,prio){
 async function ensureMat(m,fromIdx){
   const n=slen(m);const from=fromIdx||0;
   for(let i=0;i<n;i++){
-    const it=sents(m)[i],tt=ttsOf(it),lg=it.l||langOf(tt);
+    const it=sents(m)[i];
+    if(it.clip)return;
+    const tt=ttsOf(it),lg=it.l||langOf(tt);
     const kf=keyOf(lg,tt);
     if(!blobCache.has(kf)&&!await blobGet(kf))
       await enqueue(kf,tt,lg,m.id,i<from+3?1:5);
@@ -460,7 +464,8 @@ async function prefetch(from){
 function updateProg(){
   const m=S();if(!m){$('#progWrap').style.display='none';return}
   const n=slen(m);let have=0;
-  for(let i=0;i<n;i++){const it=sents(m)[i],k=keyOf(it.l||langOf(ttsOf(it)),ttsOf(it));
+  for(let i=0;i<n;i++){const it=sents(m)[i];if(it.clip){have++;continue}
+    const k=keyOf(it.l||langOf(ttsOf(it)),ttsOf(it));
     if(blobCache.has(k))have++}
   if(have>=n){$('#progWrap').style.display='none';return}
   $('#progWrap').style.display='flex';
@@ -625,7 +630,7 @@ function sessionEnd(){
 /* 播放提供的原声片段（逐词/逐句） */
 function playClip(clip,onEnd){
   if(!clip)return;
-  const base=(location.protocol.indexOf('http')===0)?(location.origin+'/media/'):'media/';
+  const base=mediaBase();
   stopAudioOnly();running=true;setPlayBtn();
   audio.src=base+clip;audio.playbackRate=+DB.settings.speed||1;
   audio.onended=()=>{running=false;setPlayBtn();if(onEnd)onEnd()};
@@ -952,7 +957,7 @@ async function preloadMaterial(m){
   const api=parseApi();
   const list=[];
   const n=slen(m);
-  for(let i=0;i<n;i++){const it=sents(m)[i];const tt=ttsOf(it);const lg=it.l||langOf(tt);
+  for(let i=0;i<n;i++){const it=sents(m)[i];if(it.clip)continue;const tt=ttsOf(it);const lg=it.l||langOf(tt);
     list.push([keyOf(lg,tt),tt,lg,i])}
   $('#progWrap').style.display='flex';
   let done=0;const total=list.length;const t0=Date.now();
@@ -1324,7 +1329,7 @@ $('#btnImp').onclick=()=>{
       const news=[];
       for(const x of man.materials){
         if(x.tracks){
-          const mm={id:x.id,title:x.title,cat:x.cat||'课本听力',tracks:x.tracks,baseURL:(location.protocol.indexOf('http')===0?location.origin+'/media/':'media/')};
+          const mm={id:x.id,title:x.title,cat:x.cat||'课本听力',tracks:x.tracks,baseURL:mediaBase()};
           // 离线导入：把包内 media/ 的音频装进 IndexedDB 并生成可播放 URL
           try{
             const urls=[];

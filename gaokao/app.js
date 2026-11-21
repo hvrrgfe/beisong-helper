@@ -12,13 +12,6 @@ const SUBJECTS={
 QB.forEach((q,i)=>q.id=i);
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-function renderMath(el){
-  if(!el||!window.renderMathInElement) return;
-  try{
-    renderMathInElement(el,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']});
-  }catch(e){}
-}
 
 /* ---------- real question bank loading ---------- */
 async function loadBank(){
@@ -179,6 +172,7 @@ function nav(id){
   if(id==='stats')renderStats();
   if(id==='wrong')renderWrong();
   if(id==='home')renderHome();
+  if(id==='ai')renderAI();
   window.scrollTo(0,0);
 }
 $$('[data-nav]').forEach(x=>x.onclick=()=>{Sound.tap();nav(x.dataset.nav)});
@@ -309,9 +303,9 @@ function renderWrong(){
     const dueTag=w.due<=todayKey()?'<span class="due-tag">今天复习</span>':`<span class="due-tag later">${w.due} 复习</span>`;
     return `<div class="wrong-item">
       <b>${s.icon} ${s.name} · ${q.k}</b> ${dueTag}
-      <p>${esc(q.q)}</p>
-      <small>正确答案：${'ABCD'[q.ans]} · ${esc(q.a[q.ans])}</small>
-      <p><small>解析：${esc(q.exp)}</small></p></div>`;
+      <p>${q.q}</p>
+      <small>正确答案：${'ABCD'[q.ans]} · ${q.a[q.ans]}</small>
+      <p><small>解析：${q.exp}</small></p></div>`;
   }).join('');
 }
 
@@ -325,14 +319,14 @@ function showQuestion(){
   const q=session.list[session.idx];
   const s=SUBJECTS[q.s];
   const modeLabel=session.mode==='diag'?'能力诊断':session.mode==='review'?'错题复盘':'智能训练';
-  $('#qMeta').textContent=`${modeLabel} · ${s.name} · ${q.k}`;
-  $('#question').textContent=q.q; renderMath($('#question'));
+  const src=q._src||(q.r?(q.r+(q.y?'·'+q.y:'')):(q.exp?'题库':''));
+  $('#qMeta').textContent=`${modeLabel} · ${s.name} · ${q.k}${src?' · '+src:''}${session._byAI?' · 🤖'+session._byAI:''}`;
+  $('#question').textContent=q.q;
   $('#qCount').textContent=`${session.idx+1}/${session.list.length}`;
   $('#qBar').style.width=(session.idx/session.list.length*100)+'%';
   const multi=!!q.multi;
   session.multiSel=multi?[]:null;
-  $('#options').innerHTML=q.a.map((o,i)=>`<button class="option ${multi?'choice':''}" data-i="${i}"><span>${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('');
-  renderMath($('#options'));
+  $('#options').innerHTML=q.a.map((o,i)=>`<button class="option ${multi?'choice':''}" data-i="${i}"><span>${'ABCD'[i]}</span><span>${o}</span></button>`).join('');
   $$('.option').forEach(b=>b.onclick=()=>answer(+b.dataset.i));
   if(multi){
     const btn=document.createElement('button');
@@ -418,10 +412,27 @@ $('#next').onclick=()=>{
     renderHome();nav('home');
   }
 };
-$('#startDaily').onclick=()=>{
+$('#startDaily').onclick=async()=>{
   Sound.start();
+  /* AI 优先：用最近错题诊断薄弱知识点，直接练该知识点 */
+  if(state.diag&&state.wrong.length&&typeof aiPost==='function'){
+    try{
+      const wq=QB[state.wrong[state.wrong.length-1].i];
+      if(wq&&wq.q){
+        const r=await aiPost('/predict',{question:wq.q.slice(0,600)});
+        const pool=QB.filter(q=>q.k===r.chapter||q.k===r.chapter.replace(/\s*知识梳理与习题\.pdf$/,''));
+        if(pool.length>=5){
+          toast('AI 定位薄弱点：'+r.chapter.slice(0,14));
+          startSession(pickAdaptiveFrom(pool,10),'practice');
+          session._byAI='AI 选题';
+          return;
+        }
+      }
+    }catch(e){/* AI 不可达，走本地逻辑 */}
+  }
   const list=state.diag?pickAdaptive(10):pickDiagnostic(12);
   startSession(list,state.diag?'practice':'diag');
+  session._byAI='本地策略';
 };
 $('#quit').onclick=()=>{if(confirm('退出本次训练？已答题进度不会保存。')){session=null;nav('home')}};
 $('#clearWrong').onclick=()=>{if(confirm('确定清空错题本？')){state.wrong=[];save();renderWrong();toast('错题本已清空')}};
@@ -473,3 +484,55 @@ loadWeekly();
 initDay();
 renderHome();renderStats();
 loadBank().then(()=>{updateBankInfo();}).catch(()=>{});
+
+/* ===== AI 智能诊断出题 ===== */
+const AI_BASE=localStorage.aiBase||'http://100.99.67.96:8898';
+let AI_OK=null;
+async function aiCheck(){
+  try{
+    const ctl=('timeout' in AbortSignal)?{signal:AbortSignal.timeout(5000)}:{};
+    const r=await fetch(AI_BASE+'/health',Object.assign({method:'GET'},ctl));
+    AI_OK=r.ok;
+  }catch(e){AI_OK=false}
+  const el=$('#aiStatus');
+  if(el)el.innerHTML=AI_OK?'✅ <b style="color:#58cc02">AI 在线</b> · 电脑端服务':'❌ <b style="color:#ef4444">AI 离线</b> · 当前使用本地策略';
+  const b=$('#aiBadge');
+  if(b)b.textContent=AI_OK?'🤖 AI 已接管选题':'📴 AI 离线 · 本地策略';
+  return AI_OK;
+}
+aiCheck(); setInterval(aiCheck,60000);
+async function aiPost(path,body){
+  const r=await fetch(AI_BASE+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  return r.json();
+}
+function renderAI(){
+  const d=$('#aiDiag'), g=$('#aiGen');
+  if(d._bind)return; d._bind=g._bind=1;
+  $('#aiTest').onclick=async()=>{
+    const el=$('#aiStatus'); el.textContent='测试中…';
+    await aiCheck();
+    toast(AI_OK?'✅ AI 服务正常':'❌ 连不上 AI（地址 '+AI_BASE+'）');
+  };
+  d.onclick=async()=>{
+    const q=$('#aiQ').value.trim(); if(!q)return toast('先粘贴一道题');
+    const out=$('#aiDiagOut'); out.textContent='诊断中…';
+    try{
+      const r=await aiPost('/predict',{question:q});
+      const ch=r.chapter.replace(/\s*知识梳理与习题\.pdf$/,'');
+      out.innerHTML=`<b>知识点：</b>${ch}（置信度 ${(r.confidence*100).toFixed(0)}%）<br><b>难度：</b>${'★'.repeat(r.difficulty)}<br>— 正在推荐同类题 —`;
+      try{
+        const rec=await aiPost('/recommend',{question:q});
+        out.innerHTML+=rec.questions.map(x=>`<div style="margin-top:10px;padding:10px;border-radius:10px;background:#faf7f0"><span style="font-size:12px;color:#999">来源：🤖 AI 推荐 · ${x.subject||''}${x.r?'·'+x.r:''}${x.y?'·'+x.y:''}</span><br>${(x.q||x.question||'').slice(0,300)}${(x.exp||x.answer)?'<br><b>解析：</b>'+(x.exp||x.answer).slice(0,150):''}</div>`).join('');
+      }catch(e){}
+    }catch(e){ out.textContent='连接失败：点上方「测试连接」排查（当前地址 '+AI_BASE+'）'; }
+  };
+  g.onclick=async()=>{
+    const s=$('#aiSubject').value,k=$('#aiKnow').value.trim(),out=$('#aiGenOut');
+    out.textContent='生成中…（约 10-30 秒）';
+    try{
+      const r=await aiPost('/generate',{subject:s,knowledge:k,n:1});
+      out.innerHTML=`<span style="font-size:12px;color:#999">来源：🤖 AI 生成（${s}·${k||'自选考点'}）· 仅供参考，请自行核对</span>\n${r.questions[0]||'（未生成）'}`;
+    }catch(e){ out.textContent='连接失败：点上方「测试连接」排查'; }
+  };
+}

@@ -223,7 +223,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
     <div class="ss-bar">
       <span id="ssCount">已选 0 篇</span>
       <button class="btn" id="ssAll">全选本类</button>
-      <button class="btn primary" id="ssGo" disabled>开始练习 ▶</button>
+      <button class="btn primary" id="ssGo" disabled title="先勾选材料">开始练习 ▶</button>
     </div>
     <button class="btn ss-imp" id="ssImp" style="display:none;margin-top:18px">⬆ 导入音频包（离线包）</button>
   </div>
@@ -999,6 +999,9 @@ function showStart(){
   document.body.classList.toggle('pc',dev==='pc');
   $$('#startScreen .ss-dev-btn').forEach(b=>b.classList.toggle('on',b.dataset.dev===dev));
   buildStart()}
+$('#ssGo').onclick=()=>{
+  if(!ssSel.size){toast('先勾选要背的内容（可跨类多选）');return}
+  startQueue()};
 function startQueue(){
   if(!ssSel.size)return;
   const order=DB.materials.map(m=>m.id);

@@ -543,10 +543,18 @@ async function playIndex(i,rep){
   running=true;setPlayBtn();
   const k=keyOf(lg,ttsOf(it));
   let b=blobCache.get(k)||await blobGet(k);
-  if(!b&&tk===speakToken){toast('这句还没生成，正在排队…');
+  if(!b&&tk===speakToken){
+    // 静态站点/离线包：直接取这一个文件（比等队列快得多）
+    toast('正在加载这句音频…',2000);
+    try{const r=await fetch('audio/'+k+'.mp3');
+      if(r.ok){b=await r.blob();blobCache.set(k,b);blobPut(k,b)}}catch(e){}
+  }
+  if(!b&&tk===speakToken){
     await enqueue(k,it.t,lg,m.id,0);genLoop();
-    for(let w=0;w<600&&tk===speakToken;w++){await new Promise(r=>setTimeout(r,300));
-      b=blobCache.get(k)||await blobGet(k);if(b)break}}
+    for(let w=0;w<200&&tk===speakToken;w++){await new Promise(r=>setTimeout(r,300));
+      b=blobCache.get(k)||await blobGet(k);if(b)break}
+    if(!b&&tk===speakToken){toast('这句音频还没生成（离线包未同步？），先跳过',3500);running=false;setPlayBtn();return}
+  }
   markSpeaking(i);
   const reps=rep||+DB.settings.rep||1;
   for(let r=0;r<reps;r++){
@@ -1051,6 +1059,8 @@ async function preloadMaterial(m){
   const n=slen(m);
   for(let i=0;i<n;i++){const it=sents(m)[i];if(it.clip)continue;const tt=ttsOf(it);const lg=it.l||langOf(tt);
     list.push([keyOf(lg,tt),tt,lg,i])}
+  // 当前句排最前，先把要播的拿到
+  if(cur>=0){const ix=list.findIndex(x=>x[3]===cur);if(ix>0)list.unshift(list.splice(ix,1)[0])}
   $('#progWrap').style.display='flex';
   let done=0;const total=list.length;const t0=Date.now();
   const worker=async()=>{

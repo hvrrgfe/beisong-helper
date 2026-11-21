@@ -228,6 +228,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
     <button class="btn ss-imp" id="ssImp" style="display:none;margin-top:18px">⬆ 导入音频包（离线包）</button>
   </div>
 </div>
+<button id="sideToggle" title="材料/阶段栏（M键）">☰</button><div id="sideMask"></div>
 <aside id="pcSide">
   <div class="ps-logo">🎧 边听边背</div>
   <div class="ps-sec">阶段</div>
@@ -1047,6 +1048,16 @@ function renderPcSide(){
       box.appendChild(b)})});
 }
 $('#ssImp').onclick=()=>{$('#btnImp').click()};
+$$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
+  $$('#startScreen .ss-dev-btn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  $('#startScreen').dataset.dev=b.dataset.dev;
+  document.body.classList.toggle('pc',b.dataset.dev==='pc')});
+$('#sideToggle').onclick=()=>{document.body.classList.toggle('side-open');renderPcSide()};
+$('#sideMask').onclick=()=>document.body.classList.remove('side-open');
+document.addEventListener('keydown',e=>{
+  if(document.body.classList.contains('pc')&&!e.target.matches('input,textarea,select')&&(e.key==='m'||e.key==='M')){
+    document.body.classList.toggle('side-open');renderPcSide()}});
 /* ================= 初始化 ================= */
 const bc=('BroadcastChannel'in window)?new BroadcastChannel('recite-gen'):null;
 let hbTimer=null;

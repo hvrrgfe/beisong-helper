@@ -304,7 +304,7 @@ const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()
 const TV=location.search.indexOf('tv=1')>=0||/Android TV|MiTV|BRAVIA|AFT|_shield/i.test(navigator.userAgent);
 if(TV)document.body.classList.add('tv');
 function fnv(str,seed){let h=seed>>>0;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return h}
-function keyOf(lang,text){const s=(lang==='en'?'edge':VOICE)+'|'+KVER+'|'+lang+'|'+text;
+function keyOf(lang,text){const s=(lang==='en'?'b1_en':VOICE)+'|'+KVER+'|'+lang+'|'+text;
   return fnv(s,0x811c9dc5).toString(16).padStart(8,'0')+fnv(s,0x01935279).toString(16).padStart(8,'0')}
 function splitSentences(text){
   const out=[];
@@ -352,6 +352,7 @@ const qAll=()=>tx('queue','readonly',s=>s.getAll());
 const qAdd=t=>tx('queue','readwrite',s=>s.add(t));
 const qPut=t=>tx('queue','readwrite',s=>s.put(t));
 const qDel=id=>tx('queue','readwrite',s=>s.delete(id));
+async function qClear(){try{const ts=await qAll();for(const t of ts)await qDel(t.id)}catch(e){}}
 const metaGet=k=>tx('meta','readonly',s=>s.get(k));
 const metaPut=(k,v)=>tx('meta','readwrite',s=>s.put(v,k));
 /* ================= 数据 ================= */
@@ -408,8 +409,15 @@ async function genOne(task){
   blobCache.set(task.key,b);await blobPut(task.key,b);
   lastGenMs.push(Date.now()-t0);if(lastGenMs.length>10)lastGenMs.shift();
   return true}
+let apiAliveCache=null, apiAliveAt=0;
+async function apiAlive(){
+  const now=Date.now();
+  if(apiAliveCache!==null && now-apiAliveAt<30000)return apiAliveCache;
+  try{const r=await fetch(parseApi()+'/docs');apiAliveCache=!!r&&r.ok}catch(e){apiAliveCache=false}
+  apiAliveAt=now;return apiAliveCache}
 async function genLoop(){
   if(genBusy)return;
+  if(!(await apiAlive())){updateProg();return}   // 静态托管：不做现场生成
   const tasks=await qAll();
   const pend=tasks.filter(t=>t.state===0).sort((a,b)=>(a.prio-b.prio)||(a.id-b.id));
   if(!pend.length){updateProg();return}
@@ -426,6 +434,7 @@ async function genLoop(){
   genTimer=setTimeout(genLoop,200)}
 async function enqueue(key,text,lang,matId,prio){
   const tasks=await qAll();
+  if(tasks.filter(t=>t.state===0).length>150)return;   // 防止队列膨胀拖慢页面
   if(tasks.some(t=>t.key===key&&t.state!==3))return;
   await qAdd({key,text,lang,matId,prio:prio==null?5:prio,state:0,tries:0})}
 async function ensureMat(m,fromIdx){
@@ -957,7 +966,7 @@ async function preloadMaterial(m){
           if(!b){const r=await fetch(api+'/api/audio/'+k+'.mp3');if(r.ok)b=await r.blob()}
           if(!b){ // 预生成还没跑到这句 → 现场合成补齐
             const r2=await fetch(api+'/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},
-              body:JSON.stringify({text:t,lang:lg,provider:(lg==='en'?'edge':'sovits'),speed:1})});
+              body:JSON.stringify({text:t,lang:lg,provider:'sovits',ref:(lg==='en'?'b1_en':''),speed:1})});
             if(r2.ok)b=await r2.blob()}
           if(b){blobCache.set(k,b);blobPut(k,b)}
         }catch(e){}}
@@ -1156,6 +1165,7 @@ window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.mes
   stage=DB.settings.stage||1;
   $$('#stages button').forEach(b=>b.classList.toggle('on',b.dataset.s==stage));
   $('#kHintW').style.display=stage===4?'flex':'none';
+  await qClear();          // 清掉历史遗留的生成任务，避免一进页面就狂拉音频
   renderSel();
   if(!TV){showStart();$('#ssCount').textContent='正在加载材料…'}
   await loadMaterialsFile();

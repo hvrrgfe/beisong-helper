@@ -113,6 +113,27 @@ body.immersion footer{background:transparent;border-top:none}
 body.immersion #sideToggle{position:fixed;left:12px;top:12px;z-index:121;background:var(--card)}
 #immExit{display:none;position:fixed;right:12px;top:12px;z-index:121}
 body.immersion #immExit{display:inline-block}
+/* ---- 参考课件式：进度点条 / 总览 / 朗读中高亮 ---- */
+#dots{display:flex;flex-wrap:wrap;gap:4px;padding:10px 12px;background:var(--card);
+  border:1px solid var(--line);border-radius:12px;margin-bottom:10px;align-items:center}
+#dots button{min-width:26px;height:26px;padding:0 5px;border:1px solid var(--line);border-radius:7px;
+  background:#fff;color:var(--sub);font-size:12px;cursor:pointer}
+#dots button:hover{border-color:var(--accent);color:var(--accent)}
+#dots button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+#dots button.done{background:#eaf6ee;border-color:#bfe3cd;color:var(--green)}
+#dots button.fuzzy{background:#fff8e1;border-color:#f0dca6;color:#a8862a}
+#dots button.nowSpeak{box-shadow:0 0 0 2px rgba(74,125,216,.35)}
+#dots .sep{width:1px;height:18px;background:var(--line);margin:0 4px}
+.sent.speaking-now{background:var(--active);border-color:var(--accent)}
+.ov-row{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border:1px solid var(--line);
+  border-radius:10px;margin-bottom:6px;background:#fff}
+.ov-row:hover{border-color:var(--accent)}
+.ov-no{flex:none;width:26px;height:26px;border-radius:50%;background:var(--bg);display:flex;
+  align-items:center;justify-content:center;font-size:12px;color:var(--sub)}
+.ov-main{flex:1;line-height:1.7;font-size:15px}
+.ov-note{font-size:12px;color:var(--sub)}
+.ov-badge{flex:none;font-size:12px;color:var(--green)}
+.ov-play{flex:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 8px;cursor:pointer}
 /* ---- 开始界面 ---- */
 #startScreen{position:fixed;inset:0;background:var(--bg);z-index:200;display:none;
   flex-direction:column;align-items:center;overflow:auto;padding:34px 16px}
@@ -199,6 +220,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button class="btn" id="btnImp">⬆导入</button>
   <button class="btn" id="btnPrint" title="打印背诵稿">🖨</button>
   <button class="btn" id="btnFull" title="全屏（F）">⛶</button>
+  <button class="btn" id="btnOv" title="总览">📋</button>
   <button class="btn" id="btnSet">⚙</button>
 </header>
 <div id="stages">
@@ -218,7 +240,15 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <label id="kHintW" style="display:none">提示 <input type="range" id="kHint" min="0" max="100" step="10"><span id="kHintV"></span></label>
 </div>
 <div id="pausePanel"><div class="pp1" id="ppTitle">该你了</div><div id="pauseBar"><div id="pauseFill"></div></div><div class="pp2">空格=提前揭晓 · <span id="pauseCd"></span></div></div>
-<main id="list"></main>
+<main id="list">
+  <div id="dots"></div>
+  <div id="listInner"></div>
+</main>
+<dialog id="ovDlg"><form class="dlg" method="dialog">
+  <h3>总览 · <span id="ovTitle"></span></h3>
+  <div id="ovList" style="max-height:62vh;overflow:auto"></div>
+  <div class="frow btns"><button class="btn primary" type="submit">关闭</button></div>
+</form></dialog>
 <!-- 开始界面 -->
 <div id="startScreen">
   <div class="ss-box">
@@ -254,6 +284,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button class="ctrl" id="btnNext" title="下一句（→）">⏭</button>
   <button class="ctrl" id="btnReplay" title="重播本句（R）">↻</button>
   <button class="ctrl" id="btnAB" title="本句循环（L）">🔁</button>
+  <button class="ctrl" id="btnAuto" title="整篇自动循环">🔄</button>
   <button class="ctrl" id="btnStop" title="停止">⏹</button>
   <span id="nowInfo"></span>
   <div class="spacer"></div>
@@ -509,7 +540,7 @@ async function playIndex(i,rep){
   if(_it&&_it.clip){playClipChain(i);return}   // 原声片段材料：直接播片段并连播
   stopAudioOnly();
   const tk=++speakToken;
-  cur=i;renderList();saveBp();
+  cur=i;renderList();renderDots();saveBp();
   const it=sents(m)[i],lg=it.l||langOf(ttsOf(it));
   running=true;setPlayBtn();
   const k=keyOf(lg,ttsOf(it));
@@ -518,6 +549,7 @@ async function playIndex(i,rep){
     await enqueue(k,it.t,lg,m.id,0);genLoop();
     for(let w=0;w<600&&tk===speakToken;w++){await new Promise(r=>setTimeout(r,300));
       b=blobCache.get(k)||await blobGet(k);if(b)break}}
+  markSpeaking(i);
   const reps=rep||+DB.settings.rep||1;
   for(let r=0;r<reps;r++){
     if(tk!==speakToken)return;
@@ -525,6 +557,7 @@ async function playIndex(i,rep){
     if(res==='missing'){toast('⚠ 音频不可用（TTS 服务未启动？）',4000);running=false;setPlayBtn();return}
     if(res==='blocked'){stopAudioOnly();running=false;setPlayBtn();return}}
   if(tk!==speakToken)return;
+  markSpeaking(-1);
   if(abLoop){playIndex(cur,rep);return}
   running=false;setPlayBtn();
   afterSentence()}
@@ -549,7 +582,9 @@ function hidePause(){if(pauseAbort)pauseAbort();pauseAbort=null;
 async function afterSentence(){
   if(!S())return;const m=S();
   const n=slen(m);
-  const done=()=>{running=false;setPlayBtn();sessionEnd();qAdvance()};
+  const done=()=>{running=false;setPlayBtn();
+    if(DB.settings.autoLoop){setTimeout(()=>playIndex(0),700);return}
+    sessionEnd();qAdvance()};
   const g=String(DB.settings.gap);
   if(stage===1){ // 磨耳朵：连播
     if(cur<n-1){playIndex(cur+1)}else done();
@@ -673,7 +708,7 @@ function renderStat(){
 function countDue(){let c=0;const today=Date.now();
   DB.materials.forEach(m=>{if(!m.nr)return;sents(m).forEach((s,i)=>{if(m.nr[i]&&m.nr[i]<=today&&m.st[i]!==2)c++})});return c}
 function renderList(){
-  const box=$('#list');box.innerHTML='';
+  const box=$('#listInner');box.innerHTML='';
   if(matIdx<0){const offline=location.protocol.indexOf('http')!==0;
     box.innerHTML='<div class="empty">'+(offline
       ?'离线模式：点右上角「⬆导入」，选择音频包 zip（含材料+全部音频），<br>导入后即可离线边听边背。'
@@ -790,6 +825,54 @@ function checkDict(i,m){
       :x.miss?'<span class="miss">＿</span>':'<span class="bad">'+esc(x.c)+'</span>').join('');
     stat='对 '+seq.filter(x=>x.ok).length+' / 漏 '+seq.filter(x=>x.miss).length+' / 错多 '+seq.filter(x=>x.extra).length}
   res.innerHTML=html+'<div class="dstat">'+stat+'</div>'}
+/* 进度点条（参考课件 renderDots）*/
+function renderDots(){
+  const box=$('#dots');const m=S();
+  if(!m||m.tracks||!slen(m)){box.innerHTML='';return}
+  box.innerHTML='';
+  for(let i=0;i<slen(m);i++){
+    const b=document.createElement('button');
+    b.textContent=i+1; b.title='第 '+(i+1)+' 句';
+    const st=(m.st&&m.st[i])||0;
+    if(i===cur)b.className='on';
+    else if(st===2)b.className='done';
+    else if(st===1)b.className='fuzzy';
+    if(i===cur&&speakingNow)b.classList.add('nowSpeak');
+    b.onclick=()=>{stopAudioOnly();running=false;setPlayBtn();cur=i;renderList();renderDots();playIndex(i)};
+    box.appendChild(b)}
+}
+/* 总览（参考课件 renderOverview）*/
+function renderOverview(){
+  const m=S();if(!m)return;
+  $('#ovTitle').textContent=m.title;
+  const box=$('#ovList');box.innerHTML='';
+  box.innerHTML+='<div class="ov-sec" style="font-weight:700;margin:4px 0 10px">'
+    +'<span style="background:var(--accent);color:#fff;border-radius:6px;padding:2px 7px;font-size:12px;margin-right:8px">PART 01</span>'
+    +esc(m.title)+' <span style="color:var(--sub);font-weight:400;font-size:13px">共 '+slen(m)+' 句</span></div>';
+  if(m.tracks){
+    box.innerHTML=m.tracks.map((t,i)=>'<div class="ov-row"><div class="ov-no">'+(i+1)+'</div><div class="ov-main">'+esc(t.t)+'</div>'+
+      '<button class="ov-play" data-i="'+i+'">🔊</button></div>').join('');
+    box.querySelectorAll('.ov-play').forEach(b=>b.onclick=()=>{playClip(m.tracks[b.dataset.i].file);$('#ovDlg').close()});
+    return}
+  sents(m).forEach((it,i)=>{
+    const st=(m.st&&m.st[i])||0;
+    const badge=st===2?'<span class="ov-badge">✓ 已背</span>':(st===1?'<span class="ov-badge" style="color:#a8862a">~ 模糊</span>':'');
+    const d=document.createElement('div');d.className='ov-row';
+    d.innerHTML='<div class="ov-no">'+(i+1)+'</div><div class="ov-main">'+
+      (it.n?'<div class="ov-note">'+esc(it.n)+'</div>':'')+esc(it.t)+'</div>'+badge+
+      '<button class="ov-play" data-i="'+i+'">🔊</button>';
+    d.onclick=()=>{cur=i;renderList();renderDots();playIndex(i);$('#ovDlg').close()};
+    d.querySelector('.ov-no').onclick=e=>{e.stopPropagation();cur=i;renderList();renderDots();
+      $('#ovDlg').close();toast('已设为起点：第 '+(i+1)+' 句')};
+    box.appendChild(d)})}
+$('#btnOv').onclick=()=>{renderOverview();$('#ovDlg').showModal()};
+/* 朗读中的句子高亮（参考课件 markLine）*/
+let speakingNow=false;
+function markSpeaking(i){
+  speakingNow=(i>=0);
+  $$('.sent').forEach(el=>el.classList.remove('speaking-now'));
+  if(i>=0){const el=document.getElementById('sent'+i);if(el)el.classList.add('speaking-now')}
+  renderDots()}
 function renderActive(){const el=document.getElementById('sent'+cur);
   if(el)el.scrollIntoView({block:'nearest',behavior:'smooth'})}
 function renderSel(){
@@ -804,7 +887,7 @@ function renderSel(){
   if(DB.materials.length){matIdx=Math.min(Math.max(matIdx,0),DB.materials.length-1);sel.value=matIdx}
   else matIdx=-1;
   renderAll()}
-function renderAll(){renderStat();renderList();stopAudioOnly();running=false;setPlayBtn();cur=-1;$('#nowInfo').textContent='';hidePause();renderQChip();renderPcSide();
+function renderAll(){renderStat();renderList();renderDots();stopAudioOnly();running=false;setPlayBtn();cur=-1;$('#nowInfo').textContent='';hidePause();renderQChip();renderPcSide();
   $('#kHintW').style.display=stage===4?'flex':'none'}
 function saveBp(){if(!DB.settings.bp)return;const m=S();if(m&&cur>=0){m.bp={stage,idx:cur}}}
 /* ================= 事件绑定 ================= */
@@ -844,6 +927,10 @@ $('#btnPrev').onclick=()=>{if(matIdx<0)return;
 $('#btnReplay').onclick=()=>{if(cur>=0)playIndex(cur)};
 $('#btnAB').onclick=()=>{abLoop=!abLoop;$('#btnAB').classList.toggle('on',abLoop);
   if(abLoop&&cur>=0)playIndex(cur)};
+$('#btnAuto').onclick=()=>{DB.settings.autoLoop=!DB.settings.autoLoop;save();
+  $('#btnAuto').classList.toggle('on',!!DB.settings.autoLoop);
+  toast(DB.settings.autoLoop?'🔄 整篇自动循环已开':'自动循环已关')};
+$('#btnAuto').classList.toggle('on',!!DB.settings.autoLoop);
 $('#btnStop').onclick=()=>{stopAudioOnly();running=false;setPlayBtn();hidePause();chainStart.seq=null;chainStart.waitMark=false};
 $('#btnOk').onclick=()=>{if(chainStart.waitMark)markResult(true)};
 $('#btnStuck').onclick=()=>{if(chainStart.waitMark)markResult(false)};

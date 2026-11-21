@@ -365,7 +365,7 @@ function load(){try{const d=JSON.parse(localStorage.getItem(LS));if(d&&d.materia
       toast('已迁移旧版背诵小助手的材料')}}catch(e){}
   return d}
 function mkMat(title,text,items,lang,cat){
-  const sents=(items&&items.length)?items.map(x=>({t:x.t,n:x.n||''})):{};
+  const sents=(items&&items.length)?items.map(x=>({t:x.t,n:x.n||'',tt:x.tt||'',clip:x.clip||'',l:x.l||''})):{};
   const m={id:'m'+Date.now()+Math.floor(Math.random()*999),title:title,lang:lang||(items&&items[0]?langOf(items[0].t):(text?langOf(text):'zh')),
     cat:cat||'',text:text||'',items:sents,ts:Date.now()};
   m.st=(items||[]).map(x=>0);m.lv=(items||[]).map(x=>0);m.nr=(items||[]).map(x=>0);m.bp={stage:1,idx:0};

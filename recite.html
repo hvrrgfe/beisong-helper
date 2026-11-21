@@ -1078,9 +1078,11 @@ async function loadMaterialsFile(){
 (async function init(){
   await idbOpen();
   try{await navigator.storage.persist()}catch(e){}
-  // 恢复内存热缓存（上限 300 条最近使用的）
-  const keys=await blobKeys();
-  for(const k of keys.slice(0,300)){const v=await blobGet(k);if(v&&v.b)blobCache.set(k,v.b)}
+  // 恢复内存热缓存（后台进行，不阻塞开始界面）
+  (async()=>{try{
+    const keys=await blobKeys();
+    for(const k of keys.slice(0,300)){const v=await blobGet(k);if(v&&v.b)blobCache.set(k,v.b)}
+  }catch(e){}})();
   $('#kSpd').value=DB.settings.speed;$('#kSpdV').textContent=' '+DB.settings.speed.toFixed(2)+'×';
   $('#kGap').value=DB.settings.gap;$('#kMask').value=DB.settings.mask;
   $('#kRep').value=DB.settings.rep;$('#kChunk').value=DB.settings.chunk;$('#kHint').value=DB.settings.hint;

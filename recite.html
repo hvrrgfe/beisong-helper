@@ -134,8 +134,6 @@ body.side-open #pcSide{display:block;transform:none;box-shadow:8px 0 28px rgba(0
   padding:0;font-size:18px;flex:none}
 .ps-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .ps-head .ps-logo{margin-bottom:0}
-#sideMask{display:none;position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:110}
-body.side-open #sideMask{display:block}
 .ps-logo{font-size:19px;font-weight:700;margin-bottom:14px}
 .ps-sec{color:var(--sub);font-size:13px;margin:14px 0 6px;font-weight:600}
 #psStages button{display:block;width:100%;text-align:left;padding:9px 12px;margin-bottom:4px;
@@ -229,7 +227,6 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
     <button class="btn ss-imp" id="ssImp" style="display:none;margin-top:18px">⬆ 导入音频包（离线包）</button>
   </div>
 </div>
-<div id="sideMask"></div>
 <aside id="pcSide">
   <div class="ps-head"><span class="ps-logo">🎧 边听边背</span><button class="btn" id="sideClose">✕</button></div>
   <div class="ps-sec">阶段</div>
@@ -1065,7 +1062,6 @@ $$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
   $('#startScreen').dataset.dev=b.dataset.dev;
   document.body.classList.toggle('pc',b.dataset.dev==='pc')});
 $('#sideToggle').onclick=()=>{document.body.classList.toggle('side-open');renderPcSide()};
-$('#sideMask').onclick=()=>document.body.classList.remove('side-open');
 $('#sideClose').onclick=()=>document.body.classList.remove('side-open');
 document.addEventListener('keydown',e=>{
   if(document.body.classList.contains('pc')&&!e.target.matches('input,textarea,select')&&(e.key==='m'||e.key==='M')){

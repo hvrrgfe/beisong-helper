@@ -1133,8 +1133,8 @@ async function loadMaterialsFile(){
     const d=await r.json();
     d.forEach(x=>{if(x.tracks){DB.materials.push(x)}
       else{const m=mkMat(x.title,x.text,x.items,x.lang,x.cat);m.id=x.id||m.id;DB.materials.push(m)}});
-    save();renderSel();toast('已加载 '+d.length+' 篇材料，开始后台生成音频…',4000);
-    DB.materials.forEach(m=>{if(!m.tracks)ensureMat(m)});genLoop()}catch(e){}}
+    save();renderSel();toast('已加载 '+d.length+' 篇材料',3000);
+  }catch(e){}}
 window.__initErr='';
 window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.message||'err')+' @'+(e.lineno||'')});
 (async function init(){
@@ -1335,7 +1335,6 @@ $('#btnImp').onclick=()=>{
           if(x.st){m.st=x.st;m.lv=x.lv||m.lv;m.nr=x.nr||m.nr}
           news.push(m)}}
       DB.materials=news;matIdx=0;save();renderSel();
-      DB.materials.forEach(m=>{if(!m.tracks)ensureMat(m)});genLoop();
       toast('✅ 导入完成：'+news.length+' 篇 / '+na+' 段音频',4000)}
     catch(e){toast('❌ 导入失败：'+e.message,4000)}};
   inp.click()};

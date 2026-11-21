@@ -4,6 +4,9 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#58cc02"><title>高考全科提分训练营</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="preload" as="style" href="https://registry.npmmirror.com/katex/0.16.11/files/dist/katex.min.css"
+      onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://registry.npmmirror.com/katex/0.16.11/files/dist/katex.min.css"></noscript>
 </head>
 <body>
 <div id="app">
@@ -24,7 +27,7 @@
         <div class="section-head"><h2>今日目标</h2><span id="dailyText">0 / 20 题</span></div>
         <div class="goal"><div class="ring" id="goalRing"><span>0%</span></div><div><b>完成每日训练</b><p>答对 10 题获得 30 宝石</p></div></div>
         <button class="primary big" id="startDaily">开始智能训练</button>
-        <span id="bankInfo"></span><span id="aiBadge" class="muted" style="margin-left:6px"></span><p class="muted" id="modeHint">先完成一次诊断，系统会定位薄弱点</p>
+        <span id="bankInfo"></span><p class="muted" id="modeHint">先完成一次诊断，系统会定位薄弱点</p>
       </div>
       <h2 class="section-title">今日重点</h2>
       <div id="focusList" class="focus-list"></div>
@@ -80,40 +83,15 @@
     <section id="profile" class="view">
       <div class="profile-card"><div class="avatar">🦉</div><h1>理科探索者</h1><p id="levelText">Lv.1 起步阶段</p><div class="level-track"><div id="levelBar"></div></div><small id="levelNext">再获得 100 XP 升级</small></div>
       <button class="menu-item" data-nav="wrong"><span>📕</span><b>我的错题本</b><em id="wrongCount">0</em></button>
-      <button class="menu-item" data-nav="ai"><span>🤖</span><b>AI 智能诊断出题</b><em>›</em></button>
       <button class="menu-item" data-nav="stats"><span>📊</span><b>学习报告</b><em>›</em></button>
       <div class="menu-item"><span>🔔</span><b>音效开关</b><em id="voiceSwitch" class="switch on"></em></div>
       <div class="menu-item"><span>🎵</span><b>界面音效</b><em id="sfxSwitch" class="switch on"></em></div>
       <button class="menu-item" id="reset"><span>♻️</span><b>重置学习记录</b><em>›</em></button>
       <p class="version">高考全科提分训练营 v1.0 · 本地自动保存</p>
     </section>
-    <section id="ai" class="view">
-      <div class="daily-card">
-        <div class="section-head"><h2>🤖 AI 智能诊断</h2></div>
-        <p class="muted">粘贴一道题（或做错的题），AI 定位知识点与难度，并推荐同类题</p>
-        <textarea id="aiQ" rows="5" placeholder="例如：下列反应中，氯元素被氧化的是……" style="width:100%;border-radius:12px;border:1px solid #e5e0d5;padding:10px;font-size:15px"></textarea>
-        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
-          <button class="primary big" id="aiDiag" style="flex:1">诊断并推荐</button>
-          <button class="secondary" id="aiTest">🔗 测试连接</button>
-        </div>
-        <div id="aiStatus" class="muted" style="margin-top:8px">检查中…</div>
-        <div id="aiDiagOut" class="muted" style="margin-top:10px"></div>
-      </div>
-      <div class="daily-card">
-        <div class="section-head"><h2>✨ AI 出题</h2></div>
-        <div style="display:flex;gap:8px;align-items:center">
-          <select id="aiSubject" style="flex:0 0 100px;padding:8px;border-radius:10px;border:1px solid #e5e0d5">
-            <option>化学</option><option>数学</option><option>生物</option><option>英语</option><option>语文</option><option>物理</option><option>历史</option><option>地理</option>
-          </select>
-          <input id="aiKnow" placeholder="知识点（可选，如：氧化还原反应）" style="flex:1;padding:8px;border-radius:10px;border:1px solid #e5e0d5;font-size:14px">
-        </div>
-        <button class="primary big" id="aiGen" style="margin-top:8px">生成新题</button>
-        <div id="aiGenOut" style="margin-top:10px;white-space:pre-wrap;font-size:15px;line-height:1.7"></div>
-      </div>
-      <p class="muted" style="text-align:center">AI 服务运行在电脑上，需在家用 Wi-Fi 下使用</p>
-    </section>
   </main>
-  <nav class="bottom-nav">    <button data-nav="home"><span>🏠</span><small>首页</small></button>
+  <nav class="bottom-nav">
+    <button data-nav="home"><span>🏠</span><small>首页</small></button>
     <button data-nav="practice"><span>✏️</span><small>训练</small></button>
     <button data-nav="stats"><span>📊</span><small>统计</small></button>
     <button data-nav="wrong"><span>📕</span><small>错题</small></button>
@@ -121,7 +99,15 @@
   </nav>
 </div>
 <div id="toast"></div>
+<script defer src="https://registry.npmmirror.com/katex/0.16.11/files/dist/katex.min.js"></script>
+<script defer src="https://registry.npmmirror.com/katex/0.16.11/files/dist/contrib/auto-render.min.js"></script>
+<script>
+(function(){var K='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/';
+function load(src,cb){var s=document.createElement('script');s.src=src;s.onload=cb;s.onerror=cb;document.head.appendChild(s)}
+function boot(){if(window.renderMathInElement)return;load(K+'katex.min.js',function(){if(window.katex)load(K+'contrib/auto-render.min.js',function(){window.__katexReady&&window.__katexReady()})})}
+setTimeout(function(){if(!window.renderMathInElement)boot()},4000)})();
+</script>
 <script src="data.js"></script>
 <script src="sound.js"></script>
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body></html>

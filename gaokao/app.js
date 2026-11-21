@@ -19,6 +19,10 @@ function renderMath(el){
     renderMathInElement(el,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']});
   }catch(e){}
 }
+window.__katexReady=function(){
+  renderMath($('#question'));renderMath($('#options'));
+  const ex=document.querySelector('#feedback:not(.hidden) .explain');renderMath(ex);
+};
 
 /* ---------- real question bank loading ---------- */
 async function loadBank(){

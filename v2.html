@@ -682,9 +682,14 @@ function playClipChain(i){
   const m=S();if(!m||i<0||i>=slen(m))return;
   const its=sents(m);
   if(!its[i]||!its[i].clip){running=false;setPlayBtn();return}
+  cur=i;markSpeaking(i);renderDots();saveBp();
+  const nm=its[i].n?(' · '+its[i].n):'';
+  $('#nowInfo').textContent='第 '+(i+1)+' / '+slen(m)+' 段'+nm;
+  const el=document.getElementById('sent'+i);
+  if(el)el.scrollIntoView({block:'nearest',behavior:'smooth'});
   playClip(its[i].clip,()=>{
     if(i+1<slen(m)&&its[i+1].clip)playClipChain(i+1);
-    else{running=false;setPlayBtn();cur=-1;$('#nowInfo').textContent=''}}
+    else{running=false;setPlayBtn();markSpeaking(-1);cur=-1;$('#nowInfo').textContent=''}}
   );
 }
 /* ================= 渲染 ================= */

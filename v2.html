@@ -1134,12 +1134,25 @@ function elect(){const t=+localStorage.getItem('recite_leader')||0;
 if(bc){bc.onmessage=()=>{};setInterval(elect,3000)}
 elect();
 async function loadMaterialsFile(){
-  if(DB.materials.length)return;
   try{const r=await fetch('materials.json');if(!r.ok)return;
     const d=await r.json();
-    d.forEach(x=>{if(x.tracks){DB.materials.push(x)}
-      else{const m=mkMat(x.title,x.text,x.items,x.lang,x.cat);m.id=x.id||m.id;DB.materials.push(m)}});
-    save();renderSel();toast('已加载 '+d.length+' 篇材料',3000);
+    const ver=String(d.length)+'_'+d.reduce((a,x)=>a+(x.items?x.items.length:0)+(x.tracks?x.tracks.length:0),0);
+    if(localStorage.getItem('matver')===ver && DB.materials.length===d.length)return; // 未变化
+    const oldById={};DB.materials.forEach(m=>oldById[m.id]=m);
+    const news=[];
+    d.forEach(x=>{
+      if(x.tracks){const om=oldById[x.id];
+        news.push(Object.assign({baseURL:mediaBase()},x, om?{st:om.st,lv:om.lv,nr:om.nr,bp:om.bp}:{}))}
+      else{const m=mkMat(x.title,x.text,x.items,x.lang,x.cat);m.id=x.id||m.id;m.source=x.source||'';
+        const om=oldById[m.id];
+        if(om){m.st=om.st&&om.st.length===m.items.length?om.st:m.st;
+               m.lv=om.lv&&om.lv.length===m.items.length?om.lv:m.lv;
+               m.nr=om.nr&&om.nr.length===m.items.length?om.nr:m.nr;
+               m.bp=om.bp||m.bp}
+        news.push(m)}});
+    DB.materials=news;matIdx=Math.min(Math.max(matIdx,0),news.length-1);
+    localStorage.setItem('matver',ver);
+    save();renderSel();toast('材料已更新：'+news.length+' 篇',3000);
   }catch(e){}}
 window.__initErr='';
 window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.message||'err')+' @'+(e.lineno||'')});

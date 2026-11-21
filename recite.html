@@ -102,6 +102,17 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 padding:8px 16px;border-radius:20px;opacity:0;transition:.25s;pointer-events:none;z-index:99;max-width:80vw}
 #toast.show{opacity:1}
 .firstbody{cursor:pointer}
+/* ---- 暗色主题 ---- */
+html[data-theme=dark]{--bg:#15181c;--card:#1e232a;--line:#2c333d;--ink:#e8eaee;--sub:#98a0ab;
+  --accent:#5b8ff0;--green:#4caf7d;--yellow:#e0aa3e;--red:#e07070;--active:#2c3140}
+html[data-theme=dark] .btn,html[data-theme=dark] select,
+html[data-theme=dark] .ss-mat,html[data-theme=dark] .ss-cat,html[data-theme=dark] .ss-dev-btn,
+html[data-theme=dark] #dots button,html[data-theme=dark] .ov-row,html[data-theme=dark] .ov-play,
+html[data-theme=dark] footer .ctrl,html[data-theme=dark] #pcSide{background:#1e232a;color:var(--ink)}
+html[data-theme=dark] #dots button.done{background:#1c2b22;border-color:#2f5c41;color:var(--green)}
+html[data-theme=dark] #dots button.fuzzy{background:#2b2519;border-color:#5c4c22;color:var(--yellow)}
+html[data-theme=dark] .ss-cat.on{background:var(--accent)}
+html[data-theme=dark] .sent.speaking-now{background:#232a35}
 /* ---- 全屏 / 沉浸模式 ---- */
 body.immersion header,body.immersion #stages,body.immersion #knobs{display:none}
 body.immersion main{max-width:1100px;padding:4vh 8vw}
@@ -220,6 +231,9 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button class="btn" id="btnImp">⬆导入</button>
   <button class="btn" id="btnPrint" title="打印背诵稿">🖨</button>
   <button class="btn" id="btnFull" title="全屏（F）">⛶</button>
+  <button class="btn" id="btnTheme" title="明/暗主题">🌓</button>
+  <select id="timerSel" title="早读计时" style="display:none"><option value="">计时</option><option value="5">5分钟</option><option value="10">10分钟</option><option value="15">15分钟</option><option value="20">20分钟</option></select>
+  <span id="timerClock" style="font-size:14px;color:var(--accent)"></span>
   <button class="btn" id="btnOv" title="总览">📋</button>
   <button class="btn" id="btnSet">⚙</button>
 </header>
@@ -882,7 +896,10 @@ let speakingNow=false;
 function markSpeaking(i){
   speakingNow=(i>=0);
   $$('.sent').forEach(el=>el.classList.remove('speaking-now'));
-  if(i>=0){const el=document.getElementById('sent'+i);if(el)el.classList.add('speaking-now')}
+  if(i>=0){const el=document.getElementById('sent'+i);
+    if(el){el.classList.add('speaking-now');
+      // 自动滑动：当前句滚到视口中间（参考课件连续朗读的跟句滚动）
+      el.scrollIntoView({block:'center',behavior:'smooth'})}}
   renderDots()}
 function renderActive(){const el=document.getElementById('sent'+cur);
   if(el)el.scrollIntoView({block:'nearest',behavior:'smooth'})}
@@ -1220,6 +1237,27 @@ function toggleFull(){
   }else{enterImmersion()}
 }
 $('#btnFull').onclick=toggleFull;
+/* 暗色主题（参考课件 themeBtn）*/
+try{const t=localStorage.getItem('bb_theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+$('#btnTheme').onclick=()=>{
+  const cur=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  if(cur==='light')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme='dark';
+  try{localStorage.setItem('bb_theme',cur)}catch(e){}};
+/* 早读计时（参考课件 startTimer）*/
+let timerId=null,timerDeadline=0;
+function beep(){try{const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);
+  o.frequency.value=880;g.gain.value=.12;o.start();o.stop(ctx.currentTime+.25)}catch(e){}}
+function startTimer(min){
+  clearInterval(timerId);
+  if(!min){$('#timerClock').textContent='';return}
+  timerDeadline=Date.now()+min*60000;
+  const tick=()=>{const left=Math.max(0,timerDeadline-Date.now());
+    const mm=Math.floor(left/60000),ss=Math.floor(left%60000/1000);
+    $('#timerClock').textContent='⏱ '+String(mm).padStart(2,'0')+':'+String(ss).padStart(2,'0');
+    if(left<=0){clearInterval(timerId);$('#timerClock').textContent='⏱ 时间到';toast('⏰ 早读时间到！');beep()}};
+  tick();timerId=setInterval(tick,500)}
+$('#timerSel').onchange=e=>startTimer(parseInt(e.target.value,10));
 $('#immExit').onclick=()=>{exitImmersion();if(document.fullscreenElement){try{document.exitFullscreen()}catch(e){}}};
 $$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
   $$('#startScreen .ss-dev-btn').forEach(x=>x.classList.remove('on'));

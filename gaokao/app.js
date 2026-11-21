@@ -172,6 +172,7 @@ function nav(id){
   if(id==='stats')renderStats();
   if(id==='wrong')renderWrong();
   if(id==='home')renderHome();
+  if(id==='ai')renderAI();
   window.scrollTo(0,0);
 }
 $$('[data-nav]').forEach(x=>x.onclick=()=>{Sound.tap();nav(x.dataset.nav)});
@@ -465,3 +466,36 @@ loadWeekly();
 initDay();
 renderHome();renderStats();
 loadBank().then(()=>{updateBankInfo();}).catch(()=>{});
+
+/* ===== AI 智能诊断出题 ===== */
+const AI_BASE=localStorage.aiBase||'http://192.168.31.57:8898';
+async function aiPost(path,body){
+  const r=await fetch(AI_BASE+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  return r.json();
+}
+function renderAI(){
+  const d=$('#aiDiag'), g=$('#aiGen');
+  if(d._bind)return; d._bind=g._bind=1;
+  d.onclick=async()=>{
+    const q=$('#aiQ').value.trim(); if(!q)return toast('先粘贴一道题');
+    const out=$('#aiDiagOut'); out.textContent='诊断中…';
+    try{
+      const r=await aiPost('/predict',{question:q});
+      const ch=r.chapter.replace(/\s*知识梳理与习题\.pdf$/,'');
+      out.innerHTML=`<b>知识点：</b>${ch}（置信度 ${(r.confidence*100).toFixed(0)}%）<br><b>难度：</b>${'★'.repeat(r.difficulty)}<br>— 正在推荐同类题 —`;
+      try{
+        const rec=await aiPost('/recommend',{question:q});
+        out.innerHTML+=rec.questions.map(x=>`<div style="margin-top:10px;padding:10px;border-radius:10px;background:#faf7f0"><b>${x.subject}·${(x.chapter||'').replace(/\s*知识梳理与习题\.pdf$/,'')}</b><br>${x.question.slice(0,300)}${x.answer?'<br><b>答案：</b>'+x.answer.slice(0,150):''}</div>`).join('');
+      }catch(e){}
+    }catch(e){ out.textContent='连接失败：请确认电脑已开机且连同一 Wi-Fi（'+AI_BASE+'）'; }
+  };
+  g.onclick=async()=>{
+    const s=$('#aiSubject').value,k=$('#aiKnow').value.trim(),out=$('#aiGenOut');
+    out.textContent='生成中…（约 10-30 秒）';
+    try{
+      const r=await aiPost('/generate',{subject:s,knowledge:k,n:1});
+      out.textContent=r.questions[0]||'（未生成）';
+    }catch(e){ out.textContent='连接失败：请确认电脑已开机且连同一 Wi-Fi'; }
+  };
+}

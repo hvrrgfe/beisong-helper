@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#58cc02"><title>高考全科提分训练营</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button class="stat" data-nav="home"><span class="flame">🔥</span><b id="streak">0</b></button>
+    <div class="xp-track" data-nav="home"><div id="xpBar"></div></div>
+    <button class="stat" data-nav="stats"><span>💎</span><b id="gem">0</b></button>
+    <button class="sound-toggle" id="soundToggle" title="声音设置">🔊</button>
+    <button class="stat" data-nav="profile"><span>👤</span></button>
+  </header>
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div><h1>把每天的努力<br><span>变成分数优势</span></h1><p>距离高考还有 <b id="countdown">—</b> 天</p></div>
+        <div class="mascot">🎯</div>
+      </div>
+      <div class="daily-card">
+        <div class="section-head"><h2>今日目标</h2><span id="dailyText">0 / 20 题</span></div>
+        <div class="goal"><div class="ring" id="goalRing"><span>0%</span></div><div><b>完成每日训练</b><p>答对 10 题获得 30 宝石</p></div></div>
+        <button class="primary big" id="startDaily">开始智能训练</button>
+        <span id="bankInfo"></span><p class="muted" id="modeHint">先完成一次诊断，系统会定位薄弱点</p>
+      </div>
+      <h2 class="section-title">今日重点</h2>
+      <div id="focusList" class="focus-list"></div>
+      <h2 class="section-title">全科能力地图</h2>
+      <div id="skills" class="skills"></div>
+      <div class="path-tip"><span>💡</span><p>每天坚持 20 分钟，保持学习连续性！</p></div>
+      <h2 class="section-title">每周必刷题</h2>
+      <div class="daily-card">
+        <div class="section-head"><h2>高三 · 本周</h2><span id="weeklyDate"></span></div>
+        <p class="muted">来源：笔袋官方资料库「每周必刷题」</p>
+        <div id="weeklyGrid" class="weekly-grid"></div>
+        <button class="secondary" data-nav="weekly">查看全部科目</button>
+      </div>
+    </section>
+
+    <section id="practice" class="view">
+      <div class="quiz-top"><button class="icon-btn" id="quit">×</button><div class="quiz-progress"><div id="qBar"></div></div><span id="qCount">1/10</span></div>
+      <div class="question-meta" id="qMeta">数学 · 集合</div>
+      <h2 class="question" id="question">题目加载中…</h2>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback hidden"><div class="feedback-title"></div><p class="explain"></p><button class="primary" id="next">继续</button></div>
+    </section>
+
+    <section id="weekly" class="view">
+      <div class="page-head"><h1>每周必刷题</h1><span class="muted" id="weekLabel"></span></div>
+      <div class="subject-tabs" id="weekTabs"></div>
+      <div id="weeklyPages"></div>
+      <p class="version">预览由笔袋官方资料库提供 · 建议先做题再看解析</p>
+    </section>
+
+    <section id="stats" class="view">
+      <h1>学习统计</h1>
+      <div class="stat-grid">
+        <div class="stat-card"><span>🔥</span><b id="sStreak">0</b><small>连续天数</small></div>
+        <div class="stat-card"><span>✅</span><b id="sCorrect">0</b><small>答对题数</small></div>
+        <div class="stat-card"><span>📚</span><b id="sTotal">0</b><small>累计答题</small></div>
+        <div class="stat-card"><span>⭐</span><b id="sAccuracy">0%</b><small>正确率</small></div>
+      </div>
+      <h2 class="section-title">最近 7 天正确率</h2>
+      <div class="stat-card" style="margin-bottom:18px"><span>🎯</span><b id="recentAcc">0%</b><small>近 7 天</small></div>
+      <h2 class="section-title">薄弱知识点</h2><div id="weakList"></div>
+      <h2 class="section-title">科目掌握度</h2><div id="mastery"></div>
+      <h2 class="section-title">成就</h2><div id="badges" class="badges"></div>
+    </section>
+
+    <section id="wrong" class="view">
+      <div class="page-head"><h1>错题本</h1><button class="text-btn" id="clearWrong">清空</button></div>
+      <p class="muted">答错的题目会自动收录，方便考前复盘。</p>
+      <div class="daily-card" style="margin:12px 0"><b>今天到期错题：<span id="dueCount">0</span> 道</b></div>
+      <div id="wrongList"></div>
+    </section>
+
+    <section id="profile" class="view">
+      <div class="profile-card"><div class="avatar">🦉</div><h1>理科探索者</h1><p id="levelText">Lv.1 起步阶段</p><div class="level-track"><div id="levelBar"></div></div><small id="levelNext">再获得 100 XP 升级</small></div>
+      <button class="menu-item" data-nav="wrong"><span>📕</span><b>我的错题本</b><em id="wrongCount">0</em></button>
+      <button class="menu-item" data-nav="stats"><span>📊</span><b>学习报告</b><em>›</em></button>
+      <div class="menu-item"><span>🔔</span><b>音效开关</b><em id="voiceSwitch" class="switch on"></em></div>
+      <div class="menu-item"><span>🎵</span><b>界面音效</b><em id="sfxSwitch" class="switch on"></em></div>
+      <button class="menu-item" id="reset"><span>♻️</span><b>重置学习记录</b><em>›</em></button>
+      <p class="version">高考全科提分训练营 v1.0 · 本地自动保存</p>
+    </section>
+  </main>
+  <nav class="bottom-nav">
+    <button data-nav="home"><span>🏠</span><small>首页</small></button>
+    <button data-nav="practice"><span>✏️</span><small>训练</small></button>
+    <button data-nav="stats"><span>📊</span><small>统计</small></button>
+    <button data-nav="wrong"><span>📕</span><small>错题</small></button>
+    <button data-nav="profile"><span>👤</span><small>我的</small></button>
+  </nav>
+</div>
+<div id="toast"></div>
+<script src="data.js"></script>
+<script src="sound.js"></script>
+<script src="app.js?v=9"></script>
+</body></html>

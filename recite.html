@@ -992,6 +992,13 @@ $('#ssAll').onclick=()=>{
   [...document.querySelectorAll('#ssList .ss-mat')].forEach(x=>x.classList.toggle('sel',!allSel));
   updateSsBar();
 };
+function showStart(){
+  $('#startScreen').style.display='flex';
+  const dev=DB.settings.device||'mob';
+  $('#startScreen').dataset.dev=dev;
+  document.body.classList.toggle('pc',dev==='pc');
+  $$('#startScreen .ss-dev-btn').forEach(b=>b.classList.toggle('on',b.dataset.dev===dev));
+  buildStart()}
 function startQueue(){
   if(!ssSel.size)return;
   const order=DB.materials.map(m=>m.id);

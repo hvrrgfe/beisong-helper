@@ -379,7 +379,9 @@ const qAll=()=>tx('queue','readonly',s=>s.getAll());
 const qAdd=t=>tx('queue','readwrite',s=>s.add(t));
 const qPut=t=>tx('queue','readwrite',s=>s.put(t));
 const qDel=id=>tx('queue','readwrite',s=>s.delete(id));
-async function qClear(){try{const ts=await qAll();for(const t of ts)await qDel(t.id)}catch(e){}}
+function qClear(){return new Promise(res=>{
+  try{const t=idb.transaction('queue','readwrite');t.objectStore('queue').clear();t.oncomplete=()=>res();t.onerror=()=>res()}
+  catch(e){res()}})}
 const metaGet=k=>tx('meta','readonly',s=>s.get(k));
 const metaPut=(k,v)=>tx('meta','readwrite',s=>s.put(v,k));
 /* ================= 数据 ================= */
@@ -1263,9 +1265,9 @@ window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.mes
   stage=DB.settings.stage||1;
   $$('#stages button').forEach(b=>b.classList.toggle('on',b.dataset.s==stage));
   $('#kHintW').style.display=stage===4?'flex':'none';
-  await qClear();          // 清掉历史遗留的生成任务，避免一进页面就狂拉音频
   renderSel();
   if(!TV){showStart();$('#ssCount').textContent='正在加载材料…'}
+  qClear();                // 清掉历史遗留的生成任务（后台一次性清空）
   await loadMaterialsFile();
   if(!TV){buildStart()}
   if(TV){preloadMaterial(S())}

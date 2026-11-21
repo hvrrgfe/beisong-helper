@@ -293,7 +293,7 @@ const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()
 const TV=location.search.indexOf('tv=1')>=0||/Android TV|MiTV|BRAVIA|AFT|_shield/i.test(navigator.userAgent);
 if(TV)document.body.classList.add('tv');
 function fnv(str,seed){let h=seed>>>0;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return h}
-function keyOf(lang,text){const s=VOICE+'|'+KVER+'|'+lang+'|'+text;
+function keyOf(lang,text){const s=(lang==='en'?'edge':VOICE)+'|'+KVER+'|'+lang+'|'+text;
   return fnv(s,0x811c9dc5).toString(16).padStart(8,'0')+fnv(s,0x01935279).toString(16).padStart(8,'0')}
 function splitSentences(text){
   const out=[];
@@ -941,7 +941,7 @@ async function preloadMaterial(m){
           if(!b){const r=await fetch(api+'/api/audio/'+k+'.mp3');if(r.ok)b=await r.blob()}
           if(!b){ // 预生成还没跑到这句 → 现场合成补齐
             const r2=await fetch(api+'/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},
-              body:JSON.stringify({text:t,lang:lg,provider:'sovits',speed:1})});
+              body:JSON.stringify({text:t,lang:lg,provider:(lg==='en'?'edge':'sovits'),speed:1})});
             if(r2.ok)b=await r2.blob()}
           if(b){blobCache.set(k,b);blobPut(k,b)}
         }catch(e){}}

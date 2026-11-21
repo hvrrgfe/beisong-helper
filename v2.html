@@ -231,14 +231,6 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button data-s="5">⑤ 验收</button>
   <span id="stat" style="margin-left:10px;font-size:13px;color:var(--sub)"></span>
 </div>
-<div id="knobs">
-  <label>停顿 <select id="kGap"><option value="0">连播</option><option value="3">3秒</option><option value="5">5秒</option><option value="8">8秒</option><option value="12">12秒</option><option value="man">手动</option></select></label>
-  <label>遮蔽 <select id="kMask"><option value="0">全文</option><option value="1">首字</option><option value="2">全遮</option></select></label>
-  <label>语速 <input type="range" id="kSpd" min="0.6" max="1.5" step="0.05"><span id="kSpdV"></span></label>
-  <label>重复 <select id="kRep"><option value="1">1遍</option><option value="2">2遍</option><option value="3">3遍</option></select></label>
-  <label>切分 <select id="kChunk"><option value="full">整句</option><option value="part">短句</option></select></label>
-  <label id="kHintW" style="display:none">提示 <input type="range" id="kHint" min="0" max="100" step="10"><span id="kHintV"></span></label>
-</div>
 <div id="pausePanel"><div class="pp1" id="ppTitle">该你了</div><div id="pauseBar"><div id="pauseFill"></div></div><div class="pp2">空格=提前揭晓 · <span id="pauseCd"></span></div></div>
 <main id="list">
   <div id="dots"></div>
@@ -288,8 +280,6 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button class="ctrl" id="btnStop" title="停止">⏹</button>
   <span id="nowInfo"></span>
   <div class="spacer"></div>
-  <button class="btn" id="btnOk" title="背顺了（1）">👍 顺</button>
-  <button class="btn" id="btnStuck" title="卡住了（2）">卡</button>
 </footer>
 <dialog id="matDlg"><form class="dlg" method="dialog">
   <h3 id="matDlgTitle">新增材料</h3>
@@ -306,6 +296,12 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <h3>⚙ 设置</h3>
   <div class="frow"><label>TTS 服务</label><input type="text" id="setApi" placeholder="http://192.168.31.57:8899"></div>
   <div class="frow"><label>断点提示</label><select id="setBp"><option value="1">记住每篇进度</option><option value="0">关闭</option></select></div>
+  <div class="frow"><label>停顿</label><select id="kGap"><option value="0">连播</option><option value="3">3秒</option><option value="5">5秒</option><option value="8">8秒</option><option value="12">12秒</option><option value="man">手动</option></select></div>
+  <div class="frow"><label>遮蔽</label><select id="kMask"><option value="0">全文</option><option value="1">首字</option><option value="2">全遮</option></select></div>
+  <div class="frow"><label>语速</label><input type="range" id="kSpd" min="0.6" max="1.5" step="0.05"><span id="kSpdV"></span></div>
+  <div class="frow"><label>每句重复</label><select id="kRep"><option value="1">1遍</option><option value="2">2遍</option><option value="3">3遍</option></select></div>
+  <div class="frow"><label>长句切分</label><select id="kChunk"><option value="full">整句</option><option value="part">短句</option></select></div>
+  <div class="frow"><label>提示比例</label><input type="range" id="kHint" min="0" max="100" step="10"><span id="kHintV"></span></div>
   <div class="frow"><label>存储</label><span id="storeInfo" style="font-size:13px"></span></div>
   <div class="frow btns"><button class="btn" id="btnGc" type="button">清理孤儿缓存</button>
     <button class="btn" id="btnWipe" type="button">清空全部音频</button></div>
@@ -989,11 +985,19 @@ window.jumpBp=function(){hideToast();cur=S().bp.idx;renderList();toast('从第 '
 $('#btnSet').onclick=async()=>{
   $('#setApi').value=DB.settings.api;
   $('#setBp').value=DB.settings.bp?'1':'0';
+  $('#kGap').value=DB.settings.gap;$('#kMask').value=DB.settings.mask;
+  $('#kSpd').value=DB.settings.speed;$('#kSpdV').textContent=' '+DB.settings.speed.toFixed(2)+'×';
+  $('#kRep').value=DB.settings.rep;$('#kChunk').value=DB.settings.chunk;
+  $('#kHint').value=DB.settings.hint;$('#kHintV').textContent=' '+DB.settings.hint+'%';
   try{const est=await navigator.storage.estimate();
     $('#storeInfo').textContent='音频 '+(est.usage/1048576).toFixed(1)+' MB / 配额 '+(est.quota/1048576|0)+' MB'}catch(e){}
   $('#setDlg').showModal()};
 $('#setSave').onclick=()=>{DB.settings.api=$('#setApi').value.trim();
-  DB.settings.bp=$('#setBp').value==='1';save();$('#setDlg').close();toast('设置已保存')};
+  DB.settings.bp=$('#setBp').value==='1';
+  DB.settings.gap=$('#kGap').value;DB.settings.mask=+$('#kMask').value;
+  DB.settings.speed=+$('#kSpd').value;DB.settings.rep=+$('#kRep').value;
+  DB.settings.chunk=$('#kChunk').value;DB.settings.hint=+$('#kHint').value;
+  save();cache.clear();$('#setDlg').close();toast('设置已保存')};
 $('#btnGc').onclick=async()=>{ // 清理孤儿缓存
   const valid=new Set();
   DB.materials.forEach(m=>{if(m.tracks)return;

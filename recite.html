@@ -118,17 +118,33 @@ padding:8px 16px;border-radius:20px;opacity:0;transition:.25s;pointer-events:non
 .ss-cat.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 .ss-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:4px}
 .ss-mat{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;
-  cursor:pointer;font-size:15px;text-align:left;line-height:1.5;min-height:44px}
-.ss-mat:hover{border-color:var(--accent);color:var(--accent)}
-/* 电脑模式 */
-body.pc main{max-width:1150px}
-body.pc .body{font-size:21px;line-height:2}
-body.pc .note{font-size:15px}
-body.pc header h1{font-size:20px}
-body.pc #stages button{font-size:16px;padding:8px 16px}
-body.pc .sent{padding:16px 20px;border-radius:14px}
-body.pc #knobs{font-size:15px}
-body.pc #knobs select,body.pc #knobs input[type=range]{max-width:140px}
+  cursor:pointer;font-size:15px;text-align:left;line-height:1.5;min-height:44px;position:relative}
+.ss-mat:hover{border-color:var(--accent)}
+.ss-mat.sel{border-color:var(--accent);background:var(--active)}
+.ss-mat.sel:after{content:'✓';position:absolute;right:10px;top:8px;color:var(--accent);font-weight:700}
+.ss-bar{display:flex;gap:10px;align-items:center;margin-top:16px;padding:12px;background:#fff;
+  border:1px solid var(--line);border-radius:12px;position:sticky;bottom:0}
+#ssCount{color:var(--sub);font-size:14px;flex:1}
+/* 电脑模式：真·桌面布局 */
+#pcSide{display:none;position:fixed;left:0;top:0;bottom:0;width:272px;background:#fff;
+  border-right:1px solid var(--line);overflow-y:auto;padding:14px 12px;z-index:50}
+.ps-logo{font-size:19px;font-weight:700;margin-bottom:14px}
+.ps-sec{color:var(--sub);font-size:13px;margin:14px 0 6px;font-weight:600}
+#psStages button{display:block;width:100%;text-align:left;padding:9px 12px;margin-bottom:4px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;font-size:14px}
+#psStages button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#psMats{padding-bottom:30px}
+#psMats .pm{display:block;width:100%;text-align:left;padding:8px 10px;margin-bottom:3px;
+  border:none;border-radius:8px;background:transparent;cursor:pointer;font-size:13.5px;line-height:1.4}
+#psMats .pm:hover{background:var(--active)}
+#psMats .pm.on{background:var(--active);color:#8a6d1f;font-weight:600}
+#psMats .pm-cat{color:var(--sub);font-size:12px;margin:10px 0 4px;font-weight:700}
+body.pc #pcSide{display:block}
+body.pc header,body.pc #stages,body.pc #knobs,body.pc main,body.pc footer,body.pc #pausePanel{margin-left:272px}
+body.pc main{max-width:none;padding:16px 28px;column-count:2;column-gap:20px}
+body.pc .sent{break-inside:avoid;margin-bottom:14px}
+body.pc .body{font-size:20px;line-height:2}
+body.pc #nowInfo{font-size:15px}
 body.pc footer .ctrl{width:50px;height:50px}
 /* ---- TV 大屏模式（地址加 ?tv=1，或 UA 含 TV 自动进入）---- */
 body.tv header,body.tv #stages{display:none}
@@ -159,6 +175,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button class="btn" id="btnEdit">编辑</button>
   <button class="btn" id="btnDel">删除</button>
   <button class="btn rev" id="btnReview">复习</button>
+  <button class="btn" id="btnQ" style="display:none">📋 队列</button>
   <div id="progWrap"><span id="progTxt"></span><div id="progBar"><div id="progFill"></div></div></div>
   <div class="spacer"></div>
   <button class="btn" id="btnExp">⬇音频包</button>
@@ -196,9 +213,23 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
     <div class="ss-step">② 选择要背诵的内容</div>
     <div class="ss-cats" id="ssCats"></div>
     <div class="ss-list" id="ssList"></div>
+    <div class="ss-bar">
+      <span id="ssCount">已选 0 篇</span>
+      <button class="btn" id="ssAll">全选本类</button>
+      <button class="btn primary" id="ssGo" disabled>开始练习 ▶</button>
+    </div>
     <button class="btn ss-imp" id="ssImp" style="display:none;margin-top:18px">⬆ 导入音频包（离线包）</button>
   </div>
 </div>
+<aside id="pcSide">
+  <div class="ps-logo">🎧 边听边背</div>
+  <div class="ps-sec">阶段</div>
+  <div id="psStages"></div>
+  <div class="ps-sec" id="psStat"></div>
+  <div class="ps-sec" id="psQueue"></div>
+  <div class="ps-sec">材料</div>
+  <div id="psMats"></div>
+</aside>
 <footer>
   <button class="ctrl" id="btnPrev" title="上一句（←）">⏮</button>
   <button class="ctrl primary" id="btnPlay" title="播放/揭晓（空格）">▶</button>
@@ -482,7 +513,7 @@ function hidePause(){if(pauseAbort)pauseAbort();pauseAbort=null;
 async function afterSentence(){
   if(!S())return;const m=S();
   const n=slen(m);
-  const done=()=>{running=false;setPlayBtn();sessionEnd()};
+  const done=()=>{running=false;setPlayBtn();sessionEnd();qAdvance()};
   const g=String(DB.settings.gap);
   if(stage===1){ // 磨耳朵：连播
     if(cur<n-1){playIndex(cur+1)}else done();
@@ -737,7 +768,7 @@ function renderSel(){
   if(DB.materials.length){matIdx=Math.min(Math.max(matIdx,0),DB.materials.length-1);sel.value=matIdx}
   else matIdx=-1;
   renderAll()}
-function renderAll(){renderStat();renderList();stopAudioOnly();running=false;setPlayBtn();cur=-1;$('#nowInfo').textContent='';hidePause();
+function renderAll(){renderStat();renderList();stopAudioOnly();running=false;setPlayBtn();cur=-1;$('#nowInfo').textContent='';hidePause();renderQChip();renderPcSide();
   $('#kHintW').style.display=stage===4?'flex':'none'}
 function saveBp(){if(!DB.settings.bp)return;const m=S();if(m&&cur>=0){m.bp={stage,idx:cur}}}
 /* ================= 事件绑定 ================= */
@@ -912,6 +943,7 @@ async function preloadMaterial(m){
       if(done>=total){setTimeout(()=>{updateProg()},800)}}};
   await Promise.all([worker(),worker(),worker(),worker(),worker(),worker()])}
 /* ---- 开始界面 ---- */
+let ssSel=new Set();
 function buildStart(){
   const cats={};
   DB.materials.forEach((m,i)=>{const c=m.cat||'其他';(cats[c]=cats[c]||[]).push([m,i])});
@@ -925,35 +957,88 @@ function buildStart(){
       b.classList.add('on');
       const list=$('#ssList');list.innerHTML='';
       cats[c].forEach(([m,i])=>{
-        const d=document.createElement('button');d.className='ss-mat';
+        const d=document.createElement('button');d.className='ss-mat'+(ssSel.has(m.id)?' sel':'');
         d.innerHTML='<b>'+esc(m.title)+'</b>'+(m.tracks?'':'<div style="font-size:12px;color:var(--sub)">'+slen(m)+' 句</div>');
-        d.onclick=()=>chooseMat(i);
+        d.onclick=()=>{
+          if(ssSel.has(m.id)){ssSel.delete(m.id);d.classList.remove('sel')}
+          else{ssSel.add(m.id);d.classList.add('sel')}
+          updateSsBar()};
         list.appendChild(d)});
     };
     catsEl.appendChild(b)});
   if(!keys.length){$('#ssImp').style.display='inline-block'}
   else if(catsEl.firstChild)catsEl.firstChild.click();
+  updateSsBar();
 }
-function chooseMat(i){
+function updateSsBar(){
+  $('#ssCount').textContent='已选 '+ssSel.size+' 篇';
+  $('#ssGo').disabled=!ssSel.size;
+}
+$('#ssAll').onclick=()=>{
+  const on=$('#ssCats .ss-cat.on');if(!on)return;
+  const cname=on.textContent.split(' · ')[0];
+  const mats=DB.materials.filter(m=>(m.cat||'其他')===cname);
+  const allSel=mats.every(m=>ssSel.has(m.id));
+  if(allSel){mats.forEach(m=>ssSel.delete(m.id))}
+  else{mats.forEach(m=>ssSel.add(m.id))}
+  [...document.querySelectorAll('#ssList .ss-mat')].forEach(x=>x.classList.toggle('sel',!allSel));
+  updateSsBar();
+};
+function startQueue(){
+  if(!ssSel.size)return;
+  const order=DB.materials.map(m=>m.id);
+  DB.q=order.filter(id=>ssSel.has(id));
+  DB.qi=0;save();
+  enterMat(DB.q[0]);
+}
+function enterMat(id){
+  const i=DB.materials.findIndex(m=>m.id===id);
+  if(i<0)return;
   const dev=$('#startScreen').dataset.dev||'mob';
   DB.settings.device=dev;save();
   document.body.classList.toggle('pc',dev==='pc');
   matIdx=i;cur=-1;abLoop=false;dueSet=null;sessionStuck=[];sessionNew=0;
   $('#startScreen').style.display='none';
-  renderAll();resumePrompt();preloadMaterial(S());
-  genLoop()}
-function showStart(){
-  $('#startScreen').style.display='flex';
-  const dev=DB.settings.device||'mob';
-  $('#startScreen').dataset.dev=dev;
-  document.body.classList.toggle('pc',dev==='pc');
-  $$('#startScreen .ss-dev-btn').forEach(b=>b.classList.toggle('on',b.dataset.dev===dev));
-  buildStart()}
-$$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
-  $$('#startScreen .ss-dev-btn').forEach(x=>x.classList.remove('on'));
-  b.classList.add('on');
-  $('#startScreen').dataset.dev=b.dataset.dev;
-  document.body.classList.toggle('pc',b.dataset.dev==='pc')});
+  renderAll();resumePrompt();preloadMaterial(S());genLoop();renderQChip();renderPcSide();
+}
+function qAdvance(){
+  if(!DB.q||!DB.q.length){hideToast();return}
+  if(DB.qi>=DB.q.length-1){DB.q=null;save();renderQChip();toast('🎉 队列全部完成');return}
+  DB.qi++;save();renderQChip();
+  const nm=DB.materials.find(m=>m.id===DB.q[DB.qi]);
+  toast('📋 下一篇：'+esc(nm?nm.title:''),2500);
+  setTimeout(()=>enterMat(DB.q[DB.qi]),2300);
+}
+function renderQChip(){
+  const b=$('#btnQ');
+  if(DB.q&&DB.q.length){b.style.display='inline-block';
+    b.textContent='📋 队列 '+(DB.qi+1)+'/'+DB.q.length+' ⏭'}
+  else b.style.display='none'}
+$('#btnQ').onclick=()=>{if(DB.q&&DB.q.length){stopAudioOnly();running=false;hidePause();qAdvance()}};
+/* PC 侧栏 */
+function renderPcSide(){
+  if(!document.body.classList.contains('pc'))return;
+  const st=$('#psStages');st.innerHTML='';
+  [['1','① 磨耳朵'],['2','② 跟读'],['3','③ 接背'],['4','④ 接龙'],['5','⑤ 验收']].forEach(a=>{
+    const b=document.createElement('button');b.textContent=a[1];
+    if(stage==a[0])b.classList.add('on');
+    b.onclick=()=>{setStage(+a[0]);renderPcSide()};
+    st.appendChild(b)});
+  const m=S();
+  $('#psStat').innerHTML=(m&&m.st)?('掌握 '+m.st.filter(x=>x===2).length+'/'+slen(m)):('共 '+DB.materials.length+' 篇');
+  const q=$('#psQueue');
+  q.innerHTML=(DB.q&&DB.q.length)?('📋 队列 '+(DB.qi+1)+'/'+DB.q.length+' · <a href="#" onclick="qAdvance();return false" style="color:var(--accent)">跳过本篇</a>'):'';
+  const box=$('#psMats');box.innerHTML='';
+  const cats={};
+  DB.materials.forEach((mm,i)=>{const c=mm.cat||'其他';(cats[c]=cats[c]||[]).push([mm,i])});
+  Object.keys(cats).forEach(c=>{
+    const h=document.createElement('div');h.className='pm-cat';h.textContent=c;box.appendChild(h);
+    cats[c].forEach(a=>{
+      const b=document.createElement('button');b.className='pm'+(a[1]===matIdx?' on':'');
+      b.textContent=a[0].title;
+      b.onclick=()=>{matIdx=a[1];cur=-1;renderAll();preloadMaterial(S());renderQChip();renderPcSide()};
+      box.appendChild(b)})});
+}
 $('#ssImp').onclick=()=>{$('#btnImp').click()};
 /* ================= 初始化 ================= */
 const bc=('BroadcastChannel'in window)?new BroadcastChannel('recite-gen'):null;

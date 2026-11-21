@@ -1154,9 +1154,10 @@ window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.mes
   $$('#stages button').forEach(b=>b.classList.toggle('on',b.dataset.s==stage));
   $('#kHintW').style.display=stage===4?'flex':'none';
   renderSel();
+  if(!TV){showStart();$('#ssCount').textContent='正在加载材料…'}
   await loadMaterialsFile();
+  if(!TV){buildStart()}
   if(TV){preloadMaterial(S())}
-  else{showStart()}
   resumePrompt();
  }catch(e){
   window.__initErr='init: '+e.message+' @'+String(e.stack||'').split('\n')[1];

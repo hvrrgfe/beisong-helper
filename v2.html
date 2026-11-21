@@ -126,14 +126,14 @@ padding:8px 16px;border-radius:20px;opacity:0;transition:.25s;pointer-events:non
   border:1px solid var(--line);border-radius:12px;position:sticky;bottom:0}
 #ssCount{color:var(--sub);font-size:14px;flex:1}
 /* 电脑模式：真·桌面布局 */
-#pcSide{display:none;position:fixed;left:0;top:0;bottom:0;width:272px;background:#fff;
+#pcSide{display:none;position:fixed;left:0;top:0;bottom:0;width:272px;max-width:82vw;background:#fff;
   border-right:1px solid var(--line);overflow-y:auto;padding:14px 12px;z-index:120;
   transform:translateX(-105%);transition:transform .22s ease}
-body.pc #pcSide{display:block}
-body.side-open #pcSide{transform:none;box-shadow:8px 0 28px rgba(0,0,0,.2)}
-#sideToggle{display:none;position:fixed;left:10px;top:10px;z-index:121;width:42px;height:42px;
-  border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:19px}
-body.pc #sideToggle{display:block}
+body.side-open #pcSide{display:block;transform:none;box-shadow:8px 0 28px rgba(0,0,0,.25)}
+.sidebtn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:34px;
+  padding:0;font-size:18px;flex:none}
+.ps-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ps-head .ps-logo{margin-bottom:0}
 #sideMask{display:none;position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:110}
 body.side-open #sideMask{display:block}
 .ps-logo{font-size:19px;font-weight:700;margin-bottom:14px}
@@ -148,7 +148,7 @@ body.side-open #sideMask{display:block}
 #psMats .pm.on{background:var(--active);color:#8a6d1f;font-weight:600}
 #psMats .pm-cat{color:var(--sub);font-size:12px;margin:10px 0 4px;font-weight:700}
 body.pc #pcSide{display:block}
-body.pc main{max-width:none;padding:16px 28px 16px 62px;column-count:2;column-gap:20px}
+body.pc main{max-width:none;padding:16px 28px;column-count:2;column-gap:20px}
 body.pc .sent{break-inside:avoid;margin-bottom:14px}
 body.pc .body{font-size:20px;line-height:2}
 body.pc #nowInfo{font-size:15px}
@@ -176,6 +176,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
 </head>
 <body>
 <header>
+  <button class="btn sidebtn" id="sideToggle" title="材料/阶段栏">☰</button>
   <h1>🎧 边听边背</h1>
   <select id="matSel"></select>
   <button class="btn" id="btnAdd">＋</button>
@@ -228,9 +229,9 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
     <button class="btn ss-imp" id="ssImp" style="display:none;margin-top:18px">⬆ 导入音频包（离线包）</button>
   </div>
 </div>
-<button id="sideToggle" title="材料/阶段栏（M键）">☰</button><div id="sideMask"></div>
+<div id="sideMask"></div>
 <aside id="pcSide">
-  <div class="ps-logo">🎧 边听边背</div>
+  <div class="ps-head"><span class="ps-logo">🎧 边听边背</span><button class="btn" id="sideClose">✕</button></div>
   <div class="ps-sec">阶段</div>
   <div id="psStages"></div>
   <div class="ps-sec" id="psStat"></div>
@@ -1036,7 +1037,6 @@ function renderQChip(){
 $('#btnQ').onclick=()=>{if(DB.q&&DB.q.length){stopAudioOnly();running=false;hidePause();qAdvance()}};
 /* PC 侧栏 */
 function renderPcSide(){
-  if(!document.body.classList.contains('pc'))return;
   const st=$('#psStages');st.innerHTML='';
   [['1','① 磨耳朵'],['2','② 跟读'],['3','③ 接背'],['4','④ 接龙'],['5','⑤ 验收']].forEach(a=>{
     const b=document.createElement('button');b.textContent=a[1];
@@ -1066,6 +1066,7 @@ $$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
   document.body.classList.toggle('pc',b.dataset.dev==='pc')});
 $('#sideToggle').onclick=()=>{document.body.classList.toggle('side-open');renderPcSide()};
 $('#sideMask').onclick=()=>document.body.classList.remove('side-open');
+$('#sideClose').onclick=()=>document.body.classList.remove('side-open');
 document.addEventListener('keydown',e=>{
   if(document.body.classList.contains('pc')&&!e.target.matches('input,textarea,select')&&(e.key==='m'||e.key==='M')){
     document.body.classList.toggle('side-open');renderPcSide()}});

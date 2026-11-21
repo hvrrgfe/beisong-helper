@@ -102,6 +102,17 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 padding:8px 16px;border-radius:20px;opacity:0;transition:.25s;pointer-events:none;z-index:99;max-width:80vw}
 #toast.show{opacity:1}
 .firstbody{cursor:pointer}
+/* ---- 全屏 / 沉浸模式 ---- */
+body.immersion header,body.immersion #stages,body.immersion #knobs{display:none}
+body.immersion main{max-width:1100px;padding:4vh 8vw}
+body.immersion .body{font-size:30px;line-height:2.1}
+body.immersion .note{font-size:18px}
+body.immersion .sent{background:transparent;border-color:transparent;padding:10px 0}
+body.immersion .sent.now{background:var(--active);border-color:var(--accent)}
+body.immersion footer{background:transparent;border-top:none}
+body.immersion #sideToggle{position:fixed;left:12px;top:12px;z-index:121;background:var(--card)}
+#immExit{display:none;position:fixed;right:12px;top:12px;z-index:121}
+body.immersion #immExit{display:inline-block}
 /* ---- 开始界面 ---- */
 #startScreen{position:fixed;inset:0;background:var(--bg);z-index:200;display:none;
   flex-direction:column;align-items:center;overflow:auto;padding:34px 16px}
@@ -187,6 +198,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
   <button class="btn" id="btnExp">⬇音频包</button>
   <button class="btn" id="btnImp">⬆导入</button>
   <button class="btn" id="btnPrint" title="打印背诵稿">🖨</button>
+  <button class="btn" id="btnFull" title="全屏（F）">⛶</button>
   <button class="btn" id="btnSet">⚙</button>
 </header>
 <div id="stages">
@@ -279,6 +291,7 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
     <button class="btn" type="submit">完成</button>
   </div>
 </form></dialog>
+<button class="btn" id="immExit" title="退出沉浸模式">✕ 退出</button>
 <div id="toast"></div>
 <script>
 /* ================= 工具 ================= */
@@ -826,6 +839,8 @@ document.addEventListener('keydown',e=>{
   if(e.code==='ArrowLeft')$('#btnPrev').click();
   if(e.key==='r'||e.key==='R')$('#btnReplay').click();
   if(e.key==='l'||e.key==='L')$('#btnAB').click();
+  if(e.key==='f'||e.key==='F'){toggleFull()}
+  if(e.key==='Escape'){if(document.body.classList.contains('immersion'))exitImmersion()}
   if(e.key==='1'){if(chainStart.waitMark)markResult(true)}
   if(e.key==='2'){if(chainStart.waitMark)markResult(false)}});
 /* ---- 材料管理 ---- */
@@ -948,6 +963,17 @@ async function preloadMaterial(m){
       $('#progFill').style.width=(done/total*100)+'%';
       if(done>=total){setTimeout(()=>{updateProg()},800)}}};
   await Promise.all([worker(),worker(),worker(),worker(),worker(),worker()])}
+/* ---- 全屏 / 沉浸模式 ---- */
+body.immersion header,body.immersion #stages,body.immersion #knobs{display:none}
+body.immersion main{max-width:1100px;padding:4vh 8vw}
+body.immersion .body{font-size:30px;line-height:2.1}
+body.immersion .note{font-size:18px}
+body.immersion .sent{background:transparent;border-color:transparent;padding:10px 0}
+body.immersion .sent.now{background:var(--active);border-color:var(--accent)}
+body.immersion footer{background:transparent;border-top:none}
+body.immersion #sideToggle{position:fixed;left:12px;top:12px;z-index:121;background:var(--card)}
+#immExit{display:none;position:fixed;right:12px;top:12px;z-index:121}
+body.immersion #immExit{display:inline-block}
 /* ---- 开始界面 ---- */
 let ssSel=new Set();
 function buildStart(){
@@ -1056,6 +1082,32 @@ function renderPcSide(){
       box.appendChild(b)})});
 }
 $('#ssImp').onclick=()=>{$('#btnImp').click()};
+/* 全屏 / 沉浸模式 */
+function enterImmersion(){
+  document.body.classList.add('immersion');
+  $('#btnFull').textContent='⤡';
+  toast('沉浸模式：F 或 ESC 退出',3000)}
+function exitImmersion(){
+  document.body.classList.remove('immersion');
+  $('#btnFull').textContent='⛶'}
+function toggleFull(){
+  const el=document.documentElement;
+  const fsEl=document.fullscreenElement||document.webkitFullscreenElement;
+  if(fsEl){
+    const x=document.exitFullscreen||document.webkitExitFullscreen;
+    try{x.call(document)}catch(e){exitImmersion()}
+    return}
+  if(document.body.classList.contains('immersion')){exitImmersion();return}
+  const req=el.requestFullscreen||el.webkitRequestFullscreen;
+  if(req){
+    try{
+      const p=req.call(el);
+      if(p&&p.catch)p.catch(()=>enterImmersion());
+    }catch(e){enterImmersion()}
+  }else{enterImmersion()}
+}
+$('#btnFull').onclick=toggleFull;
+$('#immExit').onclick=()=>{exitImmersion();if(document.fullscreenElement){try{document.exitFullscreen()}catch(e){}}};
 $$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
   $$('#startScreen .ss-dev-btn').forEach(x=>x.classList.remove('on'));
   b.classList.add('on');

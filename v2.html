@@ -1252,7 +1252,8 @@ window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.mes
 (async function init(){
  try{
   await idbOpen();
-  try{await navigator.storage.persist()}catch(e){}
+  // persist() 在 Safari 无手势时可能永不 resolve，不能 await
+  try{if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().catch(()=>{})}}catch(e){}
   // 恢复内存热缓存（后台进行，不阻塞开始界面）
   (async()=>{try{
     const keys=await blobKeys();

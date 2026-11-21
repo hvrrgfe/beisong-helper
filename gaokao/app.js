@@ -411,8 +411,23 @@ $('#next').onclick=()=>{
     renderHome();nav('home');
   }
 };
-$('#startDaily').onclick=()=>{
+$('#startDaily').onclick=async()=>{
   Sound.start();
+  /* AI 优先：用最近错题诊断薄弱知识点，直接练该知识点 */
+  if(state.diag&&state.wrong.length&&typeof aiPost==='function'){
+    try{
+      const wq=QB[state.wrong[state.wrong.length-1].i];
+      if(wq&&wq.q){
+        const r=await aiPost('/predict',{question:wq.q.slice(0,600)});
+        const pool=QB.filter(q=>q.k===r.chapter||q.k===r.chapter.replace(/\s*知识梳理与习题\.pdf$/,''));
+        if(pool.length>=5){
+          toast('AI 定位薄弱点：'+r.chapter.slice(0,14));
+          startSession(pickAdaptiveFrom(pool,10),'practice');
+          return;
+        }
+      }
+    }catch(e){/* AI 不可达，走本地逻辑 */}
+  }
   const list=state.diag?pickAdaptive(10):pickDiagnostic(12);
   startSession(list,state.diag?'practice':'diag');
 };
@@ -468,7 +483,7 @@ renderHome();renderStats();
 loadBank().then(()=>{updateBankInfo();}).catch(()=>{});
 
 /* ===== AI 智能诊断出题 ===== */
-const AI_BASE=localStorage.aiBase||'http://192.168.31.57:8898';
+const AI_BASE=localStorage.aiBase||'http://100.99.67.96:8898';
 async function aiPost(path,body){
   const r=await fetch(AI_BASE+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
   if(!r.ok) throw new Error('HTTP '+r.status);

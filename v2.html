@@ -388,15 +388,18 @@ function parseApi(){return DB.settings.api||((location.protocol.indexOf('http')=
 async function genOne(task){
   const t0=Date.now();
   const api=parseApi();
-  // 1) 先问预生成音频端点（家里服务器）
-  try{const r=await fetch(api+'/api/audio/'+task.key+'.mp3');
-    if(r.ok){const b=await r.blob();blobCache.set(task.key,b);await blobPut(task.key,b);
-      lastGenMs.push(Date.now()-t0);if(lastGenMs.length>10)lastGenMs.shift();return true}}catch(e){}
-  // 2) 离线包场景：同目录 audio/ 下的预生成文件（Gitee/静态托管可用）
+  // 1) 静态托管/离线包：同目录 audio/ 下的预生成文件
   try{const r=await fetch('audio/'+task.key+'.mp3');
     if(r.ok){const b=await r.blob();blobCache.set(task.key,b);await blobPut(task.key,b);
       lastGenMs.push(Date.now()-t0);if(lastGenMs.length>10)lastGenMs.shift();return true}}catch(e){}
-  // 3) 都没有就现场合成（服务器转 mp3）
+  // 2) 家里服务器上的预生成端点
+  try{const r=await fetch(api+'/api/audio/'+task.key+'.mp3');
+    if(r.ok){const b=await r.blob();blobCache.set(task.key,b);await blobPut(task.key,b);
+      lastGenMs.push(Date.now()-t0);if(lastGenMs.length>10)lastGenMs.shift();return true}}catch(e){}
+  // 3) 都没有 → 只有连得上本地 TTS 服务器才现场合成
+  let alive=false;
+  try{const pr=await fetch(api+'/docs');alive=!!pr&&pr.ok}catch(e){alive=false}
+  if(!alive)throw new Error('该句音频尚未生成（静态站点无TTS服务）');
   const r=await fetch(api+'/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({text:task.text,lang:task.lang,provider:'sovits',speed:1})});
   if(!r.ok)throw new Error('HTTP '+r.status);

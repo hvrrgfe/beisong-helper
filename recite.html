@@ -886,7 +886,7 @@ function renderSel(){
   else matIdx=-1;
   renderAll()}
 function renderAll(){renderStat();renderList();renderDots();stopAudioOnly();running=false;setPlayBtn();cur=-1;$('#nowInfo').textContent='';hidePause();renderQChip();renderPcSide();
-  $('#kHintW').style.display=stage===4?'flex':'none'}
+}
 function saveBp(){if(!DB.settings.bp)return;const m=S();if(m&&cur>=0){m.bp={stage,idx:cur}}}
 /* ================= 事件绑定 ================= */
 const STAGE_PRESET={1:{gap:'0',mask:'0'},2:{gap:'5',mask:'0'},3:{gap:'8',mask:'1'},4:{gap:'8',mask:'2'},5:{gap:'0',mask:'0'}};
@@ -930,8 +930,7 @@ $('#btnAuto').onclick=()=>{DB.settings.autoLoop=!DB.settings.autoLoop;save();
   toast(DB.settings.autoLoop?'🔄 整篇自动循环已开':'自动循环已关')};
 $('#btnAuto').classList.toggle('on',!!DB.settings.autoLoop);
 $('#btnStop').onclick=()=>{stopAudioOnly();running=false;setPlayBtn();hidePause();chainStart.seq=null;chainStart.waitMark=false};
-$('#btnOk').onclick=()=>{if(chainStart.waitMark)markResult(true)};
-$('#btnStuck').onclick=()=>{if(chainStart.waitMark)markResult(false)};
+// 顺/卡：键盘 1/2 或点击句子上的状态点（参考课件：点句子标记）
 $('#matSel').onchange=e=>{matIdx=+e.target.value;cur=-1;abLoop=false;dueSet=null;sessionStuck=[];sessionNew=0;renderAll();resumePrompt();preloadMaterial(S())};
 document.addEventListener('keydown',e=>{
   if(e.target.matches('input,textarea,select'))return;
@@ -1265,7 +1264,7 @@ window.addEventListener('error',e=>{if(!window.__initErr)window.__initErr=(e.mes
   $('#kHintV').textContent=' '+DB.settings.hint+'%';
   stage=DB.settings.stage||1;
   $$('#stages button').forEach(b=>b.classList.toggle('on',b.dataset.s==stage));
-  $('#kHintW').style.display=stage===4?'flex':'none';
+  
   renderSel();
   if(!TV){showStart();$('#ssCount').textContent='正在加载材料…'}
   qClear();                // 清掉历史遗留的生成任务（后台一次性清空）

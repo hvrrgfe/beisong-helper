@@ -118,7 +118,7 @@ button{font:inherit; cursor:pointer; border:0; background:none; color:inherit}
 .quiz-progress{height:8px; background:#e7dfd0; border-radius:99px; flex:1; overflow:hidden}
 .quiz-progress div{height:100%; width:0; background:linear-gradient(90deg,#6b64b5,#c9814f); border-radius:99px}
 .question-meta{color:var(--brand); font-weight:800; margin:22px 0 10px}
-.question{font-size:22px; line-height:1.55; margin:0 0 22px; font-weight:800}
+.question{font-size:19px; line-height:1.65; margin:0 0 20px; font-weight:700}
 .options{display:grid; gap:12px}
 .option{
   background:var(--card); border:1.5px solid #e8e0d1; border-radius:16px; text-align:left; padding:15px 16px;

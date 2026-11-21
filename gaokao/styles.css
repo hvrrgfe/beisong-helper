@@ -138,7 +138,8 @@ button{font:inherit; cursor:pointer; border:0; background:none; color:inherit}
 }
 .feedback-title{font-weight:900; font-size:19px; color:var(--ok)}
 .feedback.bad .feedback-title{color:var(--bad)}
-.explain{color:#5f5749; line-height:1.6; margin:8px 0 16px}
+.explain{color:#5f5749; line-height:1.7; margin:8px 0 16px; white-space:pre-line; font-size:16px}
+.explain .katex{font-size:1.05em}
 .hidden{display:none!important}
 .bottom-nav{
   position:fixed; bottom:0; left:0; right:0; height:80px; background:rgba(255,253,248,.92);

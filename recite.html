@@ -102,6 +102,34 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 padding:8px 16px;border-radius:20px;opacity:0;transition:.25s;pointer-events:none;z-index:99;max-width:80vw}
 #toast.show{opacity:1}
 .firstbody{cursor:pointer}
+/* ---- 开始界面 ---- */
+#startScreen{position:fixed;inset:0;background:var(--bg);z-index:200;display:none;
+  flex-direction:column;align-items:center;overflow:auto;padding:34px 16px}
+#startScreen .ss-box{width:min(760px,94vw)}
+#startScreen h1{font-size:26px;text-align:center;margin-bottom:22px}
+.ss-step{color:var(--sub);font-size:14px;margin:16px 0 8px;font-weight:600}
+.ss-dev{display:flex;gap:12px}
+.ss-dev-btn{flex:1;padding:16px;font-size:18px;border:2px solid var(--line);border-radius:14px;
+  background:#fff;cursor:pointer}
+.ss-dev-btn.on{border-color:var(--accent);background:var(--active);color:#8a6d1f;font-weight:700}
+.ss-cats{display:flex;gap:8px;flex-wrap:wrap}
+.ss-cat{padding:8px 14px;border:1px solid var(--line);border-radius:18px;background:#fff;
+  cursor:pointer;font-size:14px;color:var(--sub)}
+.ss-cat.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ss-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:4px}
+.ss-mat{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;
+  cursor:pointer;font-size:15px;text-align:left;line-height:1.5;min-height:44px}
+.ss-mat:hover{border-color:var(--accent);color:var(--accent)}
+/* 电脑模式 */
+body.pc main{max-width:1150px}
+body.pc .body{font-size:21px;line-height:2}
+body.pc .note{font-size:15px}
+body.pc header h1{font-size:20px}
+body.pc #stages button{font-size:16px;padding:8px 16px}
+body.pc .sent{padding:16px 20px;border-radius:14px}
+body.pc #knobs{font-size:15px}
+body.pc #knobs select,body.pc #knobs input[type=range]{max-width:140px}
+body.pc footer .ctrl{width:50px;height:50px}
 /* ---- TV 大屏模式（地址加 ?tv=1，或 UA 含 TV 自动进入）---- */
 body.tv header,body.tv #stages{display:none}
 body.tv{background:#101410;color:#f2f4ee}
@@ -156,6 +184,21 @@ body.tv #pausePanel .pp2,body.tv .gen{font-size:20px}
 </div>
 <div id="pausePanel"><div class="pp1" id="ppTitle">该你了</div><div id="pauseBar"><div id="pauseFill"></div></div><div class="pp2">空格=提前揭晓 · <span id="pauseCd"></span></div></div>
 <main id="list"></main>
+<!-- 开始界面 -->
+<div id="startScreen">
+  <div class="ss-box">
+    <h1>🎧 边听边背</h1>
+    <div class="ss-step">① 选择设备</div>
+    <div class="ss-dev">
+      <button class="ss-dev-btn on" data-dev="mob">📱 手机</button>
+      <button class="ss-dev-btn" data-dev="pc">💻 电脑</button>
+    </div>
+    <div class="ss-step">② 选择要背诵的内容</div>
+    <div class="ss-cats" id="ssCats"></div>
+    <div class="ss-list" id="ssList"></div>
+    <button class="btn ss-imp" id="ssImp" style="display:none;margin-top:18px">⬆ 导入音频包（离线包）</button>
+  </div>
+</div>
 <footer>
   <button class="ctrl" id="btnPrev" title="上一句（←）">⏮</button>
   <button class="ctrl primary" id="btnPlay" title="播放/揭晓（空格）">▶</button>
@@ -868,6 +911,50 @@ async function preloadMaterial(m){
       $('#progFill').style.width=(done/total*100)+'%';
       if(done>=total){setTimeout(()=>{updateProg()},800)}}};
   await Promise.all([worker(),worker(),worker(),worker(),worker(),worker()])}
+/* ---- 开始界面 ---- */
+function buildStart(){
+  const cats={};
+  DB.materials.forEach((m,i)=>{const c=m.cat||'其他';(cats[c]=cats[c]||[]).push([m,i])});
+  const catsEl=$('#ssCats');catsEl.innerHTML='';
+  const keys=Object.keys(cats);
+  keys.forEach(c=>{
+    const b=document.createElement('button');b.className='ss-cat';
+    b.textContent=c+' · '+cats[c].length;
+    b.onclick=()=>{
+      [...catsEl.querySelectorAll('.ss-cat')].forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      const list=$('#ssList');list.innerHTML='';
+      cats[c].forEach(([m,i])=>{
+        const d=document.createElement('button');d.className='ss-mat';
+        d.innerHTML='<b>'+esc(m.title)+'</b>'+(m.tracks?'':'<div style="font-size:12px;color:var(--sub)">'+slen(m)+' 句</div>');
+        d.onclick=()=>chooseMat(i);
+        list.appendChild(d)});
+    };
+    catsEl.appendChild(b)});
+  if(!keys.length){$('#ssImp').style.display='inline-block'}
+  else if(catsEl.firstChild)catsEl.firstChild.click();
+}
+function chooseMat(i){
+  const dev=$('#startScreen').dataset.dev||'mob';
+  DB.settings.device=dev;save();
+  document.body.classList.toggle('pc',dev==='pc');
+  matIdx=i;cur=-1;abLoop=false;dueSet=null;sessionStuck=[];sessionNew=0;
+  $('#startScreen').style.display='none';
+  renderAll();resumePrompt();preloadMaterial(S());
+  genLoop()}
+function showStart(){
+  $('#startScreen').style.display='flex';
+  const dev=DB.settings.device||'mob';
+  $('#startScreen').dataset.dev=dev;
+  document.body.classList.toggle('pc',dev==='pc');
+  $$('#startScreen .ss-dev-btn').forEach(b=>b.classList.toggle('on',b.dataset.dev===dev));
+  buildStart()}
+$$('#startScreen .ss-dev-btn').forEach(b=>b.onclick=()=>{
+  $$('#startScreen .ss-dev-btn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  $('#startScreen').dataset.dev=b.dataset.dev;
+  document.body.classList.toggle('pc',b.dataset.dev==='pc')});
+$('#ssImp').onclick=()=>{$('#btnImp').click()};
 /* ================= 初始化 ================= */
 const bc=('BroadcastChannel'in window)?new BroadcastChannel('recite-gen'):null;
 let hbTimer=null;
@@ -900,7 +987,8 @@ async function loadMaterialsFile(){
   $('#kHintW').style.display=stage===4?'flex':'none';
   renderSel();
   await loadMaterialsFile();
-  preloadMaterial(S());
+  if(TV){preloadMaterial(S())}
+  else{showStart()}
   resumePrompt();
 })();
 /* ================= 音频包导出/导入 ================= */

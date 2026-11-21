@@ -975,17 +975,6 @@ async function preloadMaterial(m){
       $('#progFill').style.width=(done/total*100)+'%';
       if(done>=total){setTimeout(()=>{updateProg()},800)}}};
   await Promise.all([worker(),worker(),worker(),worker(),worker(),worker()])}
-/* ---- 全屏 / 沉浸模式 ---- */
-body.immersion header,body.immersion #stages,body.immersion #knobs{display:none}
-body.immersion main{max-width:1100px;padding:4vh 8vw}
-body.immersion .body{font-size:30px;line-height:2.1}
-body.immersion .note{font-size:18px}
-body.immersion .sent{background:transparent;border-color:transparent;padding:10px 0}
-body.immersion .sent.now{background:var(--active);border-color:var(--accent)}
-body.immersion footer{background:transparent;border-top:none}
-body.immersion #sideToggle{position:fixed;left:12px;top:12px;z-index:121;background:var(--card)}
-#immExit{display:none;position:fixed;right:12px;top:12px;z-index:121}
-body.immersion #immExit{display:inline-block}
 /* ---- 开始界面 ---- */
 let ssSel=new Set();
 function buildStart(){

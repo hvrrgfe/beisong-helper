@@ -607,7 +607,7 @@ async function loadPreview(){
     const sel=$('#prevSubject');
     if(!sel.options.length){
       sel.innerHTML=PREV_SUBJECTS.map(s=>`<option value="${s}">${SUBJECTS[s].icon} ${SUBJECTS[s].name}</option>`).join('');
-      sel.onchange=async()=>{await loadPreviewSub(sel.value);renderPreviewBooks(sel.value);$('#prevContent').style.display='none';};
+      sel.onchange=async()=>{await loadPreviewSub(sel.value);renderPreview();$('#prevContent').style.display='none';};
     }
     await loadPreviewSub(sel.value||PREV_SUBJECTS[0]);
   }catch(e){}

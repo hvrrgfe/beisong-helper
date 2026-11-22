@@ -818,7 +818,9 @@ function renderList(){
     return}
   if(stage===5){renderVerify(box,m);return}
   const n=slen(m),mask=stage===1?0:+DB.settings.mask;
-  M:for(let i=0;i<n;i++){
+  const shown=Math.min(n,Math.max(200,m._shown||200));   // 大材料分页渲染
+  m._shown=shown;
+  M:for(let i=0;i<shown;i++){
     const it=sents(m)[i];
     const d=document.createElement('div');d.className='sent';d.id='sent'+i;
     if(i===cur)d.classList.add('now');
@@ -849,6 +851,11 @@ function renderList(){
     d.ondblclick=e=>{e.preventDefault();abLoop=!abLoop||i!==cur;if(abLoop)cur=i;renderList();
       toast(abLoop?('🔁 AB循环第'+(i+1)+'句（再双击取消）'):'AB循环已取消')};
     box.appendChild(d)}
+  if(shown<n){const mb=document.createElement('button');mb.className='btn';
+    mb.textContent='显示更多（还有 '+(n-shown)+' 句）';
+    mb.style.cssText='display:block;margin:12px auto;padding:10px 18px';
+    mb.onclick=()=>{m._shown=shown+300;renderList()};
+    box.appendChild(mb)}
   updateProg()}
 function renderVerify(box,m){
   const t=document.createElement('div');t.className='tools';
@@ -930,7 +937,9 @@ function renderDots(){
   const box=$('#dots');const m=S();
   if(!m||m.tracks||!slen(m)){box.innerHTML='';return}
   box.innerHTML='';
-  for(let i=0;i<slen(m);i++){
+  const n=slen(m);
+  const CAP=Math.min(n,400);            // 进度点最多 400 个，避免大材料卡顿
+  for(let i=0;i<CAP;i++){
     const b=document.createElement('button');
     b.textContent=i+1; b.title='第 '+(i+1)+' 句';
     const st=(m.st&&m.st[i])||0;
@@ -940,6 +949,8 @@ function renderDots(){
     if(i===cur&&speakingNow)b.classList.add('nowSpeak');
     b.onclick=()=>{stopAudioOnly();running=false;setPlayBtn();cur=i;renderList();renderDots();playIndex(i)};
     box.appendChild(b)}
+  if(n>CAP){const more=document.createElement('span');more.textContent='…共 '+n+' 句';
+    more.style.cssText='font-size:12px;color:#8b9084;margin-left:6px';box.appendChild(more)}
 }
 /* 总览（参考课件 renderOverview）*/
 function renderOverview(){

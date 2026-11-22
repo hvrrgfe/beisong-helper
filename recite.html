@@ -413,7 +413,10 @@ function mkMat(title,text,items,lang,cat){
     cat:cat||'',text:text||'',items:sents,ts:Date.now()};
   m.st=(items||[]).map(x=>0);m.lv=(items||[]).map(x=>0);m.nr=(items||[]).map(x=>0);m.bp={stage:1,idx:0};
   return m}
-let DB=load(); const save=()=>localStorage.setItem(LS,JSON.stringify(DB));
+let DB=load(); const save=()=>{try{localStorage.setItem(LS,JSON.stringify(DB))}catch(e){
+  // 超配额：seek 型大材料不存句子（上线后从 materials.json 重新拉取），再试一次
+  try{const slim=Object.assign({},DB,{materials:DB.materials.map(m=>m.seek?Object.assign({},m,{items:[]}):m)});
+    localStorage.setItem(LS,JSON.stringify(slim))}catch(e2){}}};
 let matIdx=-1, stage=1, cur=-1, running=false, speakToken=0, abLoop=false;
 let dueSet=null, sessionStuck=[], sessionNew=0;
 const audio=new Audio(); const urls=new Map(); let curKey='';
@@ -686,14 +689,38 @@ function sessionEnd(){
     $('#sumDlg').showModal()}
   sessionStuck=[];sessionNew=0}
 /* 播放提供的原声片段（逐词/逐句） */
+function remMedia(p){return String(p).replace(/^media\//,'')}
+function altBases(){ // 相对路径失败后的备用音频基址（外网用 Tailscale 访问家里服务器）
+  try{const v=localStorage.getItem('audioBases');return v?JSON.parse(v):['https://bili-audio.pages.dev/','http://192.168.31.57:8899/media/','http://100.99.67.96:8899/media/']}
+  catch(e){return ['https://bili-audio.pages.dev/','http://192.168.31.57:8899/media/','http://100.99.67.96:8899/media/']}}
+let baseCache=null;
+function playSrcWithFallback(path,onReady){ // 依次尝试基址，找到能加载的为止（结果缓存）
+  const start=()=>{
+    const url=baseCache+remMedia(path);onReady(url)};
+  if(baseCache!=null){start();return}
+  const cands=[mediaBase()].concat(altBases());
+  let i=0;
+  const tryNext=()=>{
+    if(i>=cands.length){baseCache=cands[0];onReady(null);return}
+    const url=cands[i]+remMedia(path);i++;
+    const probe=new Audio();
+    probe.preload='metadata';
+    probe.onerror=()=>{tryNext()};
+    const to=setTimeout(()=>{probe.onerror=probe.onloadedmetadata=null;tryNext()},6000);
+    probe.onloadedmetadata=()=>{clearTimeout(to);baseCache=cands[i-1];onReady(url)};
+    probe.src=url};
+  tryNext()}
 function playClip(clip,onEnd){
   if(!clip)return;
-  const base=mediaBase();
   stopAudioOnly();running=true;setPlayBtn();
-  audio.src=base+String(clip).replace(/^media\//,'');audio.playbackRate=+DB.settings.speed||1;
-  audio.onended=()=>{running=false;setPlayBtn();if(onEnd)onEnd()};
-  const p=audio.play();
-  if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
+  const finish=err=>{if(err){running=false;setPlayBtn()}};
+  playSrcWithFallback(clip,url=>{
+    if(!url){finish(true);return}
+    audio.src=url;audio.playbackRate=+DB.settings.speed||1;
+    audio.onended=()=>{running=false;setPlayBtn();if(onEnd)onEnd()};
+    const p=audio.play();
+    if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
+  });
 }
 function playClipChain(i){
   const m=S();if(!m||i<0||i>=slen(m))return;
@@ -737,9 +764,12 @@ function playSeekChain(i){
     if(audio.currentTime<startAt-1.5||audio.currentTime>endAt+8){seekTo()}
     if(++tries>600){finish()}
   },1000);
-  audio.src=mediaBase()+String(m.seek).replace(/^media\//,'');audio.playbackRate=+DB.settings.speed||1;
-  const p=audio.play();
-  if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
+  playSrcWithFallback(m.seek,url=>{
+    if(!url){running=false;setPlayBtn();return}
+    audio.src=url;audio.playbackRate=+DB.settings.speed||1;
+    const p=audio.play();
+    if(p&&p.catch)p.catch(()=>{running=false;setPlayBtn()});
+  });
 }
 /* ================= 渲染 ================= */
 function maskHTML(t,mode){

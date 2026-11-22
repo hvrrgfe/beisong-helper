@@ -597,7 +597,7 @@ function renderAI(){
 let PB=null;
 async function loadPreview(){
   try{
-    const r=await fetch('preview.json');
+    const r=await fetch('preview.json?v='+Date.now());
     PB=await r.json();
     if($('#preview').classList.contains('active'))renderPreview();
   }catch(e){}

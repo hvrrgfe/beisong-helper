@@ -136,6 +136,9 @@ body.immersion #immExit{display:inline-block}
 #dots button.nowSpeak{box-shadow:0 0 0 2px rgba(74,125,216,.35)}
 #dots .sep{width:1px;height:18px;background:var(--line);margin:0 4px}
 .sent.speaking-now{background:var(--active);border-color:var(--accent)}
+.tagx,.tagh{display:inline-block;font-size:11px;line-height:1.7;padding:0 5px;border-radius:4px;margin-right:6px;vertical-align:2px;font-weight:600}
+.tagx{background:#eceff3;color:#8a93a0}
+.tagh{background:#e8f4ec;color:#2e7d4f}
 .ov-row{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border:1px solid var(--line);
   border-radius:10px;margin-bottom:6px;background:#fff}
 .ov-row:hover{border-color:var(--accent)}
@@ -408,7 +411,7 @@ function load(){try{const d=JSON.parse(localStorage.getItem(LS));if(d&&d.materia
       toast('已迁移旧版背诵小助手的材料')}}catch(e){}
   return d}
 function mkMat(title,text,items,lang,cat){
-  const sents=(items&&items.length)?items.map(x=>({t:x.t,n:x.n||'',tt:x.tt||'',clip:x.clip||'',l:x.l||'',s:x.s,e:x.e})):{};
+  const sents=(items&&items.length)?items.map(x=>({t:x.t,n:x.n||'',tt:x.tt||'',clip:x.clip||'',l:x.l||'',s:x.s,e:x.e,tag:x.tag||''})):{};
   const m={id:'m'+Date.now()+Math.floor(Math.random()*999),title:title,lang:lang||(items&&items[0]?langOf(items[0].t):(text?langOf(text):'zh')),
     cat:cat||'',text:text||'',items:sents,ts:Date.now()};
   m.st=(items||[]).map(x=>0);m.lv=(items||[]).map(x=>0);m.nr=(items||[]).map(x=>0);m.bp={stage:1,idx:0};
@@ -556,6 +559,7 @@ async function playIndex(i,rep){
   const _it=sents(m)[i];
   if(_it&&_it.clip){playClipChain(i);return}   // 原声片段材料：直接播片段并连播
   if(m.seek&&_it&&_it.s!=null){playSeekChain(i);return} // 整段音频 seek 模式
+  if(_it&&_it.tag==='拓展'){toast('拓展内容：无真人原声，不朗读');running=false;setPlayBtn();return}
   stopAudioOnly();
   const tk=++speakToken;
   cur=i;renderList();renderDots();saveBp();
@@ -732,7 +736,10 @@ function playClipChain(i){
   const el=document.getElementById('sent'+i);
   if(el)el.scrollIntoView({block:'nearest',behavior:'smooth'});
   playClip(its[i].clip,()=>{
-    if(i+1<slen(m)&&its[i+1].clip)playClipChain(i+1);
+    // 连播：自动跳过没有原声的句子，直到篇末
+    let j=i+1;
+    while(j<slen(m)&&!its[j].clip)j++;
+    if(j<slen(m))playClipChain(j);
     else{running=false;setPlayBtn();markSpeaking(-1);cur=-1;$('#nowInfo').textContent=''}}
   );
 }
@@ -821,16 +828,19 @@ function renderList(){
     if(stage>=3&&mask===1)body='<span class="note">'+esc(it.n||'')+'</span>'+maskHTML(it.t,1);
     else if(stage>=3&&mask===2)body='<span class="note">'+esc(it.n||'')+'</span>'+maskHTML(it.t,2);
     else body='<span class="note">'+esc(it.n||'')+'</span>'+esc(it.t);
-    const gen=(()=>{const k=keyOf(it.l||langOf(ttsOf(it)),ttsOf(it));return blobCache.has(k)?'':'<span class="gen" data-k="'+k+'">⏳</span>'})();
-    d.innerHTML='<div class="no">'+(i+1)+'</div><div class="body">'+body+'</div>'+
+    const gen=(()=>{if(it.clip||it.s!=null)return '';const k=keyOf(it.l||langOf(ttsOf(it)),ttsOf(it));return blobCache.has(k)?'':'<span class="gen" data-k="'+k+'">⏳</span>'})();
+    const tg=(it.tag==='拓展')?'<span class="tagx" title="拓展内容，不参与背诵朗读">拓展</span>':(it.tag==='高考'?'<span class="tagh" title="高考必考">高考</span>':'');
+    d.innerHTML='<div class="no">'+(i+1)+'</div><div class="body">'+tg+body+'</div>'+
       '<div class="ops"><span class="gen">'+gen+'</span>'+(it.clip?'<button class="pc" title="播放原声片段">🎧</button>':'')+
       '<button class="play" title="播放本句">▶</button>'+
       '<span class="dot s'+(m.st[i]||0)+'" title="未背/模糊/已背"></span></div>';
     if(it.clip)d.querySelector('.pc').onclick=e=>{e.stopPropagation();unlockAudio();playClip(it.clip)};
     d.querySelector('.play').onclick=e=>{e.stopPropagation();unlockAudio();
+      if(it.tag==='拓展'){toast('拓展内容：无真人原声，不朗读');return}
       if(stage===4)chainStart(i);else playIndex(i)};
     if(stage!==5){ // 整句可点读（参考早读课件）
       d.querySelector('.body').onclick=e=>{e.stopPropagation();unlockAudio();
+        if(it.tag==='拓展'){toast('拓展内容：无真人原声，不朗读');return}
         if(stage===4)chainStart(i);else playIndex(i)};
       d.querySelector('.body').style.cursor='pointer'}
     d.querySelector('.dot').onclick=e=>{e.stopPropagation();m.st[i]=((m.st[i]||0)+1)%3;

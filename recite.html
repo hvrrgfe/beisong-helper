@@ -764,7 +764,7 @@ function playSeekChain(i){
     if(audio.currentTime<startAt-1.5||audio.currentTime>endAt+8){seekTo()}
     if(++tries>600){finish()}
   },1000);
-  playSrcWithFallback(m.seek,url=>{
+  playSrcWithFallback(it.src||m.seek,url=>{
     if(!url){running=false;setPlayBtn();return}
     audio.src=url;audio.playbackRate=+DB.settings.speed||1;
     const p=audio.play();

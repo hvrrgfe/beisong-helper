@@ -545,6 +545,17 @@ loadPreview().catch(()=>{});
 const AI_BASES=['https://win-q31rv0eu48c.tail5b9ed1.ts.net','http://100.99.67.96:8898','http://192.168.31.57:8898'];
 let AI_BASE=localStorage.aiBase||'';
 async function aiPickBase(){
+  // 优先：公网 Cloudflare 隧道（任何网络可用）
+  try{
+    const r=await fetch('ai_endpoint.txt?v='+Date.now(),{cache:'no-store'});
+    if(r.ok){
+      const u=(await r.text()).trim();
+      if(u.startsWith('https://')){
+        const rr=await fetch(u+'/health',{cache:'no-store'});
+        if(rr.ok){AI_BASE=u;localStorage.aiBase=u;return true}
+      }
+    }
+  }catch(e){}
   for(const b of AI_BASES){
     try{
       const ctl=('timeout' in AbortSignal)?{signal:AbortSignal.timeout(4000)}:{};

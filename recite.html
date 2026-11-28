@@ -1370,7 +1370,8 @@ async function loadMaterialsFile(){
     const nc=d.reduce((a,x)=>a+(x.items?x.items.reduce((b,it)=>b+(it.clip?1:0),0):0),0);
     const ns=d.reduce((a,x)=>a+(x.seek?1:0),0);
     const ver=String(d.length)+'_'+d.reduce((a,x)=>a+(x.items?x.items.length:0)+(x.tracks?x.tracks.length:0),0)+'_'+nc+'_'+ns;
-    if(localStorage.getItem('matver')===ver && DB.materials.length===d.length)return; // 未变化
+    const needFix=DB.materials.some(m=>m.seek&&!(m.items&&m.items.length)); // seek 材料被裁剪过 → 需要重建
+    if(localStorage.getItem('matver')===ver && DB.materials.length===d.length && !needFix)return; // 未变化
     const oldById={};DB.materials.forEach(m=>oldById[m.id]=m);
     const news=[];
     d.forEach(x=>{

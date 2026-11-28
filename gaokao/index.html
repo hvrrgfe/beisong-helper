@@ -112,6 +112,19 @@
         <button class="primary big" id="aiGen" style="margin-top:8px">生成新题</button>
         <div id="aiGenOut" style="margin-top:10px;white-space:pre-wrap;font-size:15px;line-height:1.7"></div>
       </div>
+      <div class="daily-card">
+        <div class="section-head"><h2>🔍 相似题检索</h2></div>
+        <p class="muted">找知识点最接近的 5 道真题（含答案解析）</p>
+        <button class="primary big" id="aiSim" style="margin-top:8px">找相似题（用上方题目）</button>
+        <div id="aiSimOut" class="muted" style="margin-top:10px"></div>
+      </div>
+      <div class="daily-card">
+        <div class="section-head"><h2>✍️ 作文评分（实验）</h2></div>
+        <p class="muted">英语作文打分，训练数据为 ASAP 评分集，仅供参考</p>
+        <textarea id="aiEssay" rows="5" placeholder="Paste your English essay here..." style="width:100%;border-radius:12px;border:1px solid #e5e0d5;padding:10px;font-size:15px"></textarea>
+        <button class="primary big" id="aiEssayBtn" style="margin-top:8px">AI 评分</button>
+        <div id="aiEssayOut" class="muted" style="margin-top:10px"></div>
+      </div>
       <p class="muted" style="text-align:center">AI 服务运行在电脑上，需在家用 Wi-Fi 下使用</p>
     </section>
     <section id="preview" class="view">
@@ -139,5 +152,5 @@
 <script src="data.js"></script>
 <script src="sound.js"></script>
 <script src="forget_mlp.js"></script>
-<script src="app.js?v=16"></script>
+<script src="app.js?v=17"></script>
 </body></html>

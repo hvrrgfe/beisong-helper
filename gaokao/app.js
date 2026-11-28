@@ -588,7 +588,7 @@ function renderAI(){
     const out=$('#aiDiagOut'); out.textContent='诊断中…';
     try{
       const r=await aiPost('/predict',{question:q});
-      const ch=r.chapter.replace(/\s*知识梳理与习题\.pdf$/,'');
+      const ch=(r.label||r.chapter||'').replace(/\s*知识梳理与习题\.pdf$/,'');
       out.innerHTML=`<b>知识点：</b>${ch}（置信度 ${(r.confidence*100).toFixed(0)}%）<br><b>难度：</b>${'★'.repeat(r.difficulty)}<br>— 正在推荐同类题 —`;
       try{
         const rec=await aiPost('/recommend',{question:q});
@@ -602,6 +602,24 @@ function renderAI(){
     try{
       const r=await aiPost('/generate',{subject:s,knowledge:k,n:1});
       out.innerHTML=`<span style="font-size:12px;color:#999">来源：🤖 AI 生成（${s}·${k||'自选考点'}）· 仅供参考，请自行核对</span>\n${r.questions[0]||'（未生成）'}`;
+    }catch(e){ out.textContent='连接失败：点上方「测试连接」排查'; }
+  };
+  const sb=$('#aiSim');
+  if(sb)sb.onclick=async()=>{
+    const q=$('#aiQ').value.trim(); if(!q)return toast('先在上方粘贴一道题');
+    const out=$('#aiSimOut'); out.textContent='检索中…';
+    try{
+      const r=await aiPost('/similar',{question:q});
+      out.innerHTML=(r.similar||[]).map(x=>`<div style="margin-top:10px;padding:10px;border-radius:10px;background:#faf7f0"><span style="font-size:12px;color:#999">相似度 ${(x.sim*100).toFixed(0)}% · ${x.k}</span><br>${(x.q||'').slice(0,280)}<br><b>答案：</b>${(x.ans||'').toString().slice(0,60)}<br><b>解析：</b>${(x.exp||'').slice(0,160)}</div>`).join('')||'（无结果）';
+    }catch(e){ out.textContent='连接失败：点上方「测试连接」排查'; }
+  };
+  const eb=$('#aiEssayBtn');
+  if(eb)eb.onclick=async()=>{
+    const t=$('#aiEssay').value.trim(); if(t.length<60)return toast('作文至少 60 字符');
+    const out=$('#aiEssayOut'); out.textContent='评分中…';
+    try{
+      const r=await aiPost('/essay',{essay:t});
+      out.innerHTML=`<b>AI 评分（实验性）：</b>${r.score}<br>置信度 ${(r.confidence*100).toFixed(0)}%（模型在 ASAP 作文集上训练，仅供练习参考，请勿当真实分数）`;
     }catch(e){ out.textContent='连接失败：点上方「测试连接」排查'; }
   };
 }

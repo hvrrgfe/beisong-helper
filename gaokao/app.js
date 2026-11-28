@@ -193,7 +193,7 @@ function nav(id){
   if(id==='wrong')renderWrong();
   if(id==='home')renderHome();
   if(id==='ai')renderAI();
-  if(id==='preview'){loadPreview().then(()=>renderPreview());}
+  if(id==='preview')renderPreview();
   window.scrollTo(0,0);
 }
 $$('[data-nav]').forEach(x=>x.onclick=()=>{Sound.tap();nav(x.dataset.nav)});
@@ -542,9 +542,22 @@ loadBank().then(()=>{updateBankInfo();}).catch(()=>{});
 loadPreview().catch(()=>{});
 
 /* ===== AI 智能诊断出题 ===== */
-const AI_BASE=localStorage.aiBase||'http://100.99.67.96:8898';
+const AI_BASES=['https://win-q31rv0eu48c.tail5b9ed1.ts.net','http://100.99.67.96:8898','http://192.168.31.57:8898'];
+let AI_BASE=localStorage.aiBase||'';
+async function aiPickBase(){
+  for(const b of AI_BASES){
+    try{
+      const ctl=('timeout' in AbortSignal)?{signal:AbortSignal.timeout(4000)}:{};
+      const r=await fetch(b+'/health',Object.assign({method:'GET'},ctl));
+      if(r.ok){AI_BASE=b;localStorage.aiBase=b;return true}
+    }catch(e){}
+  }
+  AI_BASE=AI_BASE||AI_BASES[0]; return false;
+}
+aiPickBase();
 let AI_OK=null;
 async function aiCheck(){
+  await aiPickBase();
   try{
     const ctl=('timeout' in AbortSignal)?{signal:AbortSignal.timeout(5000)}:{};
     const r=await fetch(AI_BASE+'/health',Object.assign({method:'GET'},ctl));
@@ -594,22 +607,12 @@ function renderAI(){
 }
 
 /* ===== 预习课（课本教材）===== */
-let PB=null,PB_SUB=null;
-const PREV_SUBJECTS=['math','physics','chemistry','biology','chinese','english','history','geography'];
-async function loadPreviewSub(sub){
-  if(PB_SUB===sub&&PB)return PB;
-  const r=await fetch('preview/'+sub+'.json?v='+Date.now());
-  PB=await r.json();PB_SUB=sub;
-  return PB;
-}
+let PB=null;
 async function loadPreview(){
   try{
-    const sel=$('#prevSubject');
-    if(!sel.options.length){
-      sel.innerHTML=PREV_SUBJECTS.map(s=>`<option value="${s}">${SUBJECTS[s].icon} ${SUBJECTS[s].name}</option>`).join('');
-      sel.onchange=async()=>{await loadPreviewSub(sel.value);renderPreview();$('#prevContent').style.display='none';};
-    }
-    await loadPreviewSub(sel.value||PREV_SUBJECTS[0]);
+    const r=await fetch('preview.json?v='+Date.now());
+    PB=await r.json();
+    if($('#preview').classList.contains('active'))renderPreview();
   }catch(e){}
 }
 function progKey(sub){
@@ -619,18 +622,20 @@ function progKey(sub){
     .replace(/(知识梳理|强化训练|习题|微专题\d*|必修[一二三上下]|选择性必修[一二三])/g,' ');
   return t.split(/\s+/).filter(x=>x.length>=2);
 }
-async function renderPreview(){
+function renderPreview(){
   if(!PB)return;
+  const subs=[...new Set(PB.books.map(b=>b.s))].filter(s=>SUBJECTS[s]);
   const sel=$('#prevSubject');
-  const sub=sel.value||PREV_SUBJECTS[0];
+  if(!sel.options.length)sel.innerHTML=subs.map(s=>`<option value="${s}">${SUBJECTS[s].icon} ${SUBJECTS[s].name}</option>`).join('');
+  const sub=sel.value||subs[0];
+  if(sel.value!==sel.dataset.cur){sel.dataset.cur=sub;renderPreviewBooks(sub)}
   $('#prevSub').textContent=SUBJECTS[sub].name;
-  if(sel.dataset.cur!==sub){sel.dataset.cur=sub;renderPreviewBooks(sub)}
   const p=state.prog&&state.prog[sub];
   $('#prevProgress').textContent=p?('当前进度：'+p.name+'（之后的章节可提前预习）'):'还没设置教学进度，点章节下的「设为进度」';
 }
 function renderPreviewBooks(sub){
   const box=$('#prevChapters');box.innerHTML='';
-  const books=(PB&&PB.books)||[];
+  const books=PB.books.filter(b=>b.s===sub);
   const p=state.prog&&state.prog[sub];
   const pIdx=p?books.findIndex(b=>b.name===p.name):-1;
   box.innerHTML=books.map((b,i)=>{
@@ -640,7 +645,7 @@ function renderPreviewBooks(sub){
   $$('.prev-ch').forEach(el=>el.onclick=()=>openChapter(sub,+el.dataset.i));
 }
 function openChapter(sub,i){
-  const b=PB.books[i];
+  const b=PB.books.filter(x=>x.s===sub)[i];
   const box=$('#prevContent');box.style.display='block';
   const p=state.prog&&state.prog[sub];
   const isCur=p&&p.name===b.name;
